@@ -1,0 +1,6 @@
+main{
+    color: var(--negro);
+    text-align: center;
+    font-family: var(--font-Roboto);
+    margin-top: 180px;
+}
