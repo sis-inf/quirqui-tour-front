@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PiePagina from '../../components/piePagina.astro';
+import Encabezado from '../../components/encabezado.astro';
+---
+
+<Layout title="Casco - Información Turística">
+    <Encabezado />
+	<main>
+		<h1>Destino turístico seleccionado</h1>
+
+        <div class="carrusel-imagen">
+            <a href="/inforTuristica/oruro">
+                <img src="/casco.jpeg" alt="Destino turistico" style="width: 50%; height: auto;" />
+                <div class="info">
+                    <p>Nombre: Casco</p>
+                    <p>Ubicación: Oruro</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="filtros">
+            <label for="filtroBuses">Filtrar transportes:</label>
+            <select id="filtroBuses">
+                <option value="bus">Bus</option>
+                <option value="trufi">Trufi</option>
+                <option value="etc">etc.</option>
+            </select>
+        </div>
+
+		<p>Información relevante/historia sobre...</p>
+
+        <div class="horarios">
+            <h2>Horarios de Visita</h2>
+            <p>Ejemplo: Abierto todos los días de 9:00 a 18:00.</p>
+        </div>
+
+        <div class="ubicacion">
+            <h2>Ubicación</h2>
+            <a href="/inforTuristica/oruro"><!-- poner link de redireccion a maps, e imagen de maps?(creo)-->
+                <img src="/oruroFoto.jpg" alt="Ubicación de Casco" style="width: 50%; height: auto;" />
+            </a>
+            <p>Poner detalles de como llegar (en la imagen va una de goolgle maps)</p>
+        </div>
+	</main>
+	<PiePagina />  
+</Layout>

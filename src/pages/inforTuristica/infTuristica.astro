@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PiePagina from '../../components/piePagina.astro';
+import Encabezado from '../../components/encabezado.astro';
+---
+
+<Layout title="Informacion-Turistica">
+    <Encabezado />
+	<main>
+		<h1>Los Principales Destinos en Oruro</h1>
+
+		<div class="busqueda">
+            <input type="text" placeholder="Ingrese destino a buscar" />
+            <button>Buscar</button>
+        </div>
+
+        <div class="carrusel">
+
+			<div class="carrusel-imagen">
+				<a href="/inforTuristica/oruro"> 
+					<img src="/casco.jpeg" alt="Destino turistico" style="width: 50%; height: auto;" />
+					<div class="info">
+						<p>Nombre: Casco</p>
+						<p>Ubicación: Oruro</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="carrusel-imagen">
+				<a href="/inforTuristica/oruro">
+					<img src="/oruroFoto.jpg" alt="Destino turistico" style="width: 50%; height: auto;" />
+					<div class="info">
+						<p>Nombre: Oruro</p>
+						<p>Ubicación: Oruro</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="carrusel-imagen">
+				<a href="/inforTuristica/oruro">
+					<img src="/casco.jpeg" alt="Destino turistico" style="width: 50%; height: auto;" />
+					<div class="info">
+						<p>Nombre: Casco</p>
+						<p>Ubicación: Oruro</p>
+					</div>
+				</a>
+			</div>
+
+			<!-- Botones para navegar -->
+			<button class="prev" onclick="cambiarSlide(-1)">&#10094;</button>
+			<button class="next" onclick="cambiarSlide(1)">&#10095;</button>
+		</div>
+
+		<div class="anuncio">
+			<a href="/infTuristica" target="_blank"><!--redirecciona a la pagina del anunciante por ahora solo a la misma seccion inf. turistica -->
+				<img src="/anuncio.jpg" alt="Anuncio de lugares turísticos" style="width: 50%; height: auto;">
+			</a>
+		</div>
+			
+		<div class="filtros">
+            <label for="filtroTuristicos">Filtrar sitios turísticos:</label>
+            <select id="filtroTuristicos">
+                <option value="caminata">Caminata</option>
+                <option value="comida">Comida</option>
+                <option value="etc">etc.</option>
+            </select>
+        </div>
+    </main>
+	<PiePagina />  
+</Layout>
