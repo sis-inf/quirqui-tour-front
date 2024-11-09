@@ -1,0 +1,33 @@
+// script.js
+
+// Seleccionar los botones por su ID
+const btnReserveTicket = document.getElementById('btnReserveTicket');
+const btnViewSchedules = document.getElementById('btnViewSchedules');
+const btnConsultRoutes = document.getElementById('btnConsultRoutes');
+const btnViewMap = document.getElementById('btnViewMap');
+
+// Función para simular la reserva de boletos
+function reserveTicket() {
+    alert("¡Reserva de boletos realizada con éxito!");
+}
+
+// Función para mostrar horarios de los buses
+function viewSchedules() {
+    alert("Mostrando los horarios de los buses...");
+}
+
+// Función para consultar rutas de transporte
+function consultRoutes() {
+    alert("Consultando las rutas disponibles...");
+}
+
+// Función para ver el mapa de rutas
+function viewMap() {
+    alert("Abriendo el mapa de las rutas...");
+}
+
+// Asignar eventos de clic a los botones
+btnReserveTicket.addEventListener('click', reserveTicket);
+btnViewSchedules.addEventListener('click', viewSchedules);
+btnConsultRoutes.addEventListener('click', consultRoutes);
+btnViewMap.addEventListener('click', viewMap);
