@@ -5,43 +5,228 @@ import Encabezado from '../components/encabezado.astro';
 ---
 
 <Layout title="Casco - Información Turística">
-    <Encabezado />
-	<main>
-		<h1>Destino turístico seleccionado</h1>
+  <Encabezado />
+  <main class="main-container">
+      <h1>Destino turístico seleccionado</h1>
 
-        <div class="carrusel-imagen">
-            <a href="/destinos">
-                <img src="/casco.jpeg" alt="Destino turistico" style="width: 50%; height: auto;" />
-                <div class="info">
-                    <p>Nombre: Casco</p>
-                    <p>Ubicación: Oruro</p>
-                </div>
-            </a>
-        </div>
+      <!-- Carrusel de imágenes -->
+      <div class="carrusel-imagen">
+          <a href="/destinos">
+              <img src="/casco.jpeg" alt="Destino turistico" />
+              <div class="info">
+                  <p>Nombre: Casco</p>
+                  <p>Ubicación: Oruro</p>
+              </div>
+          </a>
+          <div class="navegacion">
+              <button class="prev">«</button>
+              <button class="next">»</button>
+          </div>
+      </div>
 
-        <div class="filtros">
-            <label for="filtroBuses">Filtrar transportes:</label>
-            <select id="filtroBuses">
-                <option value="bus">Bus</option>
-                <option value="trufi">Trufi</option>
-                <option value="etc">etc.</option>
-            </select>
-        </div>
+      <!-- Información relevante y horarios lado a lado -->
+      <div class="contenido-informacion">
+          <div class="informacion">
+              <h2>Información Relevante / Historia</h2>
+              <p>Detalles históricos y descripción del destino...</p>
+          </div>
+          
+          <div class="horarios">
+              <h2>Horarios de Visita</h2>
+              <p>Ejemplo: Abierto todos los días de 9:00 a 18:00.</p>
+          </div>
+      </div>
 
-		<p>Información relevante/historia sobre...</p>
+      <!-- Filtros de transporte -->
+      <div class="filtros">
+          <label for="filtroBuses">Filtrar transportes:</label>
+          <select id="filtroBuses">
+              <option value="bus">Bus</option>
+              <option value="trufi">Trufi</option>
+              <option value="etc">etc.</option>
+          </select>
+      </div>
 
-        <div class="horarios">
-            <h2>Horarios de Visita</h2>
-            <p>Ejemplo: Abierto todos los días de 9:00 a 18:00.</p>
-        </div>
-
-        <div class="ubicacion">
-            <h2>Ubicación</h2>
-            <a href="/destinos"><!-- poner link de redireccion a maps, e imagen de maps?(creo)-->
-                <img src="/oruroFoto.jpg" alt="Ubicación de Casco" style="width: 50%; height: auto;" />
-            </a>
-            <p>Poner detalles de como llegar (en la imagen va una de goolgle maps)</p>
-        </div>
-	</main>
-	<PiePagina />  
+      <!-- Ubicación -->
+      <div class="ubicacion">
+          <h2>Ubicación</h2>
+          <a href="https://maps.google.com">
+              <img src="/oruroFoto.jpg" alt="Ubicación de Casco" />
+          </a>
+          <p>Haz clic en la imagen para ver la ubicación.</p>
+      </div>
+  </main>
+  <PiePagina />
 </Layout>
+
+<style> 
+:root {
+  --color-marron-tierra: #8B4513;
+  --color-crema: #F6ECDE;
+  --color-verde-musgo: #556B2F;
+  --color-rojo-arcilla: #A52A2A;
+  --color-azul-profundo: #335669;
+}
+
+body {
+  background-color: var(--color-crema);
+  font-family: 'Akshar Light', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+main {
+  background-color: var(--color-crema);
+}
+
+h1 {
+  color: var(--color-marron-tierra);
+  font-family: 'Poppins', sans-serif;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 30px; /* Espacio entre columnas */
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  align-items: start;
+}
+
+.carrusel-imagen {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carrusel-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prev, .next {
+  background-color: var(--color-verde-musgo);
+  color: var(--color-crema);
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 55%;
+  transform: translateY(-55%);
+}
+
+.prev {
+  left: 90px; /* Ajuste para estar más cerca del borde de la imagen */
+}
+
+.next {
+  right: 1010px; /* Ajuste para estar más cerca del borde de la imagen */
+}
+
+.prev:hover, .next:hover {
+  background-color: var(--color-marron-tierra);
+}
+
+.info p {
+  color: var(--color-azul-profundo);
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Contenedor para Información, Horarios y Ubicación en columnas */
+.contenido-informacion {
+  grid-column: 2 / 4; /* Usa las dos columnas centrales para alinear bien */
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.informacion {
+  width: 60%; /* Ajustamos el ancho para dejar espacio a la derecha */
+}
+
+.horarios-ubicacion {
+  width: 40%; /* Ajustamos el ancho para que contenga horarios y ubicación */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.horarios {
+  /* Ajuste individual para alinearse con el contenedor */
+}
+
+.informacion h2, .horarios h2, .ubicacion h2 {
+  font-size: 24px;
+  color: var(--color-marron-tierra);
+}
+
+.informacion p, .horarios p {
+  font-size: 18px;
+  color: var(--color-azul-profundo);
+}
+
+/* Bloque de filtros */
+.filtros {
+  grid-column: 1 / 2;
+}
+
+.filtros label {
+  font-size: 18px;
+  color: var(--color-marron-tierra);
+}
+
+.filtros select {
+  padding: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Ubicación alineada debajo de horarios */
+.ubicacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ubicacion img {
+  width: 100%; /* Ajustamos el ancho para hacer la imagen más pequeña */
+  max-width: 300px; /* Tamaño máximo para que no sea tan grande */
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadido sombra para consistencia */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contenido-informacion {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+
+</style>
