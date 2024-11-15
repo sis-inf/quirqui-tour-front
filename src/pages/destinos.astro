@@ -58,3 +58,197 @@ import Encabezado from '../components/encabezado.astro';
   </main>
   <PiePagina />
 </Layout>
+
+<style> 
+  :root {
+    --color-marron-tierra: #8B4513;
+    --color-crema: #F6ECDE;
+    --color-verde-musgo: #556B2F;
+    --color-rojo-arcilla: #A52A2A;
+    --color-azul-profundo: #335669;
+  }
+  
+  body {
+    background-color: var(--color-crema);
+    font-family: 'Akshar Light', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  
+  main {
+    background-color: var(--color-crema);
+  }
+  
+  :root {
+    --color-crema: #F6ECDE;
+  }
+  
+  html, body {
+    background-color: var(--color-crema);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-container, main {
+    background-color: var(--color-crema);
+  }
+  
+  h1 {
+    color: var(--color-marron-tierra);
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+  }
+  
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px; /* Espacio entre columnas */
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    align-items: start;
+  }
+  
+  .carrusel-imagen {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .carrusel-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .prev, .next {
+    background-color: var(--color-verde-musgo);
+    color: var(--color-crema);
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-55%);
+  }
+  
+  .prev {
+    left: 90px; /* Ajuste para estar más cerca del borde de la imagen */
+  }
+  
+  .next {
+    right: 1010px; /* Ajuste para estar más cerca del borde de la imagen */
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: var(--color-marron-tierra);
+  }
+  
+  .info p {
+    color: var(--color-azul-profundo);
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  /* Contenedor para Información y columna derecha (Horarios + Ubicación) */
+  .informacion {
+    padding-left: 50px; /* Ajusta el valor según sea necesario */
+  }
+  .informacion {
+    margin-left: 50px; /* Ajusta el valor según sea necesario */
+  }
+  
+  .contenido-informacion {
+    grid-column: 2 / 4; /* Usa las dos columnas centrales para alinear bien */
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+  }
+  
+  /* Contenedor que agrupa Horarios y Ubicación en una columna */
+  .columna-derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre Horarios y Ubicación */
+    width: 40%; /* Ajustamos el ancho para que quede alineado con Información */
+  }
+  
+  /* Estilo de Horarios */
+  .horarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  
+  /* Ubicación alineada debajo de Horarios */
+  .ubicacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px; /* Alineado con horarios */
+  }
+  
+  .ubicacion img {
+    width: 100%;
+    max-width: 300px; /* Limita el tamaño máximo de la imagen */
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* Bloque de filtros */
+  .filtros {
+    margin-top: -170px; /* Ajusta el valor según lo necesites */
+  }
+  
+  .filtros {
+    grid-column: 1 / 2;
+  }
+  
+  .filtros label {
+    font-size: 18px;
+    color: var(--color-marron-tierra);
+  }
+  
+  .filtros select {
+    padding: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .main-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .contenido-informacion {
+      flex-direction: column;
+    }
+  
+    h1 {
+      font-size: 30px;
+    }
+  }
+  
+  
+  </style>
