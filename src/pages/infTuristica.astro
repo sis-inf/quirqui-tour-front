@@ -7,7 +7,66 @@ import Encabezado from '../components/encabezado.astro';
 <Layout title="Informacion-Turistica">
     <Encabezado />
 	<main>
-		<h1>INFORMACION TURISTICA</h1>
-	</main>
+		<div class="header">
+      <h1>Los Principales Destinos de Oruro</h1>
+      <div class="busqueda">
+        <input type="text" placeholder="INGRESE DESTINO PARA BUSCAR">
+        <button>BUSCAR</button>
+      </div>
+    </div>
+
+    <div class="carrusel">
+			<div class="carrusel-imagen">
+				<a href="/destinos"> 
+					<img src="/oruroFoto.jpg" alt="Destino turistico" style="width: 50%; height: auto;" />
+					<div class="info">
+						<p>Nombre: Casco</p>
+						<p>Ubicación: Oruro</p>
+					</div>
+				</a>
+		</div>
+
+			<div class="carrusel-imagen">
+				<a href="/destinos">
+					<img src="/oruroFoto.jpg" alt="Destino turistico" style="width: 50%; height: auto;" />
+					<div class="info">
+						<p>Nombre: Oruro</p>
+						<p>Ubicación: Oruro</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="carrusel-imagen">
+				<a href="/destinos">
+					<img src="/oruroFoto.jpg" alt="Destino turistico" style="width: 50%; height: auto;" />
+					<div class="info">
+						<p>Nombre: Casco</p>
+						<p>Ubicación: Oruro</p>
+					</div>
+				</a>
+			</div>
+
+			<!-- Botones para navegar -->
+			<button class="prev" onclick="cambiarSlide(-1)">&#10094;</button>
+			<button class="next" onclick="cambiarSlide(1)">&#10095;</button>
+		</div>
+
+    <div class="filtros-anuncio">
+      <div class="filtros">
+        <label for="filtro-turistico">Filtrar sitios turísticos:</label>
+        <select id="filtro-turistico">
+          <option value="caminata">Caminata</option>
+          <option value="comida">Comida</option>
+          <option value="etc">etc.</option>
+        </select>
+      </div>
+    
+      <div class="anuncio">
+        <a href="/infTuristica">
+          <img src="/anuncio.jpg" alt="Anuncio" />
+        </a>
+      </div>
+    </div>    
+    </main>
 	<PiePagina />  
 </Layout>
