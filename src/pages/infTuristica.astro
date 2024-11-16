@@ -92,6 +92,15 @@ body {
 main {
   background-color: var(--color-crema);
 }
+html, body {
+    background-color: var(--color-crema);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+
+  }
 
 /* Contenedor del título y barra de búsqueda */
 .header {
@@ -146,6 +155,7 @@ h1 {
 /* Contenedor principal del carrusel */
 .carrusel {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -212,24 +222,23 @@ h1 {
   outline: none;
 }
 
-/* Ajustes responsive */
 @media (max-width: 768px) {
-  .carrusel-imagen {
-    width: 200px; /* Tamaño más pequeño para pantallas móviles */
+  .carousel-container {
+    flex-direction: column; /* Cambia la dirección si es necesario */
   }
 
-  .prev, .next {
-    font-size: 24px;
-    width: 35px;
-    height: 35px;
-    top: 55%; /* Ajusta la posición de los botones */
-  }
-
-  .carrusel-contenedor {
-    width: 100%;
-    gap: 10px;
+  .search-bar, .filter-options {
+    width: 90%; /* Asegúrate de que ocupen menos espacio */
+    margin: 0 auto;
   }
 }
+
+@media (max-width: 480px) {
+  .carousel-images img {
+    height: 200px; /* Ajusta la altura para pantallas pequeñas */
+  }
+}
+
 /* Ajustes responsive para tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
   .carrusel-imagen {
@@ -370,5 +379,4 @@ h1 {
   }
 }
 
-	  
 	</style>
