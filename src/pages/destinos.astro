@@ -69,13 +69,16 @@ import Encabezado from '../components/encabezado.astro';
   }
   
   body {
-    background-color: var(--color-crema);
-    font-family: 'Akshar Light', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-  }
+  background-color: var(--color-crema);
+  font-family: 'Akshar Light', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
   
   main {
     background-color: var(--color-crema);
@@ -158,6 +161,60 @@ import Encabezado from '../components/encabezado.astro';
     background-color: var(--color-marron-tierra);
   }
   
+  /* Botones del carrusel responsivos */
+.prev, .next {
+  background-color: var(--color-verde-musgo);
+  color: var(--color-crema);
+  font-size: 24px; /* Tamaño inicial */
+  border: none;
+  border-radius: 50%;
+  padding: 10px; /* Espaciado interno del botón */
+  cursor: pointer;
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  transform: translateY(-50%);
+  z-index: 10; /* Para asegurarse de que estén encima de la imagen */
+}
+
+.prev {
+  left: 90px; /* Posición inicial en pantallas grandes */
+}
+
+.next {
+  right: 1010px; /* Posición inicial en pantallas grandes */
+}
+
+/* Ajustes responsivos para tablets y móviles */
+@media (max-width: 1024px) {
+  .prev, .next {
+    font-size: 20px; /* Tamaño reducido para tablets */
+    padding: 8px;
+  }
+
+  .prev {
+    left: 5px; /* Ajuste de posición en tablets */
+  }
+
+  .next {
+    right: 5px; /* Ajuste de posición en tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .prev, .next {
+    font-size: 18px; /* Tamaño aún más pequeño para móviles */
+    padding: 6px;
+  }
+
+  .prev {
+    left: 3px; /* Más cerca del borde en móviles */
+  }
+
+  .next {
+    right: 3px;
+  }
+}
+
   .info p {
     color: var(--color-azul-profundo);
     font-size: 20px;
@@ -215,7 +272,7 @@ import Encabezado from '../components/encabezado.astro';
   
   /* Bloque de filtros */
   .filtros {
-    margin-top: -170px; /* Ajusta el valor según lo necesites */
+    margin-top: -130px; /* Ajusta el valor según lo necesites */
   }
   
   .filtros {
@@ -236,19 +293,64 @@ import Encabezado from '../components/encabezado.astro';
   
   
   /* Estilos responsivos */
-  @media (max-width: 768px) {
-    .main-container {
-      grid-template-columns: 1fr;
-    }
-  
-    .contenido-informacion {
-      flex-direction: column;
-    }
-  
-    h1 {
-      font-size: 30px;
-    }
+
+/* Tablets (pantallas menores a 1024px) */
+@media (max-width: 1024px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
+
+  .contenido-informacion {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .carrusel-imagen {
+    grid-column: 1 / 2;
+  }
+
+  .columna-derecha {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
+
+/* Móviles (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .carrusel-imagen img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contenido-informacion {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .columna-derecha {
+    width: 100%;
+  }
+
+  .prev, .next {
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
   
   
   </style>
