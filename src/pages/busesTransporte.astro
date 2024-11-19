@@ -23,6 +23,7 @@ import Encabezado from "../components/encabezado.astro";
                   id="origen"
                   name="origen"
                   placeholder="Oruro"
+                  readonly
                   required
                 />
               </div>
@@ -42,6 +43,7 @@ import Encabezado from "../components/encabezado.astro";
               <div class="campo-formulario">
                 <label for="hora">Hora de Salida:</label>
                 <input
+                  type="time"
                   id="hora"
                   name="hora"
                   required
