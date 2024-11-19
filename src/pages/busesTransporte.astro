@@ -1,0 +1,262 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import PiePagina from "../components/piePagina.astro";
+import Encabezado from "../components/encabezado.astro";
+---
+
+<Layout title="Buses-De-Transporte">
+  <Encabezado />
+  <main>
+    <h1>Buses y Transporte</h1>
+    <div class="contenedor">
+      <div class="contenido">
+        <!-- Formulario -->
+        <section class="contenedor-formulario">
+          <h2>Buscar Buses</h2>
+          <form class="formulario-transporte" action="/buscar" method="GET"><!--/pagina-en-blanco aqui colocar la ruta para la pagina en blanco -->
+            <div class="grupo-formulario">
+              <div class="campo-formulario">
+                <label for="origen">Origen</label>
+                <input
+                  type="text"
+                  id="origen"
+                  name="origen"
+                  placeholder="Oruro"
+                  readonly
+                  required
+                />
+              </div>
+              <div class="campo-formulario">
+                <label for="destino">Destino</label>
+                <input
+                  type="text"
+                  id="destino"
+                  name="destino"
+                  placeholder="Destino"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <div class="campo-formulario">
+                <label for="hora">Hora de Salida:</label>
+                <input
+                  type="time"
+                  id="hora"
+                  name="hora"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="boton-formulario">
+              <button type="submit">Buscar</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Logo o anuncio -->
+        <figure class="buses-logo">
+          <img src="QUIRQUI_revuelto.png" alt="Descripción de la imagen" />
+        </figure>
+      </div>
+
+      <!-- Buses -->
+      <section class="contenedor-boton">
+        <a href="/buses" class="boton-buses">Buses</a><!--/pagina-en-blanco aqui colocar la ruta para la pagina en blanco -->
+      </section>
+    </div>
+  </main>
+  <PiePagina />
+</Layout>
+
+<style>
+  body {
+    background-color: #f6ecde; 
+  }
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    gap: 7px;
+    margin: 0 auto;
+  }
+  .contenido {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px;
+  }
+
+  /* formulario */
+  .formulario-transporte {
+    background-color: #f6c496;
+    padding: 20px;
+    border: 2px solid #8b4513;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .grupo-formulario {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .campo-formulario {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+
+  .campo-formulario:last-child {
+    margin-right: 0;
+  }
+
+  .formulario-transporte label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .formulario-transporte input {
+    background-color: #f6ecde;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #f6ecde;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .formulario-transporte input:focus {
+    outline: none;
+    border-color: #f6c496;
+  }
+
+  /* Botón del formulario */
+  .boton-formulario {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .formulario-transporte button {
+    padding: 10px 20px;
+    background-color: #8b4513;
+    color: #f6ecde;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .formulario-transporte button:hover {
+    background-color: #f6c496;
+  }
+
+  /*logo */
+  .buses-logo {
+    flex: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buses-logo img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .contenedor-boton {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .boton-buses {
+    padding: 10px 20px;
+    background-color: var(--color-primario);
+    color: #f6ecde;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; 
+  }
+
+  .boton-buses:hover {
+    background-color: var(--color-secundario);
+  }
+
+  /* celulares */
+  @media (max-width: 768px) {
+    .contenedor {
+      width: 90%; 
+      margin: auto; 
+    }
+
+    .contenido {
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 20px; 
+    }
+
+    .contenedor-formulario h2 {
+      text-align: center; 
+      margin-bottom: 20px; 
+    }
+
+    .contenedor-formulario {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      width: 100%; 
+    }
+
+    .formulario-transporte {
+      max-width: 100%; 
+      box-sizing: border-box; 
+    }
+
+    .buses-logo {
+      display: none; /* oculta el logo en pantallas de celulares */
+    }
+  }
+
+  .contenedor-boton {
+    margin-bottom: 20px; 
+  }
+
+  /* tablets */
+  @media (max-width: 1024px) {
+    .contenedor {
+      width: 90%;
+      margin-bottom: 0; 
+      padding: 20px; 
+    }
+    .contenedor-formulario {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+    }
+
+    .contenedor-formulario h2 {
+      text-align: center; 
+      margin-bottom: 10px;
+    }
+
+    .formulario-transporte {
+      margin-top: 10px; 
+      max-width: 100%; 
+    }
+  }
+</style>
