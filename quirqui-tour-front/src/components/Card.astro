@@ -19,7 +19,6 @@ const { href, title, body } = Astro.props;
 		</p>
 	</a>
 </li>
-
 <style>
 	.link-card {
 		list-style: none;
@@ -58,40 +57,5 @@ const { href, title, body } = Astro.props;
 	}
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
-	}
-</style>
-<style>
-    main {
-        background-color: #f5ecdd;
-        padding-top: 30px;
-        text-align: center;
-        min-height: 78.5vh;
-    }
-    .title {
-        color: #55341e;
-        font-size: 3rem;
-        margin: 0;
-    }
-    .container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;; 	
-    padding: 100px;
-    } 
-    .card {         
-        background-color: #ba9374;			
-        border-radius: 38px;					
-        padding: 40px;
-        text-align: justify;            
-    }
-    .card-info {	
-        font-size: 2.3rem;	
-        color: #55341e;
-	}
-    .imagen {
-        border-radius: 38px;
-		width: 800px;
-		height: 500px;
-        margin-right: 90px;
 	}
 </style>

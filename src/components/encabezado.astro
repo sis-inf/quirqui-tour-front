@@ -42,21 +42,118 @@ import Card from "../components/Card.astro";
 						<li>
 							<a href="/busesTransporte">BUSES & TRANSPORTE</a>
 						</li>
-						<li><a href="/carnaval">CARNAVAL</a></li>
+						<li class="dropdown">
+							<a href="/carnaval" class="carnaval"id="carnaval-link">CARNAVAL</a>
+							<ul class="dropdown-menu" id="carnaval-submenu">
+								<li><a href="/carnaval/diablada">Diablada</a></li>
+								<li><a href="/carnaval/morenada">Morenada</a></li>
+								<li><a href="/carnaval/llamerada">Llamerada</a></li>
+								<li><a href="/carnaval/tobas">Tobas</a></li>
+								<li><a href="/carnaval/tinkus">Tinkus</a></li>
+								<li><a href="/carnaval/incas">Incas</a></li>
+								<li><a href="/carnaval/tarqueada">Tarqueada</a></li>
+										<li><a href="/carnaval/pujllay">Pujllay</a></li>
+										<li><a href="/carnaval/potolos">Potolos</a></li>
+								<li class="dropdown-submenu">
+									<a href="#" id="ver-mas">Ver más</a>
+									<ul class="dropdown-menu" id="mas-danzas" style="display: none;">
+										<li><a href="/carnaval/negritos">Negritos</a></li>
+										<li><a href="/carnaval/caporales">Caporales</a></li>
+										<li><a href="/carnaval/tundiqui">Tundiqui</a></li>
+										<li><a href="/carnaval/ahuatiris">Ahuatiris</a></li>
+										<li><a href="/carnaval/cullaguada">Cullaguada</a></li>
+										<li><a href="/carnaval/suri">Suri</a></li>
+										<li><a href="/carnaval/salay">Salay</a></li>
+										<li><a href="/carnaval/kallawaya">Kallawaya</a></li>
+										<li><a href="/carnaval/waka-waka">Waka Waka</a></li>
+										<!-- Agrega más danzas según sea necesario -->
+
+										<!-- <li class="dropdown-submenu">
+											<a href="#" id="ver-mas-dos">Ver más</a>
+											<ul class="dropdown-menu" id="otras-danzas" style="display: none;">
+										<li><a href="/carnaval/tarqueada">Tarqueada</a></li>
+										<li><a href="/carnaval/Pujllay">Pujllay</a></li>
+										<li><a href="/carnaval/potolos">Potolos</a></li>
+										<li><a href="/carnaval/salay">Salay</a></li>
+										<li><a href="/carnaval/kallawaya">Kallawaya</a></li>
+										<li><a href="/carnaval/waka-waka">Waka Waka</a></li>
+											</ul>
+										</li> -->
+									</ul>
+								</li>
+							</ul>
+						</li>
 						<li><a href="/museos">MUSEOS</a></li>
 						<li><a href="/acercaDe">ACERCA DE</a></li>
 						<li><a href="/gesContenido">GES. DE CONTENIDO</a></li>
 					</ul>
 				</nav>
+				<script>
+					document.getElementById("ver-mas").addEventListener("click", function(event) {
+        event.preventDefault(); // Evita que el enlace se active
+        const masDanzas = document.getElementById("mas-danzas");
+        if (masDanzas.style.display === "none") {
+            masDanzas.style.display = "block";
+            this.textContent = "Ver menos";
+        } else {
+            masDanzas.style.display = "none";
+            this.textContent = "Ver más";
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const url = window.location.pathname;
+        const carnavalSubmenu = document.getElementById("carnaval-submenu");
+        const carnavalLink = document.getElementById("carnaval-link");
+
+        // Verificar si estamos en la página /carnaval
+        if (url === "/carnaval") {
+            // Agregar evento de clic al enlace "Carnaval"
+            carnavalLink.addEventListener("click", function(event) {
+                event.preventDefault(); // Evita recargar la página
+                
+                // Alternar visibilidad del submenú
+                carnavalSubmenu.style.display = carnavalSubmenu.style.display === "block" ? "none" : "block";
+            });
+        } else {
+            // Asegurar que el submenú esté oculto en otras páginas
+            carnavalSubmenu.style.display = "none";
+        }
+    });
+	document.addEventListener("DOMContentLoaded", function () {
+    const url = window.location.pathname;
+    const carnavalLink = document.getElementById("carnaval-link");
+
+    if (url === "/carnaval") {
+        carnavalLink.classList.add("active");
+    }
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const url = window.location.pathname;
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === url) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
+
 			</section>
 		</div>
 	</header>
 </Layout>
 <style>
+
+#carnaval-submenu {
+    display: none; /* Oculto por defecto */
+}
+
 	/*variable globales*/
 	:root {
 		--color-primario: #8b4513;
-		--color-secundario: #f6c496;
+		--color-secundario: #f5ecdd;
 		--negro: #000000;
 		--blanco: #0c0c0c;
 		--letras: #556b2f;
@@ -147,6 +244,80 @@ import Card from "../components/Card.astro";
 	input {
 		display: none;
 	}
+
+.nav-links a.active {
+    background-color: rgba(186, 147, 116, 0.7); /* Fondo claro */
+    color: var(--negro); /* Letra negra */
+    padding: 1px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+	display: inline-block; /* Asegura que solo ocupe el espacio necesario */
+}
+
+	/* Estilos para el menú desplegable de Carnaval */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(186, 147, 116, 0.7);
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+	width: 160px;
+}
+
+.dropdown-menu li {
+    padding: 5px 20px;
+}
+
+.dropdown-menu li a {
+    color: #6f4428;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+	padding: 5px 20px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #b8a08e;
+    color: #fff;
+}
+
+/* Mostrar el menú desplegable al pasar el mouse */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu .dropdown-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(186, 147, 116, 0.7);
+    position: absolute;
+    left: 100%;
+    top: 0;
+	width: 160px;
+}
+
+.dropdown-submenu .dropdown-menu li a {
+    color: #6f4428;
+    text-decoration: none;
+    padding: 5px 15px;
+    display: block;
+}
+
+.dropdown-submenu .dropdown-menu li a:hover {
+    background-color: #b8a08e;
+    color: #fff;
+}
+
 	@media screen and (max-width: 768px) {
 		.nav-links {
 			position: absolute;
@@ -191,6 +362,61 @@ import Card from "../components/Card.astro";
 			padding: 0 10px;
 		}
 	}
+
+	/* Deslizamiento en responsive */
+    @media screen and (max-width: 768px) {
+    #carnaval-submenu {
+        max-height: 100px; /* Ajusta la altura máxima para que se deslice */
+        overflow-y: auto;  /* Activa el deslizamiento vertical */
+		overflow-x: hidden; /* para evitar desplazamiento horizontal */
+    }
+}
+@media screen and (max-width: 768px) {
+    /* Ajustar el segundo submenú para que se muestre debajo del primero en pantallas pequeñas */
+    .dropdown-submenu .dropdown-menu {
+        position: static; /* Cambia la posición para que se apile debajo */
+        margin-top: 10px; /* Agrega un pequeño margen superior si es necesario */
+        left: auto; /* Anula la posición izquierda */
+        top: auto; /* Anula la posición superior */
+    }
+}
+@media screen and (max-width: 768px) {
+    /* Alineación del segundo submenú */
+    .dropdown-submenu .dropdown-menu {
+        position: relative;
+        margin-top: 0;
+        left: -11px;
+        top: 0;
+        width: 100%;
+        padding: 0; /* Elimina cualquier espacio adicional */
+    }
+
+    /* Estilo para unir ambos submenús visualmente */
+    .dropdown-menu,
+    .dropdown-submenu .dropdown-menu {
+        border: none;
+        box-shadow: none;
+        background-color: rgba(186, 147, 116, 0.7);
+        text-align: left; /* Alinea el texto y botones a la izquierda */
+    }
+
+    /* Ajuste de los elementos del menú */
+    .dropdown-menu li,
+    .dropdown-submenu .dropdown-menu li {
+        padding: 0 15px; /* Ajusta el espaciado de los elementos */
+        margin: 0; /* Elimina cualquier margen adicional */
+    }
+
+    /* Ajuste del botón "Ver Más" */
+    .dropdown-menu .ver-mas,
+    .dropdown-submenu .ver-mas {
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        padding-left: 10px 15px; /* Ajusta la alineación hacia la izquierda */
+        text-align: left;
+    }
+	
+}
+
 
 	/*end header*/
 </style>

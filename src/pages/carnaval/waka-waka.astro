@@ -1,0 +1,135 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Encabezado from '../../components/encabezado.astro';
+---
+
+<Layout title="Carnaval">
+    <Encabezado />
+    <main>
+        <h1 class="title">WAKA WAKA</h1>
+        <div class="container">
+            <img src="/waka waka.jpg" class="imagen" />
+            <div class="card">
+                <div class="card-info">
+                    <p>
+                        El Waka Waka es una danza tradicional que 
+                        parodia las corridas de toros de la época 
+                        colonial. Los bailarines, con trajes que 
+                        imitan al toro y al torero, recrean la 
+                        figura de este espectáculo con humor y 
+                        crítica. La danza representa la resistencia 
+                        indígena y es una fusión de alegría y 
+                        protesta cultural.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main {
+        background-color: #f5ecdd;
+        padding-top: 30px;
+        text-align: center;
+        min-height: 78.5vh;
+    }
+    .title {
+        color: #55341e;
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin: 0 0 20px;
+        text-align: center;
+        font-family: "Arial", sans-serif;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center; 	
+        padding: 40px 120px;
+        gap: 40px;
+    } 
+    .card {         
+        background-color: #ba9374;			
+        border-radius: 38px;					
+        padding: 25px;
+        text-align: justify;
+        max-width: 650px;            
+    }
+    .card-info {	
+        font-size: 1.15rem;	
+        color: #55341e;
+        line-height: 1.6;
+        font-family: "Arial", sans-serif;
+        font-weight: 600;
+	}
+    .imagen {
+        border-radius: 38px;
+		width: 600px;/*aumentar el ancho de la imagen*/
+		height: 350px; /* Altura fija reducida */
+        object-fit: cover;
+        margin-right: 20px;
+	}
+    /* Media queries para dispositivos más pequeños */
+    @media (max-width: 768px) {
+    main {
+        padding-top: 15px; /* Reducir espacio superior */
+    }
+
+    .container {
+        flex-direction: column; /* Apilar elementos verticalmente */
+        align-items: center;
+        padding: 10px;
+        gap: 15px; /* Espacio entre elementos */
+    }
+
+    .imagen {
+        width: 90%; /* Imagen ajustada al ancho de la tarjeta */
+        max-width: 500px; /* Tamaño máximo */
+        height: auto; /* Mantener proporción */
+    }
+
+    .card {
+        max-width: 90%; /* La tarjeta y la imagen tienen el mismo ancho */
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .card-info {
+        font-size: 0.95rem; /* Texto más pequeño para móviles */
+        line-height: 1.4; /* Espaciado adecuado entre líneas */
+    }
+
+    .title {
+        font-size: 1.8rem; /* Título más pequeño */
+        margin: 10px 0; /* Reducir margen superior e inferior */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+        gap: 10px;
+    }
+
+    .imagen {
+        width: 100%; /* Imagen ajustada al ancho de la tarjeta */
+        max-width: 350px; /* Tamaño máximo reducido */
+        height: auto;
+    }
+
+    .card {
+        max-width: 95%; /* La tarjeta y la imagen tienen el mismo ancho */
+        padding: 8px; /* Padding reducido */
+    }
+
+    .card-info {
+        font-size: 0.85rem; /* Texto aún más pequeño */
+    }
+
+    .title {
+        font-size: 1.5rem; /* Título más pequeño para dispositivos muy pequeños */
+    }
+}
+
+    
+</style>
