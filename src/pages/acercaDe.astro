@@ -7,7 +7,206 @@ import Encabezado from '../components/encabezado.astro';
 <Layout title="Acerca de..">
     <Encabezado />
 	<main> 
-		<h1>ACERCA DE</h1>
+		<section class="quienes-somos">
+			<div class="titulo-principal">
+			  <img src="logoAro.png" alt="Logo Quirqui-Tour">
+			  <h1>QUIRQUI - TOUR</h1>
+			</div>
+			<div class="contenido">
+			  <h2>QUIENES SOMOS</h2>
+			  <p>
+				Somos un equipo de estudiantes apasionados por explorar y compartir las maravillas de nuestro país. Hemos creado esta página para brindarte una guía completa sobre los viajes departamentales e interdepartamentales en Bolivia, con un enfoque especial en la riqueza cultural y turística de Oruro. Aquí encontrarás información sobre destinos turísticos, transporte, festividades como el Carnaval de Oruro, y los fascinantes museos de la región.
+			  </p>
+			  <h2>OBJETIVO</h2>
+			  <p>
+				La página web está desarrollada para poder orientar y ofrecer información a los turistas y también a personas de nuestro departamento, ofrece una amplia información para que pueda visitar y conocer la historia y costumbres de nuestro departamento, también cuenta con información del transporte interdepartamental y departamental de Oruro y explica las tarifas de cada transporte.
+			  </p>
+			  <h2>CARACTERÍSTICAS</h2>
+			  <p>
+				El sitio web “QUIRQUI - TUR” tiene como objeto demostrar a la población en general y poder llegar a los turistas para mostrar los lugares turísticos más importantes como el Carnaval de Oruro, los museos, las rutas interdepartamentales y departamentales, además de tarifas, ofreciendo una información más detallada y óptima sobre los lugares turísticos de Oruro.
+			  </p>
+			</div>
+		</section>
+		  
+		<section class="equipo-trabajo">
+			<h2>EQUIPO DE TRABAJO</h2>
+			<div class="miembros">
+			  <div class="miembro">
+				<img src="logoAro.png" alt="Miembro del equipo">
+				<p>Nombre 1</p>
+				<p>Rol 1</p>
+			  </div>
+			  <div class="miembro">
+				<img src="logoAro.png" alt="Miembro del equipo">
+				<p>Nombre 2</p>
+				<p>Rol 2</p>
+			  </div>
+			  <div class="miembro">
+				<img src="logoAro.png" alt="Miembro del equipo">
+				<p>Nombre 3</p>
+				<p>Rol 3</p>
+			  </div>
+			  <div class="miembro">
+				<img src="logoAro.png" alt="Miembro del equipo">
+				<p>Nombre 4</p>
+				<p>Rol 4</p>
+			  </div>
+			  <div class="miembro">
+				<img src="logoAro.png" alt="Miembro del equipo">
+				<p>Nombre 5</p>
+				<p>Rol 5</p>
+			  </div>
+			  <div class="miembro">
+				<img src="logoAro.png" alt="Miembro del equipo">
+				<p>Nombre 6</p>
+				<p>Rol 6</p>
+			  </div>
+			  <div class="miembro">
+				<img src="logoAro.png" alt="Miembro del equipo">
+				<p>Nombre 7</p>
+				<p>Rol 7</p>
+			  </div>
+			  <div class="miembro">
+				<img src="logoAro.png" alt="Miembro del equipo">
+				<p>Nombre 8</p>
+				<p>Rol 8</p>
+			  </div>
+			  <div class="miembro">
+				<img src="logoAro.png" alt="Miembro del equipo">
+				<p>Nombre 9</p>
+				<p>Rol 9</p>
+			  </div>
+			  <div class="miembro">
+				<img src="logoAro.png" alt="Miembro del equipo">
+				<p>Nombre 10</p>
+				<p>Rol 10</p>
+			  </div>
+			</div>
+		</section>
 	</main>
 	<PiePagina />  
 </Layout>
+
+<style>
+	/* Estilo global */
+	html, body {
+		height: 100%;
+		margin: 0;
+		overflow-x: hidden;
+	}
+	
+	body {
+		background-image: url('fondoAcercaDe.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		color: #333;
+		font-family: 'Akshar Light', sans-serif;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-height: 100vh;
+	}
+
+	main {
+		padding: 20px;
+	}
+
+	.titulo-principal {
+		background-image: url('fondoTituloAcercaDe.jpg'); 
+		background-size: cover; 
+		background-position: center;
+		padding: 30px 20px;
+		display: flex; 
+		align-items: center; 
+		justify-content: center; 
+		gap: 20px; 
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+		border-radius: 10px; 
+		text-align: center;
+	}
+
+	.titulo-principal img {
+		width: 150px; 
+		height: auto;
+	}
+
+	.titulo-principal h1 {
+		font-size: 2.5em;
+		margin: 0;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 2px; 
+		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+		color: #FFFFFF; 
+	}
+
+
+	.quienes-somos {
+		background-color: rgba(239, 231, 231, 0.7);
+		border-radius: 10px;
+		padding: 20px;
+		margin-bottom: 40px;
+	}
+	
+	.quienes-somos h1 {
+		text-align: center;
+		font-size: 3em;
+		color: #8B4513;
+	}
+	
+	.quienes-somos h2 {
+		color: #5A3E1A;
+		margin-top: 20px;
+	}
+
+	.equipo-trabajo {
+		text-align: center; 
+		padding: 20px 20px;
+		margin-bottom: 40px;
+		width: 100%;
+		border-radius: 10px;
+	}
+	
+	.equipo-trabajo h2 {
+		font-size: 3em;
+		color: #8B4513;
+		margin-bottom: 30px;
+		text-transform: uppercase;
+		font-weight: bold;
+		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	}
+	
+	.miembros {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr); 
+		gap: 20px; 
+		justify-content: center; 
+		align-items: center; 
+		padding: 20px;
+	}
+	
+	.miembro {
+		text-align: center;
+		width: 100%;
+		margin-bottom: 30px;
+		border-radius: 10px;
+		padding: 20px;
+	}
+	
+	.miembro img {
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		border: 3px solid #8B4513;
+		margin-bottom: 15px;
+	}
+	
+	.miembro p {
+		font-size: 1.2em;
+		color: #335669;
+		margin: 5px 0;
+	}
+	</style>
+	
