@@ -1,0 +1,322 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PiePagina from '../components/piePagina.astro';
+import Encabezado from '../components/encabezado.astro';
+---
+
+<Layout title="Casco - Información Turística">
+  <Encabezado />
+  <main class="main-container">
+    <h1>Destino turístico seleccionado</h1>
+
+    <!-- Carrusel de imágenes -->
+    <div class="carrusel-imagen">
+      <a href="/destinos">
+        <img src="/oruroFoto.jpg" alt="Destino turístico" />
+        <div class="info">
+          <p>Nombre: Casco</p>
+          <p>Ubicación: Oruro</p>
+        </div>
+      </a>
+      <div class="navegacion">
+        <button class="prev" onclick="cambiarSlide(-1)">&#10094;</button>
+        <button class="next" onclick="cambiarSlide(1)">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- Información adicional -->
+    <div class="contenido-informacion">
+      <div class="informacion-relevante">
+        <h2>Información Relevante / Historia</h2>
+        <p>Detalles históricos y descripción del destino...</p>
+      </div>
+
+      <div class="horarios">
+        <h2>Horarios de Visita</h2>
+        <p>Ejemplo: Abierto todos los días de 9:00 a 18:00.</p>
+      </div>
+
+      <div class="ubicacion">
+        <h2>Ubicación</h2>
+        <a href="https://maps.google.com">
+          <img src="/anuncio.jpg" alt="Ubicación de Casco" />
+        </a>
+        <p>Haz clic en la imagen para ver la ubicación.</p>
+      </div>
+    </div>
+
+    <!-- Filtros de transporte -->
+    <div class="filtros">
+      <label for="filtroBuses">Filtrar transportes:</label>
+      <select id="filtroBuses">
+        <option value="bus">Bus</option>
+        <option value="trufi">Trufi</option>
+        <option value="etc">etc.</option>
+      </select>
+    </div>
+  </main>
+  <PiePagina />
+</Layout>
+ <style>
+  :root {
+  --color-marron-tierra: #8B4513;
+  --color-crema: #F6ECDE;
+  --color-verde-musgo: #556B2F;
+  --color-rojo-arcilla: #A52A2A;
+  --color-azul-profundo: #335669;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
+body {
+  background-color: var(--color-crema);
+  font-family: 'Akshar Light', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; /* Asegura que el cuerpo ocupe al menos la altura total */
+}
+
+main {
+  background-color: var(--color-crema);
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  align-items: start;
+}
+
+h1 {
+  color: var(--color-marron-tierra);
+  font-family: 'Poppins', sans-serif;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.carrusel-imagen {
+  position: relative;
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carrusel-imagen img {
+  width: 180%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prev, .next {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: var(--color-verde-musgo);
+  color: var(--color-crema);
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: -40px;
+}
+
+.next {
+  right: -40px;
+}
+
+.prev:hover, .next:hover {
+  background-color: var(--color-marron-tierra);
+}
+
+.contenido-informacion {
+  grid-column: 2 / 4;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.informacion-relevante,
+.horarios,
+.ubicacion {
+  flex: 1;
+  padding: 10px;
+}
+
+.filtros {
+  padding: 10px;
+  background-color: var(--color-crema);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.filtros label {
+  font-size: 18px;
+  color: var(--color-marron-tierra);
+}
+
+.filtros select {
+  padding: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contenido-informacion {
+  grid-column: 1 / 4;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  }
+
+  .prev, .next {
+  position: absolute;
+  top: 41%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: var(--color-verde-musgo);
+  color: var(--color-crema);
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  }
+  .carrusel-imagen {
+    grid-column: 1 / 2;
+  }
+
+  .informacion-relevante,
+  .horarios,
+  .ubicacion {
+    flex: 1 100%;
+  }
+
+  .columna-derecha {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .prev, .next {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .prev {
+    left: 5px;
+  }
+
+  .next {
+    right: 5px;
+  }
+}
+  /* Contenedores de información, horarios y ubicación */
+.informacion, .horarios, .ubicacion {
+  flex: 1; /* Flexibilidad para que se ajusten al espacio disponible */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.informacion h2, .horarios h2, .ubicacion h2 {
+  font-size: 20px;
+  color: var(--color-marron-tierra);
+  margin-bottom: 10px;
+}
+
+.informacion p, .horarios p, .ubicacion p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-azul-profundo);
+}
+.carrusel-imagen img {
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hacer el texto responsivo */
+@media (max-width: 1024px) {
+  .contenido-informacion {
+  grid-column: 1 / 4;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  }
+  .prev, .next {
+  position: absolute;
+  top: 41%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: var(--color-verde-musgo);
+  color: var(--color-crema);
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+  .informacion h2, .horarios h2, .ubicacion h2 {
+    font-size: 18px; /* Reducir tamaño del título */
+  }
+
+  .informacion p, .horarios p, .ubicacion p {
+    font-size: 14px; /* Reducir tamaño del texto */
+  }
+
+  /* Hacer que las imágenes en la ubicación se ajusten al contenedor */
+  .ubicacion img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 408px) {
+  .informacion h2, .horarios h2, .ubicacion h2 {
+    font-size: 16px; /* Reducir aún más el tamaño de los títulos */
+  }
+
+  .informacion p, .horarios p, .ubicacion p {
+    font-size: 12px; /* Reducir aún más el tamaño del texto */
+  }
+
+  .informacion, .horarios, .ubicacion {
+    padding: 8px; /* Reducir el padding en pantallas más pequeñas */
+  }
+}
+.carrusel-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ </style>

@@ -7,7 +7,376 @@ import Encabezado from '../components/encabezado.astro';
 <Layout title="Informacion-Turistica">
     <Encabezado />
 	<main>
-		<h1>INFORMACION TURISTICA</h1>
-	</main>
+		<div class="header">
+      <h1>Los Principales Destinos de Oruro</h1>
+      <div class="busqueda">
+        <input type="text" placeholder="INGRESE DESTINO PARA BUSCAR">
+        <button>BUSCAR</button>
+      </div>
+    </div>
+
+    <div class="carrusel">
+			<div class="carrusel-imagen">
+				<a href="/destinos"> 
+					<img src="/oruroFoto.jpg" alt="Destino turistico" style="width: 50%; height: auto;" />
+					<div class="info">
+						<p>Nombre: Casco</p>
+						<p>Ubicación: Oruro</p>
+					</div>
+				</a>
+		</div>
+
+			<div class="carrusel-imagen">
+				<a href="/destinos">
+					<img src="/oruroFoto.jpg" alt="Destino turistico" style="width: 50%; height: auto;" />
+					<div class="info">
+						<p>Nombre: Oruro</p>
+						<p>Ubicación: Oruro</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="carrusel-imagen">
+				<a href="/destinos">
+					<img src="/oruroFoto.jpg" alt="Destino turistico" style="width: 50%; height: auto;" />
+					<div class="info">
+						<p>Nombre: Casco</p>
+						<p>Ubicación: Oruro</p>
+					</div>
+				</a>
+			</div>
+			<!-- Botones para navegar -->
+			<button class="prev" onclick="cambiarSlide(-1)">&#10094;</button>
+			<button class="next" onclick="cambiarSlide(1)">&#10095;</button>
+
+		</div>
+
+    <div class="filtros-anuncio">
+      <div class="filtros">
+        <label for="filtro-turistico">Filtrar sitios turísticos:</label>
+        <select id="filtro-turistico">
+          <option value="caminata">Caminata</option>
+          <option value="comida">Comida</option>
+          <option value="etc">etc.</option>
+        </select>
+      </div>
+    
+      <div class="anuncio">
+        <a href="/infTuristica">
+          <img src="/anuncio.jpg" alt="Anuncio" />
+        </a>
+      </div>
+    </div>    
+    </main>
 	<PiePagina />  
 </Layout>
+
+<style>
+
+/* Estilos base */
+:root {
+  --color-marron-tierra: #8B4513;
+  --color-crema: #F6ECDE;
+  --color-verde-musgo: #556B2F;
+  --color-rojo-arcilla: #A52A2A;
+  --color-azul-profundo: #335669;
+}
+
+body {
+  background-color: var(--color-crema);
+  font-family: 'Akshar Light', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background-color: var(--color-crema);
+}
+html, body {
+    background-color: var(--color-crema);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+
+  }
+
+/* Contenedor del título y barra de búsqueda */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+h1 {
+  color: var(--color-marron-tierra);
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.busqueda {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 430px;
+}
+
+.busqueda input[type="text"] {
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid var(--color-marron-tierra);
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.busqueda button {
+  background-color: var(--color-verde-musgo);
+  color: var(--color-crema);
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Contenedor principal del carrusel */
+.carrusel {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; /* Espacio entre el carrusel y la barra de menú */
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+/* Contenedor de las imágenes dentro del carrusel */
+.carrusel-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 1200px; /* Ajuste para un ancho máximo */
+  gap: 20px;
+  overflow: hidden;
+}
+
+/* Cada imagen en el carrusel */
+.carrusel-imagen {
+  flex: 0 0 auto;
+  width: 550px; /* Tamaño de la imagen */
+  overflow: hidden;
+}
+
+.carrusel-imagen img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Botones de navegación */
+.prev, .next {
+  font-size: 30px;
+  color: var(--color-verde-musgo);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+/* Evita que los botones se muevan */
+.prev:focus, .next:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    flex-direction: column; /* Cambia la dirección si es necesario */
+  }
+
+  .search-bar, .filter-options {
+    width: 90%; /* Asegúrate de que ocupen menos espacio */
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-images img {
+    height: 200px; /* Ajusta la altura para pantallas pequeñas */
+  }
+}
+
+/* Ajustes responsive para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .carrusel-imagen {
+    width: 350px; /* Ajusta el tamaño para tablets */
+    height: 300px; /* Proporción más adecuada */
+  }
+
+  .prev, .next {
+    font-size: 28px;         /* Tamaño medio para los botones */
+    width: 45px;             /* Ancho mayor para visibilidad */
+    height: 45px;            /* Altura proporcional */
+    top: 50%;                /* Centra los botones en tablets */
+    transform: translateY(-50%);
+  }
+
+  .carrusel-contenedor {
+    width: 100%;             /* Asegura que ocupe el ancho disponible */
+    gap: 15px;               /* Espaciado mayor entre elementos */
+  }
+}
+
+
+  .info {
+    text-align: center;
+  }
+  
+  .info p {
+    color: var(--color-azul-profundo);
+    font-size: 18px;
+  }
+
+.info {
+  text-align: center;
+}
+
+.info p {
+  color: var(--color-azul-profundo);
+  font-size: 16px;
+}
+
+/* Filtros y anuncios */
+.filtros-anuncio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.filtros {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.filtros label,
+.filtros select {
+  font-size: 16px;
+  color: var(--color-marron-tierra);
+}
+
+.anuncio {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.anuncio img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Estilos responsivos */
+/* Celulares */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .busqueda {
+    width: 100%;
+  }
+
+  .carrusel {
+    flex-direction: column;
+  }
+
+  .filtros-anuncio {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .anuncio img {
+    max-width: 100%;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .busqueda {
+    max-width: 80%;
+  }
+
+  .carrusel {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .filtros-anuncio {
+    flex-direction: column;
+  }
+
+  .filtros {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .anuncio img {
+    max-width: 80%;
+  }
+}
+
+	</style>
