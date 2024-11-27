@@ -4,10 +4,89 @@ import Card from '../components/Card.astro';
 import PiePagina from '../components/piePagina.astro';
 import Encabezado from '../components/encabezado.astro';
 ---
-<Layout title="Gestion-De-Contenido">
-    <Encabezado />
-	<main>
-		<h1>GESTION DE CONTENIDO</h1>
-	</main>
-	<PiePagina />  
-</Layout>
+<!-- Botón que al hacer clic mostrará el formulario de registro -->
+<button id="boton-registrar" class="boton-registrar">
+	Registrar
+</button>
+</div>
+<!-- Formulario oculto que aparecerá al hacer clic en el botón -->
+<div id="seccion-registro" class="seccion-registrar">
+	<img 
+		src="/oruro.jpeg" 
+		alt="" 
+		style="width: 720px; height: 720px;"
+	/>
+	<div class="texto-registrar"
+		style="top: 100px; 
+			   left: 250px; 
+			   color: white; 
+			   font-size: 60px; 
+			   font-weight: bold;">
+		<p>
+			Bienvenido!
+		</p>
+	</div>
+	<div class="texto-registrar"
+		style="top: 170px; 
+			   left: 340px; 
+			   color: white; 
+			   font-size: 40px; 
+			   font-weight: bold;">
+		<p>
+			Inicia sesión para continuar
+		</p>
+	</div>
+	<div class="texto-registrar"
+		style="top: 170px; 
+			   left: 340px; 
+			   color: black; 
+			   font-size: 40px; 
+			   font-weight: bold;">
+		<p>
+			Usuario o dirección de email
+		</p>
+	</div>
+</div>
+
+<script>
+   // Mostrar formulario de registro al hacer clic en el botón
+   document.getElementById("boton-registrar").addEventListener("click", function() {
+	   document.getElementById("seccion-registro").style.display = "block";
+   });
+</script>
+
+<style>
+.contenedor-boton {
+    display: flex; /* Hacer que los elementos estén en línea horizontalmente */
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+.boton-registrar {
+    color: black; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 2.7rem; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    font-family: 'Calibri'; /* Fuente */
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.seccion-registrar {
+    display:none; 
+	background-color: rgba(255, 255, 255, 0.71); 
+	padding: 30px; 
+	width: 1300px; 
+	height: 720px; 
+	position: fixed; 
+	top: 50%; left: 50%; 
+	transform: translate(-50%, -50%); 
+	z-index: 999;
+}
+
+.texto-registrar {
+    position: absolute; 
+    transform: translate(-50%, -50%); 
+}
+</style>

@@ -18,13 +18,271 @@ import Card from "../components/Card.astro";
 				<div class="logo-principal">
 					<a href="/"><img src="/logo.png" alt="" /></a>
 				</div>
-				<div>
+				<div class="contenedor-boton">
+					<img 
+						src="/usuario.png" 
+						alt="Usuario" 
+						style="width: 70px; height: 70px;" 
+					/>
+					
+					<!-- Botón que al hacer clic mostrará el formulario de registro -->
+					<button id="boton-registrar" class="boton-registrar">
+						Registrar
+					</button>
+				</div>
+				
+				<!-- Formulario oculto que aparecerá al hacer clic en el botón -->
+				<div id="seccion-registro" class="seccion-registrar" style="width: 1300px; 
+																			height: 720px;"	>
+					<img 
+						src="/oruro.jpeg" 
+						alt="" 
+						style="width: 720px; height: 720px;"
+					/>
+					<div class="texto-registrar"
+					    style="top: 100px; 
+                               left: 250px; 
+							   color: white; 
+							   font-size: 60px; 
+							   font-weight: bold;">
+						<p>
+							Bienvenido!
+						</p>
+					</div>
+					<div class="texto-registrar"
+					    style="top: 170px; 
+                               left: 340px; 
+							   color: white; 
+							   font-size: 40px; 
+							   font-weight: bold;">
+						<p>
+							Inicia sesión para continuar
+						</p>
+					</div>
+					<div class="texto-registrar"
+					    style="top: 200px; 
+                               left: 1040px; 
+							   color: black; 
+							   font-size: 40px;">
+						<p>
+							Usuario o dirección de email
+						</p>
+					</div>
+					<div class="texto-registrar"
+					    style="top: 350px; 
+                               left: 890px; 
+							   color: black; 
+							   font-size: 40px;">
+						<p>
+							Contraseña
+						</p>
+					</div>
+					<div class="campo-registrar">
+						<input type="text" placeholder="Escribe algo aquí" required>
+					</div>
+					<button id="boton-cerrar" class="boton-cerrar">
+						✖
+					</button>
+					<label class="switch"
+					style="top: 500px;  
+    							left: 850px;">
+						<input type="checkbox" id="recordar-datos" />
+						<span class="slider round"></span>
+					</label>
+					<div class="texto-registrar"
+					    style="top: 520px; 
+                               left: 1120px; 
+							   color: black; 
+							   font-size: 40px;">
+						<p>
+							Recordar mis datos
+						</p>
+					</div>
+					<button id="boton-registrado" class="boton-registrado" style="top: 600px;  
+					left: 1000px;">
+						Registrar ahora
+					</button>
+				</div>
+				<div id="seccion-bienvenido" class="seccion-registrar" style="width: 500px; 
+				height: 400px;">
+					<div class="texto-registrar"
+					    style="top: 50px; 
+                               left: 270px; 
+							   color: rgb(0, 0, 0); 
+							   font-size: 30px; 
+							   font-weight: bold;">
+						<p>
+							¡Bienvenido a quirqui tur!
+						</p>
+					</div>
+					<div class="texto-registrar"
+					    style="top: 100px; 
+                               left: 270px; 
+							   color: black; 
+							   font-size: 25px;">
+						<p>
+							Nos alegra que estés aqui.
+						</p>
+					</div>
+					<div class="texto-registrar"
+					    style="top: 150px; 
+                               left: 270px; 
+							   color: black; 
+							   font-size: 25px;">
+						<p>
+							Deseas agregar nuevo 
+						</p>
+					</div>
+					<div class="texto-registrar"
+					    style="top: 200px; 
+                               left: 270px; 
+							   color: black; 
+							   font-size: 25px;">
+						<p>
+							contenido?
+						</p>
+					</div>
+					<button id="boton-agregar" class="boton" style="top: 350px;  
+					left: 100px;">
+						Agregar contenido
+					</button>
+					<button id="boton-cerrado" class="boton-cerrar">
+						✖
+					</button>
+					<label class="switch"
+					style="top: 250px;  
+    							left: 100px;">
+						<input type="checkbox" id="autorizado" />
+						<span class="slider round"></span>
+					</label>
+					<div class="texto-registrar"
+					    style="top: 270px; 
+                               left: 300px; 
+							   color: black; 
+							   font-size: 25px;">
+						<p>
+							Autorizado a subir
+						</p>
+					</div>
+				</div>
+				<div id="seccion-contenido" class="seccion-registrar" style="width: 500px; 
+				height: 500px;">
+					<div class="texto-registrar"
+					    style="top: 50px; 
+                               left: 200px; 
+							   color: #8B4513; 
+							   font-size: 30px; 
+							   font-weight: bold;">
+						<p>
+							Crear nuevo contenido
+						</p>
+					</div>
+					<div class="texto-registrar"
+					    style="top: 100px; 
+                               left: 100px; 
+							   color: black; 
+							   font-size: 25px;">
+						<p>
+							Nombre *
+						</p>
+					</div>
+					<div class="texto-registrar"
+					    style="top: 170px; 
+                               left: 80px; 
+							   color: black; 
+							   font-size: 25px;">
+						<p>
+							Tipo *
+						</p>
+					</div>
+					<div class="texto-registrar"
+					    style="top: 240px; 
+                               left: 170px; 
+							   color: black; 
+							   font-size: 25px;">
+						<p>
+							Fecha de publicación *
+						</p>
+					</div>
+					<div class="texto-registrar"
+					    style="top: 310px; 
+                               left: 100px; 
+							   color: black; 
+							   font-size: 25px;">
+						<p>
+							Imagen *
+						</p>
+					</div>
+					<div class="texto-registrar"
+					    style="top: 380px; 
+                               left: 120px; 
+							   color: black; 
+							   font-size: 25px;">
+						<p>
+							Descripción *
+						</p>
+					</div>
+					<button id="boton-enviar" class="boton" style="top: 450px;  
+					left: 50px;">
+						Crear y enviar
+					</button>
+					<button id="boton-cerrando" class="boton-cerrar">
+						✖
+					</button>
+				</div>
+				<script>
+				   // Mostrar formulario de registro al hacer clic en el botón
+				   document.getElementById("boton-registrar").addEventListener("click", function() {
+					   document.getElementById("seccion-registro").style.display = "block";
+				   });
+				   document.getElementById("boton-cerrar").addEventListener("click", function(event) {
+    					event.preventDefault(); // Previene cualquier comportamiento predeterminado
+    					document.getElementById("seccion-registro").style.display = "none";
+					});
+					document.getElementById("boton-registrado").addEventListener("click", function() {
+					   document.getElementById("seccion-bienvenido").style.display = "block";
+					   document.getElementById("seccion-registro").style.display = "none";
+				   });
+				   document.getElementById("boton-cerrado").addEventListener("click", function(event) {
+    					event.preventDefault(); // Previene cualquier comportamiento predeterminado
+    					document.getElementById("seccion-bienvenido").style.display = "none";
+					});
+					document.getElementById("boton-agregar").addEventListener("click", function() {
+					   document.getElementById("seccion-contenido").style.display = "block";
+					   document.getElementById("seccion-bienvenido").style.display = "none";
+				   });
+				   document.getElementById("boton-cerrando").addEventListener("click", function(event) {
+    					event.preventDefault(); // Previene cualquier comportamiento predeterminado
+    					document.getElementById("seccion-contenido").style.display = "none";
+					});
+					document.getElementById("boton-enviar").addEventListener("click", function(event) {
+    					event.preventDefault(); // Previene cualquier comportamiento predeterminado
+    					document.getElementById("seccion-contenido").style.display = "none";
+					});
+				</script>
+				
+				<!--<div id="header">
 					<img
 						src="/LogoTOUR.svg"
-						alt=""
+						alt="Logo"
 						style="transform: scaleX(-1);"
+						id="logo"
 					/>
 				</div>
+				
+				<script>
+					// Simulación: Verificar si el usuario ya está registrado
+					// (Esto puede venir de cookies, localStorage, o de un backend)
+					const usuarioRegistrado = localStorage.getItem("registrado") === "true";
+				
+					// Elementos del DOM
+					const botonRegistrar = document.getElementById("boton-registrar");
+				
+					// Mostrar u ocultar el botón "Registrar" según el estado
+					if (usuarioRegistrado) {
+						botonRegistrar.style.display = "none"; // Oculta el botón si ya se registró
+					}
+				</script>-->
 			</section>
 			<section class="navegacion-contenedor seccion">
 				<nav class="navbar" id="navbar">
@@ -85,7 +343,6 @@ import Card from "../components/Card.astro";
 						</li>
 						<li><a href="/museos">MUSEOS</a></li>
 						<li><a href="/acercaDe">ACERCA DE</a></li>
-						<li><a href="/gesContenido">GES. DE CONTENIDO</a></li>
 					</ul>
 				</nav>
 				<script>
@@ -416,7 +673,139 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 	
 }
+.contenedor-boton {
+    display: flex; /* Hacer que los elementos estén en línea horizontalmente */
+    align-items: center; /* Centrar verticalmente los elementos */
+}
 
+.boton-registrar {
+    color: black; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 2.7rem; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    font-family: 'Calibri'; /* Fuente */
+	background-color: #8B4513;
+	border: none;
+	cursor: pointer;
+}
 
-	/*end header*/
+.seccion-registrar {
+    display:none; 
+	background-color: rgba(255, 255, 255, 0.71); 
+	padding: 30px;  
+	position: fixed; 
+	top: 50%; left: 50%; 
+	transform: translate(-50%, -50%); 
+	z-index: 999;
+}
+
+.texto-registrar {
+    position: absolute; 
+    transform: translate(-50%, -50%); 
+	white-space: nowrap;
+}
+
+.campo-registrar {
+    position: relative; 
+    width: 100%;
+    text-align: center; /* Centrar el campo horizontalmente */
+    margin-top: 20px; /* Espacio desde arriba */
+}
+
+/* Estilos del campo de texto */
+.campo-registrar input {
+	width: 300px; /* Ancho del campo */
+	height: 50px; /* Alto del campo */
+	font-size: 18px; /* Tamaño del texto */
+	padding: 10px; /* Espaciado interno */
+	border: 2px solid #3200d6; /* Borde */
+    background: rgb(162, 212, 13); /* Fondo del campo */
+	color: rgb(185, 4, 107); /* Color del texto */
+	outline: none; /* Eliminar contorno al hacer clic */
+	border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Efecto al interactuar */
+.campo-registrar input:focus {
+    border-color: #1855f0; /* Cambiar color de borde al hacer clic */
+    background: rgb(182, 255, 120); /* Cambiar fondo al hacer clic */
+}
+.boton-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 90px;
+    height: 40px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #C1A579;
+    transition: 0.4s;
+    border-radius: 100px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    left: 3px;
+    bottom: 3px;
+    background-color: rgb(255, 255, 255);
+    transition: 0.4s;
+    border-radius: 60%;
+}
+
+input:checked + .slider {
+    background-color: #C1A579;
+}
+
+input:checked + .slider:before {
+    transform: translateX(55px);
+}
+.boton-registrado {
+	position: absolute;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.boton {
+    color: black; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 2.7rem; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    font-family: 'Calibri'; /* Fuente */
+	background-color: #8B4513;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+}
 </style>
