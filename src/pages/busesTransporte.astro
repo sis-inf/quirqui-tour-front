@@ -5,10 +5,11 @@ import PiePagina from "../components/piePagina.astro";
 import Encabezado from "../components/encabezado.astro";
 ---
 
-<Layout title="Buses-De-Transporte">
+<Layout title="Buses_y_Transporte">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <Encabezado />
   <main>
-    <h1>Buses y Transporte</h1>
+    <h1>BUSES Y TRANSPORTES</h1>
     <div class="contenedor">
       <div class="contenido">
         <!-- Formulario -->
@@ -52,7 +53,7 @@ import Encabezado from "../components/encabezado.astro";
             </div>
 
             <div class="boton-formulario">
-              <button type="submit">Buscar</button>
+              <button type="submit">Buscar <i class="fa-solid fa-search"></i></button>
             </div>
           </form>
         </section>
@@ -63,9 +64,22 @@ import Encabezado from "../components/encabezado.astro";
         </figure>
       </div>
 
-      <!-- Buses -->
+      <!-- Listar Empresas -->
       <section class="contenedor-boton">
-        <a href="/buses" class="boton-buses">Buses</a><!--/pagina-en-blanco aqui colocar la ruta para la pagina en blanco -->
+        <a href="#Listar" class="boton-listar">Listar Empresas</a>
+      </section>
+
+      <section class="Listar">
+        <h1>LISTADO DE EMPRESAS</h1>
+        <div class="card"> 
+          <img src="ruta/a/la/imagen.jpg" alt="Imagen del autobús">
+           <h2>Nombre</h2> 
+           <p>info: +591 00000000</p> 
+        </div>
+
+
+
+
       </section>
     </div>
   </main>
@@ -75,6 +89,9 @@ import Encabezado from "../components/encabezado.astro";
 <style>
   body {
     background-color: #f6ecde; 
+  }
+  h1{
+    color: #A52A2A;
   }
   .contenedor {
     display: flex;
@@ -94,11 +111,11 @@ import Encabezado from "../components/encabezado.astro";
 
   /* formulario */
   .formulario-transporte {
-    background-color: #f6c496;
+    background-color: #335669;
     padding: 20px;
-    border: 2px solid #8b4513;
+    border: 2px solid #233b47;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     max-width: 600px;
     width: 100%;
   }
@@ -148,7 +165,7 @@ import Encabezado from "../components/encabezado.astro";
   }
   .formulario-transporte button {
     padding: 10px 20px;
-    background-color: #8b4513;
+    background-color: #A52A2A	;
     color: #f6ecde;
     border: none;
     border-radius: 4px;
@@ -157,7 +174,8 @@ import Encabezado from "../components/encabezado.astro";
   }
 
   .formulario-transporte button:hover {
-    background-color: #f6c496;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
   }
 
   /*logo */
@@ -181,9 +199,9 @@ import Encabezado from "../components/encabezado.astro";
     width: 100%;
   }
 
-  .boton-buses {
+  .boton-listar {
     padding: 10px 20px;
-    background-color: var(--color-primario);
+    background-color: #A52A2A	;
     color: #f6ecde;
     border: none;
     border-radius: 4px;
@@ -191,8 +209,39 @@ import Encabezado from "../components/encabezado.astro";
     text-decoration: none; 
   }
 
-  .boton-buses:hover {
-    background-color: var(--color-secundario);
+  .boton-listar:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  /* Listado de Empresas */
+  .card { 
+    display: flex; 
+    align-items: center;
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    padding: 16px; 
+    max-width: 300px; 
+    font-family: Arial, sans-serif; 
+    background-color: #f9f9f9; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  } 
+  .card img { 
+    width: 100%; 
+    border-radius: 8px; 
+    margin-right: 16px;
+  } 
+  .card h2 { 
+    font-size: 1.5em; 
+    margin: 8px 0; 
+  }
+  .card p { 
+    color: #555; 
+    margin: 0; 
+  } 
+  .card .info { 
+    margin-top: 12px; 
+    font-size: 0.9em; 
+    color: #777; 
   }
 
   /* celulares */
