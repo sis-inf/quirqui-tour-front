@@ -80,14 +80,16 @@ import Encabezado from "../components/encabezado.astro";
             <div class="nombre_emp">NOMBRE</div> 
             <br>
             <br>
-            <div class="cel_emp">+591 999999</div> 
+            <div class="cel_emp">Info: +591 999999</div> 
         </div> 
-        <button class="boton_inf">+ INFORMACIÓN</button> 
-      </div>
-        <figure class="infbuslogo">
-          <img src="QUIRQUI_info_bus.png" alt="Descripción de la imagen" />
-        </figure>
-      </div>
+        <button class="boton_inf">
+          + INFORMACIÓN
+        </button> 
+        </div>
+          <figure class="infbuslogo">
+            <img src="QUIRQUI_info_bus.png" alt="Descripción de la imagen" />
+          </figure>
+        </div>
       </section>
     </div>
   </main>
@@ -96,6 +98,9 @@ import Encabezado from "../components/encabezado.astro";
 
 <style>
   main {
+    background-color: #f6ecde; 
+  }
+  body{
     background-color: #f6ecde; 
   }
   html { 
@@ -239,8 +244,9 @@ import Encabezado from "../components/encabezado.astro";
   .card { 
     display: flex; 
     align-items: center; 
-    background-color: #f6ecde; 
+    background-color: #f7e5c8; 
     border-bottom: 4px solid #A52A2A;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px; 
     border-radius: 10px; 
     width: 550px; 
@@ -339,6 +345,9 @@ import Encabezado from "../components/encabezado.astro";
       align-items: center;
     }
     .card{
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
       width: 100%;
     }
     .buses-logo {
@@ -351,7 +360,7 @@ import Encabezado from "../components/encabezado.astro";
   .contenedor-boton {
     margin-bottom: 20px; 
   }
-
+ 
   /* tablets */
   @media (max-width: 1024px) {
     .contenedor {
@@ -379,6 +388,9 @@ import Encabezado from "../components/encabezado.astro";
       align-items: center;
     }
     .card{
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
       width: 100%;
     }
   }
