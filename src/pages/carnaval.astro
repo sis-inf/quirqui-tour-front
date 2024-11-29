@@ -8,12 +8,80 @@ import Encabezado from '../components/encabezado.astro';
     <Encabezado />
 	<main>
 		<h1>CARNAVAL</h1>
-		<img src="/dist/img1.1.jpeg" alt="">
+		<div class="botones1">
+			<div class="fila">
+					<div class="icono">
+						<i class="fa fa-info-circle"></i>
+					</div>
+				<button class="btn">
+				Informacion general
+				</button>
+				<div class="guion">></div>
+			</div>
+			<div class="fila">
+				<div class="icono">
+					<i class="fa fa-calendar"></i>
+				</div>
+				<button class="btn">
+					Ver cronograma
+				</button>
+				<div class="guion">></div>
+			</div>
+		</div>
+
 	</main>
-	<PiePagina />  
+	<PiePagina />
 </Layout>
 <style>
-	img{
-		width: 100%;
+	.botones1
+	{	
+		margin-left: 200px;
+		display: flex;
+  		flex-direction: column;
+  		gap: 10px;
+  		align-items: flex-start;
+		
 	}
+	
+	.fila
+	{
+		display: flex;
+		align-items: center;
+		gap: 10px; /* Espaciado entre icono, botón y flecha */
+	}
+	.btn{
+		width: 190px;
+		text-align: center;
+		background: #a52b2a;
+		display: flex;
+		padding: 10px 20px;
+		color: white;
+		border-radius: 20px;
+		font-size: 14px;
+		font-weight: bold;
+		align-items: center;
+	}
+	.guion {
+  margin-left: auto;
+  font-size: 20px;
+  color:#a52b2a;
+}
+.icono
+{
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #497e6c; /* Verde del ícono */
+  border-radius: 50%;
+  margin-right: 5px;
+  font-size: 16px;
+  color:white;
+}
+h1{
+	color: #a52b2a;
+	font-weight: 500;
+}
+
 </style>
