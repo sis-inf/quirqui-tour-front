@@ -43,29 +43,29 @@ import Card from "../components/Card.astro";
 							<a href="/busesTransporte">BUSES & TRANSPORTE</a>
 						</li>
 						<li class="dropdown">
-							<a href="/carnaval" class="carnaval"id="carnaval-link">CARNAVAL</a>
+							<a href="/carnaval" class="carnaval"id="carnaval-link">CARNAVAL ▼</a>
 							<ul class="dropdown-menu" id="carnaval-submenu">
-								<li><a href="/carnaval/diablada">Diablada</a></li>
-								<li><a href="/carnaval/morenada">Morenada</a></li>
-								<li><a href="/carnaval/llamerada">Llamerada</a></li>
-								<li><a href="/carnaval/tobas">Tobas</a></li>
-								<li><a href="/carnaval/tinkus">Tinkus</a></li>
-								<li><a href="/carnaval/incas">Incas</a></li>
-								<li><a href="/carnaval/tarqueada">Tarqueada</a></li>
-										<li><a href="/carnaval/pujllay">Pujllay</a></li>
-										<li><a href="/carnaval/potolos">Potolos</a></li>
+								<li><a href="#diablada">Diablada</a></li>
+								<li><a href="#morenada">Morenada</a></li>
+								<li><a href="#llamerada">Llamerada</a></li>
+								<li><a href="#tobas">Tobas</a></li>
+								<li><a href="#tinkus">Tinkus</a></li>
+								<li><a href="#incas">Incas</a></li>
+								<li><a href="#tarqueada">Tarqueada</a></li>
+								<li><a href="#pujllay">Pujllay</a></li>
+								<li><a href="#potolos">Potolos</a></li>
 								<li class="dropdown-submenu">
 									<a href="#" id="ver-mas">Ver más</a>
 									<ul class="dropdown-menu" id="mas-danzas" style="display: none;">
-										<li><a href="/carnaval/negritos">Negritos</a></li>
-										<li><a href="/carnaval/caporales">Caporales</a></li>
-										<li><a href="/carnaval/tundiqui">Tundiqui</a></li>
-										<li><a href="/carnaval/ahuatiris">Ahuatiris</a></li>
-										<li><a href="/carnaval/cullaguada">Cullaguada</a></li>
-										<li><a href="/carnaval/suri">Suri</a></li>
-										<li><a href="/carnaval/salay">Salay</a></li>
-										<li><a href="/carnaval/kallawaya">Kallawaya</a></li>
-										<li><a href="/carnaval/waka-waka">Waka Waka</a></li>
+										<li><a href="#negritos">Negritos</a></li>
+										<li><a href="#caporales">Caporales</a></li>
+										<li><a href="#tundiqui">Tundiqui</a></li>
+										<li><a href="#ahuatiris">Ahuatiris</a></li>
+										<li><a href="#cullaguada">Cullaguada</a></li>
+										<li><a href="#suri">Suri</a></li>
+										<li><a href="#salay">Salay</a></li>
+										<li><a href="#kallawaya">Kallawaya</a></li>
+										<li><a href="#waka-waka">Waka Waka</a></li>
 										<!-- Agrega más danzas según sea necesario -->
 
 										<!-- <li class="dropdown-submenu">
@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	body {
 		height: 100%;
 		margin: 0;
+		z-index: 10;
 	}
 
 	body {
@@ -184,6 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	.contenedor-logo {
 		background:linear-gradient(to right,#da8d57,#8b4513,#da8d57) ;
 		background-repeat: no-repeat;
+		
 	}
 	.seccion {
 		width: 100%;
@@ -265,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
     display: none; /* Oculto por defecto */
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 10%;
     background-color: rgba(186, 147, 116, 0.7);
     padding: 10px 0;
     border-radius: 5px;
