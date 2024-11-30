@@ -74,7 +74,7 @@ import Encabezado from "../components/encabezado.astro";
       <section class="Listar" id="Listar">
         <div class="card"> 
           <div class="fotobus">
-            <img src="  " alt="Imagen del bus"/>  
+            <img src="public/buss.png" alt="Imagen del bus"/>  
           </div> 
           <div class="info"> 
             <div class="nombre_emp">NOMBRE</div> 
@@ -264,6 +264,11 @@ import Encabezado from "../components/encabezado.astro";
     font-size: 12px; 
     font-weight: bold; 
   } 
+	.fotobus img{
+		width: 100%; 
+		height: 100%; 
+		object-fit: cover;	
+	}
   .card .info { 
     flex-grow: 1; 
     margin-left: 20px; 
@@ -343,6 +348,7 @@ import Encabezado from "../components/encabezado.astro";
     .Listar{
       flex-direction: column;
       align-items: center;
+      width: 75%;
     }
     .card{
       display: flex;
