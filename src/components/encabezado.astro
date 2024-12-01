@@ -336,7 +336,6 @@ import Card from "../components/Card.astro";
 				position: absolute;
 				flex-direction: column;
 				align-items: center;
-				justify-content:space-between;
 				gap: 10px;
 				top: 40px;
 				background: rgba(116, 38, 38, 0.65);
@@ -349,14 +348,18 @@ import Card from "../components/Card.astro";
 			}
 			.seccion {
 				width: 50%;
-				height: 10%;
-			}
-			.navbar{
-
+				height: 20%;
 			}
 			input:checked ~ .nav-links {
-				height: 300%;
+				height: 1200%;
 			}
+			.contenedor-logo{
+				height: 34%;
+			}
+			.navbar {
+				height: 34px; /* Reduce la altura */
+			}
+
 			.menu {
 				display: block;
 				width: 24px;
