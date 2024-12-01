@@ -20,7 +20,7 @@ import Card from "../components/Card.astro";
 				<section class="navegacion-contenedor seccion">
 					<nav class="navbar" id="navbar">
 						<input type="checkbox" id="checkbox" />
-						
+			
 						<!-- Enlaces de navegación -->
 						<ul class="nav-links" id="nav-links">
 							<li><a href="/">INICIO</a></li>
@@ -129,16 +129,18 @@ import Card from "../components/Card.astro";
 	
 				</section>
 				<div >
-					<figure class="quirqui">
+					<figure class="quirqui1">
 						<img  src="/LogoTOUR.svg" alt="" style="transform: scaleX(-1);"/>
 					</figure>
 				</div>
+				
 			</section>
 			<div class="menu">
 				<label for="checkbox"></label>
 				<img src="close.svg" class="x-icon" alt="" />
 				<img src="menu.svg" class="line-icon" alt="" />
 			</div>
+			
 			
 		</div>
 	</header>
@@ -192,10 +194,11 @@ import Card from "../components/Card.astro";
 		}
 	
 		.navbar {
+			
 			width: 80%;
 			max-width: 80%;
 			display: flex;
-			justify-content: center;
+			justify-content: space-between;
 			align-items: center;
 			position: fixed;
 			font-family: var(--font-Akshar);
@@ -230,15 +233,17 @@ import Card from "../components/Card.astro";
 			display: inline-block;
 			padding: 0 20px;
 		}
-	
+		
+
 		.nav-links a {
 			text-decoration: none;
 			color: var(--color-secundario);
 			font-size: 20px;
-			font-weight: 600;
+			font-weight: 6000;
 			text-transform: uppercase;
 			padding: 1px 20px;
 			border-radius: 5px;
+			display:inline-block;
 		}
 	
 		.nav-links a:hover {
@@ -326,7 +331,7 @@ import Card from "../components/Card.astro";
 		color: #fff;
 	}
 	
-		@media screen and (max-width: 768px) {ç
+		@media screen and (max-width: 465px) {ç
 			.nav-links {
 				position: absolute;
 				flex-direction: column;
@@ -430,20 +435,20 @@ import Card from "../components/Card.astro";
 		}
 		
 	}
-	@media screen and (width: 1024px) {
+	@media screen and (max-width: 1024px) {
 		.nav-links {
-			width: 100%; /* Asegura que ocupe todo el ancho disponible */
-			height: 100%;
-			display: flex; /* Mantiene el display en flex para disposición en fila */
-			justify-content: space-around; /* Distribuye uniformemente los elementos */
+			width: 190%; /* Asegura que ocupe todo el ancho disponible */
+			height: 50%;
+			justify-content: center; /* Distribuye uniformemente los elementos */
 			align-items: center; /* Centra las opciones verticalmente */
 			position: static;
 			font-family: var(--font-Akshar);
 			text-align: center;
 			background-color: var(--color-primario);
+			display:block;
 
 		}
-		.quirqui {
+		.quirqui1{
 			display: none;
 		}
 	}
