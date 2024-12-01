@@ -331,12 +331,12 @@ import Card from "../components/Card.astro";
 		color: #fff;
 	}
 	
-		@media screen and (max-width: 465px) {ç
+		@media screen and (max-width: 768px) {
 			.nav-links {
 				position: absolute;
 				flex-direction: column;
 				align-items: center;
-				justify-content:center;
+				justify-content:space-between;
 				gap: 10px;
 				top: 40px;
 				background: rgba(116, 38, 38, 0.65);
@@ -348,13 +348,8 @@ import Card from "../components/Card.astro";
 				height: 0;
 			}
 			input:checked ~ .nav-links {
-				white: 1000%;
 				height: 300%;
 			}
-			.quirqui{
-				display: none;
-			}
-
 			.menu {
 				display: block;
 				width: 24px;
@@ -374,7 +369,11 @@ import Card from "../components/Card.astro";
 			input:checked ~ .menu .x-icon {
 				display: block;
 			}
-		}
+			.quirqui , .quirqui1{
+				display: none;
+			}
+
+		}	
 		@media screen and (max-width: 920px) {
 			.nav-links li {
 				display: inline-block;
@@ -435,7 +434,7 @@ import Card from "../components/Card.astro";
 		}
 		
 	}
-	@media screen and (max-width: 1024px) {
+	@media screen and (width: 1024px) {
 		.nav-links {
 			width: 190%; /* Asegura que ocupe todo el ancho disponible */
 			height: 50%;
