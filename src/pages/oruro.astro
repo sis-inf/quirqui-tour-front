@@ -1,13 +1,279 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import PiePagina from '../components/piePagina.astro';
-import Encabezado from '../components/encabezado.astro';
+import Layout from "../layouts/Layout.astro";
+import PiePagina from "../components/piePagina.astro";
+import Encabezado from "../components/encabezado.astro";
 ---
+
 <Layout title="Oruro">
-    <Encabezado />
+	<Encabezado />
 	<main>
-		<h1>ORURO</h1>
-	</main> 
-	<PiePagina />  
+		<h1>ORUЯO</h1>
+		<div class="container">
+			<div class="sitios-recomendados">
+				<h2>SITIOS RECOMENDADOS</h2>
+				<div class="slider">
+					<ul>
+						<li>
+							<img src="src/pages/oruro/oruroVirgen.jpg" alt="" />
+							<p>Monumento a la Virgen del Socavón</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/oruroNoche.jpeg" alt="" />
+							<p>Oruro Noche</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/oruroCasco.jpg" alt="" />
+							<p>Oruro Casco</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/oruroPlaza.jpg" alt="" />
+							<p>Oruro Plaza</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/oruroVirgen.jpg" alt="" />
+							<p>Monumento a la Virgen del Socavón</p>
+						</li>
+					</ul>
+				</div>
+				<img
+					src="src/pages/oruro/oruroQuirqui.png"
+					alt="quirqui"
+					class="quirqui"
+				/>
+			</div>
+
+			<div class="historia">
+				<h2>HISTORIA</h2>
+				<p>
+					El 10 de febrero de 1781 estalló la revolución contra la
+					tiranía colonial, siendo encabezada por don Sebastián
+					Pagador, los Menacho y otros patriotas más. Los hermanos
+					Juan de Dios y Jacinto Rodríguez fueron los cerebros de la
+					rebelión. Fue en la Villa Real de San Felipe de Austria
+					(Oruro) que se produjo uno de los primeros gritos
+					libertarios de América Latina, continuando con las
+					rebeliones contra la corona española. Es entonces que
+					Sebastián Pagador emite la siguiente proclama: “Amigos
+					paisanos y compañeros; en ninguna ocasión podemos dar
+					mejores pruebas de nuestro amor a la patria, sino en ésta.
+					No estimemos en nada nuestras vidas, sacrifiquémosla
+					gustosos en defensa de la libertad; convirtiendo toda la
+					humildad y rendimiento que hemos tenido con los españoles
+					europeos en ira y furor…”. Se sacaron a las milicias para
+					evitar atropellos contra el edificio de las Cajas Reales,
+					cuya seguridad estaba a cargo de Sebastián Pagador, que en
+					medio de los incidentes acaecidos, fue asesinado por la
+					turba indígena. La historia de Oruro comenzó con Don
+					Francisco de Medrano, hacia el año 1585, cuando bautizó con
+					el nombre de San Miguel de Oruro a un pueblo denominado
+					Ururu, notable por su desarrollo en cerámica, fama que se
+					extiende desde Venezuela hasta más allá de Tucumán, en la
+					Argentina. El 1º de febrero de 1606, sobre lo que fue este
+					poblado, el licenciado en cánones y letras, oidor de la
+					audiencia de Charcas, don Miguel de Castro y Padilla, fundó
+					la Real Villa de San Felipe de Austria, refleja el
+					historiador orureño, Carlos Condarco Santillán. El 6 de
+					octubre de 1810 tuvo lugar la hazaña más firme de la
+					emancipación, que se consolidó con la victoria de Aroma,
+					cuyo principal protagonista fue Esteban Arze. Finalmente, el
+					5 de septiembre de 1826, durante la presidencia del Mariscal
+					de Ayacucho Antonio José de Sucre fue creado por decreto
+					supremo el departamento de Oruro. Su nombre deriva de la más
+					antigua civilización milenaria de los andes bolivianos, los
+					Urus.
+				</p>
+			</div>
+
+			<div class="comida">
+				<h2>Platos Típicos</h2>
+				<div class="slider">
+					<ul>
+						<li>
+							<img src="src/pages/oruro/comida1.jpg" alt="" />
+							<p>Charquekan</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/comida1.jpg" alt="" />
+							<p>Comida2</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/comida1.jpg" alt="" />
+							<p>Comida3</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/comida1.jpg" alt="" />
+							<p>Comida4</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/comida1.jpg" alt="" />
+							<p>Comida5</p>
+						</li>
+					</ul>
+				</div>
+				<img
+					src="src/pages/oruro/oruroQuirqui.png"
+					alt="quirqui"
+					class="quirqui"
+				/>
+			</div>
+		</div>
+	</main>
+	<PiePagina />
 </Layout>
+
+<style>
+	body {
+		background-color: #f6ecde;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	h1 {
+		font-size: 5rem;
+		font-weight: bold;
+		text-align: center;
+		color: #a52b2a;
+		letter-spacing: 3px;
+		margin: 20px auto;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+	}
+
+	.container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+		padding: 15px;
+		box-sizing: border-box;
+	}
+
+	.historia,
+	.comida,
+	.sitios-recomendados {
+		background-color: #f6c496;
+		padding: 15px;
+		border-radius: 20px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		text-align: justify;
+	}
+
+	.slider {
+		width: 100%;
+		margin: 50px auto 0;
+		position: relative;
+		overflow: hidden;
+	}
+	.slider ul {
+		display: flex;
+		padding: 0;
+		margin: 0;
+		width: calc(100% * 5);
+		animation: slide 20s infinite alternate ease-in-out;
+	}
+
+	.slider li {
+		list-style: none;
+		width: 100%;
+	}
+
+	.slider img {
+		width: 100%;
+		border-radius: 20px;
+		margin-top: 10px;
+	}
+
+	@keyframes slide {
+		0% {
+			margin-left: 0%;
+		}
+		15% {
+			margin-left: 0%;
+		}
+		20% {
+			margin-left: -100%;
+		}
+		35% {
+			margin-left: -100%;
+		}
+		40% {
+			margin-left: -200%;
+		}
+		55% {
+			margin-left: -200%;
+		}
+		60% {
+			margin-left: -300%;
+		}
+		75% {
+			margin-left: -300%;
+		}
+		80% {
+			margin-left: -400%;
+		}
+		100% {
+			margin-left: -400%;
+		}
+	}
+
+	.sitios-recomendados h2,
+	.historia h2,
+	.comida h2 {
+		font-family: "Roboto", sans-serif;
+		font-size: 30px;
+		background-color: #a52929;
+		color: #f6ecde;
+		padding: 10px;
+		border-radius: 20px;
+		text-align: center;
+	}
+
+	.sitios-recomendados p,
+	.comida p {
+		border-radius: 20px;
+		font-size: 24px;
+		font-family: "Akshar", sans-serif;
+		background-color: #335669;
+		color: #f6ecde;
+		text-align: center;
+		width: auto;
+		margin: 0 auto;
+		padding: 10px;
+		margin-top: 30px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.historia p {
+		font-family: "Akshar", sans-serif;
+		font-size: 24px;
+		padding: 15px;
+		border-radius: 20px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		color: #f6ecde;
+		background-color: #335669;
+		line-height: 1.6;
+		text-align: justify;
+	}
+	.quirqui {
+		width: 100%;
+		margin-top: 10px;
+		border-radius: 10px;
+	}
+
+	@media (max-width: 992px) {
+		.container {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.container {
+			grid-template-columns: 1fr;
+			padding: 10px;
+		}
+
+		.historia,
+		.comida,
+		.sitios-recomendados {
+			margin: 0 auto;
+		}
+	}
+</style>
