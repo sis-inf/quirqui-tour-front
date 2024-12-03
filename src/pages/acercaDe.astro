@@ -5,8 +5,8 @@ import PiePagina from '../components/piePagina.astro';
 import Encabezado from '../components/encabezado.astro';
 ---
 <Layout title="Acerca de..">
-    <Encabezado />
 	<main> 
+		<h1>ACERCA DE</h1>
 		<section class="quienes-somos">
 			<div class="titulo-principal">
 			  <img src="logoAro.png" alt="Logo Quirqui-Tour">
@@ -201,10 +201,16 @@ import Encabezado from '../components/encabezado.astro';
 			  </div>
 		</section>
 	</main>
-	<PiePagina />  
 </Layout>
 
+
 <style>
+	h1 {
+		font-size: 3rem; /* Aumenta aún más el tamaño del título */
+		color: #A52B2A; /* Color rojo para el texto */
+		text-align: center; /* Centra el título */
+		margin-top: -150px; /* Ajusta el espacio encima del título */
+	}
 	/* Estilo global */
 	html, body {
 		height: 100%;
@@ -213,7 +219,7 @@ import Encabezado from '../components/encabezado.astro';
 	}
 	
 	body {
-		background-image: url('fondoAcercaDe.jpg');
+		background-color: #F5ECDD;
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -261,7 +267,7 @@ import Encabezado from '../components/encabezado.astro';
 
 
 	.quienes-somos {
-		background-color: rgba(239, 231, 231, 0.7);
+		background-color: rgba(249, 221, 221, 0.7);
 		border-radius: 10px;
 		padding: 20px;
 		margin-bottom: 40px;
@@ -270,7 +276,7 @@ import Encabezado from '../components/encabezado.astro';
 	.quienes-somos h1 {
 		text-align: center;
 		font-size: 3em;
-		color: #8B4513;
+		color: #F5ECDD;
 	}
 	
 	.quienes-somos h2 {
@@ -288,7 +294,7 @@ import Encabezado from '../components/encabezado.astro';
 	
 	.equipo-trabajo h2 {
 		font-size: 3em;
-		color: #8B4513;
+		color: 335669;
 		margin-bottom: 30px;
 		text-transform: uppercase;
 		font-weight: bold;
@@ -310,8 +316,8 @@ import Encabezado from '../components/encabezado.astro';
 		margin-bottom: 25px;
 		border-radius: 20px;
 		padding: 20px;
-		background-color: #F5F5DC;
-		box-shadow: 0px 4px 8px rgba(120, 36, 18, 0.912);
+		background-color: #335669;
+		box-shadow: 0px 4px 8px rgba(255, 238, 234, 0.912);
 		border: 1px solid #D3D3D3;
 		transition: transform 0.3s, box-shadow 0.3s;
 	}
@@ -320,16 +326,18 @@ import Encabezado from '../components/encabezado.astro';
 		width: 120px;
 		height: 120px;
 		border-radius: 50%;
-		border: 3px solid #8B4513;
+		border: 3px solid #F5ECDD; /* Ya está usando el color #F5ECDD */
 		margin-bottom: 15px;
+		background-color: #F5ECDD;
 	}
-	
+		
 	.miembro p {
 		font-size: 1.2em;
 		margin: 5px 0;
+		color: #F5ECDD;
 	}
 	.miembro a {
-		color: #8B4513;
+		color: #F5ECDD;
 		font-size: 2.5em;
 		text-decoration: none;
 		transition: color 0.3s;
@@ -344,14 +352,12 @@ import Encabezado from '../components/encabezado.astro';
 		font-weight: bold; 
 		text-align: center; 
 	}
-
-
 	.miembro:hover {
  		box-shadow: 0px 6px 12px rgba(0, 0, 0, 5);
 	}
 
 	.miembro a:hover {
-		color: #1a4676;
+		color: #6d1515;
 	}
 	</style>
 	

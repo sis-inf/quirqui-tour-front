@@ -1,20 +1,217 @@
 ---
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import PiePagina from '../components/piePagina.astro';
 import Encabezado from '../components/encabezado.astro';
+import AcercaDe from './acercaDe.astro';
 ---
+
 <Layout title="Inicio">
     <Encabezado />
-	<main>
-		<h1>INICIO</h1>
-		<img src="oruroFoto.jpg" alt="">
-	</main>
-	<PiePagina />
+    <main class="main-content">
+		<h1>INICIO</h1> <!-- Titulo Grande en Rojo -->
+        <div class="content-wrapper">
+            <div class="carousel-container">
+                <div class="carrusel">
+                    <!-- Primer Slide -->
+                    <div class="carrusel-imagen">
+                        <a href="/destinos"> 
+                            <img src="/oruroFoto.jpg" alt="Destino turistico" class="carousel-img" />
+                            <div class="info">
+                                <p class="info-text">Casco del minero</p> <!-- Texto con borde azul -->
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Segundo Slide -->
+                    <div class="carrusel-imagen">
+                        <a href="/destinos">
+                            <img src="/oruroFoto.jpg" alt="Destino turistico" class="carousel-img" />
+                            <div class="info">
+                                <p class="info-text">Oruro</p> <!-- Texto con borde azul -->
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Tercer Slide -->
+                    <div class="carrusel-imagen">
+                        <a href="/destinos">
+                            <img src="/oruroFoto.jpg" alt="Destino turistico" class="carousel-img" />
+                            <div class="info">
+                                <p class="info-text">Casco</p> <!-- Texto con borde azul -->
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Botones de navegación -->
+                    <button class="prev" onclick="cambiarSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="cambiarSlide(1)">&#10095;</button>
+                </div>
+            </div>
+
+            <img src="quirquiInicio.png" alt="Quirqui Inicio" class="quirquincho-image">
+        </div>
+        <AcercaDe />
+    </main>
+    <PiePagina />
 </Layout>
+
 <style>
-	img{
-		width: 100%;
+	h1 {
+		font-size: 3rem; /* Aumenta aún más el tamaño del título */
+		color: #A52B2A; /* Color rojo para el texto */
+		text-align: center; /* Centra el título */
+		margin-top: 10px; /* Ajusta el espacio encima del título */
 	}
+
+    .content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .carousel-container {
+        position: relative;
+        width: 80%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .carrusel {
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px 0;
+    }
+
+    .carrusel-imagen {
+        flex: 0 0 100%;
+        display: none;
+    }
+
+    .carousel-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .info {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+	.info-text {
+		color: #F5ECDD; /* Cambié el color del texto a blanco para mejorar la legibilidad */
+		font-size: 20px; /* Aumenté el tamaño de la fuente */
+		border: 0px solid;
+		display: inline-block;
+		padding: 12px; /* Más espacio en el contenedor */
+		border-radius: 5px;
+		background-color: #335669; /* Fondo con el color #335669 */
+	}
+
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgb(157, 43, 43);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 25px;
+        color: #872222;
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-130%);
+        background-color: rgb(158, 35, 35);
+        padding: 10px;
+        cursor: pointer;
+        font-size: 25px;
+        color: #F5ECDD;
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .quirquincho-image {
+        width: 35%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+   /* Responsivo */
+@media (max-width: 768px) {
+	h1 {
+		font-size: 3rem; /* Aumenta aún más el tamaño del título */
+		color: #A52B2A; /* Color rojo para el texto */
+		text-align: center; /* Centra el título */
+		margin-top: -50px; /* Ajusta el espacio encima del título */
+	}
+	.content-wrapper {
+        flex-direction: row; /* Cambiar a fila en lugar de columna */
+        align-items: center; /* Alinea los elementos verticalmente al centro */
+        justify-content: space-between; /* Centra los elementos */
+    }
+
+    .carousel-container {
+        width: 50%;
+    }
+
+    .quirquincho-image {
+        width: 20%; /* Reduce el tamaño de la imagen */
+        height: auto;
+        margin-top: 0px;
+        margin-left: 20px; /* Espacio debajo de la imagen */
+    }
+
+    .info-text {
+        font-size: 18px; /* Ajusta el tamaño del texto para que se vea bien en pantallas pequeñas */
+        padding: 10px; /* Ajusta el padding para que el texto sea más compacto */
+    }
+
+    .carousel-button {
+        font-size: 20px;
+    }
+}
 </style>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carrusel-imagen');
+
+    function showSlide(index) {
+        if (index >= slides.length) currentSlide = 0;
+        if (index < 0) currentSlide = slides.length - 1;
+        
+        slides.forEach((slide, i) => {
+            slide.style.display = (i === currentSlide) ? 'block' : 'none';
+        });
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    // Inicializar el carrusel mostrando el primer slide
+    showSlide(currentSlide);
+</script>
