@@ -4,379 +4,277 @@ import Card from '../components/Card.astro';
 import PiePagina from '../components/piePagina.astro';
 import Encabezado from '../components/encabezado.astro';
 ---
-<Layout title="Informacion-Turistica">
-    <Encabezado />
-	<main>
-		<div class="header">
-      <h1>Los Principales Destinos de Oruro</h1>
-      <div class="busqueda">
-        <input type="text" placeholder="INGRESE DESTINO PARA BUSCAR">
-        <button>BUSCAR</button>
+<Layout title="Destinos Turísticos en Oruro">
+  <Encabezado />
+  
+  <main>
+    <h1>Descubre los Destinos de Oruro</h1>
+    <section class="destinos-turisticos">
+      <div class="header">
+        <div class="filters">
+          <input type="text" placeholder="Buscar destino..." class="search-input" />
+          <button class="search-button">Buscar</button>
+        </div>
       </div>
-    </div>
 
-    <div class="carrusel">
-			<div class="carrusel-imagen">
-				<a href="/destinos"> 
-					<img src="/oruroFoto.jpg" alt="Destino turistico" style="width: 50%; height: auto;" />
-					<div class="info">
-						<p>Nombre: Casco</p>
-						<p>Ubicación: Oruro</p>
-					</div>
-				</a>
-		</div>
+      <div class="cards-container">
+        <!-- Museos -->
+        <div class="card-wrapper">
+          <div class="card-title">MUSEOS</div>
+          <div class="card">
+            <img src="/Museo.jpg" alt="Imagen Turística 1">
+            <h2>NOMBRE</h2>
+            <p>Descripción del destino turístico 1.</p>
+            <a href="/infTuristica/destino1-slug">Ver más</a>
+          </div>
+        </div>
 
-			<div class="carrusel-imagen">
-				<a href="/destinos">
-					<img src="/oruroFoto.jpg" alt="Destino turistico" style="width: 50%; height: auto;" />
-					<div class="info">
-						<p>Nombre: Oruro</p>
-						<p>Ubicación: Oruro</p>
-					</div>
-				</a>
-			</div>
-
-			<div class="carrusel-imagen">
-				<a href="/destinos">
-					<img src="/oruroFoto.jpg" alt="Destino turistico" style="width: 50%; height: auto;" />
-					<div class="info">
-						<p>Nombre: Casco</p>
-						<p>Ubicación: Oruro</p>
-					</div>
-				</a>
-			</div>
-			<!-- Botones para navegar -->
-			<button class="prev" onclick="cambiarSlide(-1)">&#10094;</button>
-			<button class="next" onclick="cambiarSlide(1)">&#10095;</button>
-
-		</div>
-
-    <div class="filtros-anuncio">
-      <div class="filtros">
-        <label for="filtro-turistico">Filtrar sitios turísticos:</label>
-        <select id="filtro-turistico">
-          <option value="caminata">Caminata</option>
-          <option value="comida">Comida</option>
-          <option value="etc">etc.</option>
-        </select>
+        <!-- Plazas -->
+        <div class="card-wrapper">
+          <div class="card-title">PLAZAS</div>
+          <div class="card">
+            <img src="/caporales.jpg" alt="Imagen Turística 2">
+            <h2>NOMBRE</h2>
+            <p>Descripción del destino turístico 2.</p>
+            <a href="/infTuristica/destino2-slug">Ver más</a>
+          </div>
+        </div>
+        <!-- Monumentos -->
+      <div class="card-wrapper">
+        <div class="card-title">MONUMENTOS</div>
+        <div class="card">
+          <img src="/Museo.jpg" alt="Imagen Turística 1">
+          <h2>NOMBRE</h2>
+          <p>Descripción del destino turístico 1.</p>
+          <a href="/infTuristica/destino1-slug">Ver más</a>
+        </div>
       </div>
-    
-      <div class="anuncio">
-        <a href="/infTuristica">
-          <img src="/anuncio.jpg" alt="Anuncio" />
-        </a>
+      <!-- Atractivos turisticos -->
+      <div class="card-wrapper">
+        <div class="card-title">ATRACTIVOS TURISTICOS</div>
+          <div class="card">
+            <img src="/Museo.jpg" alt="Imagen Turística 1">
+            <h2>NOMBRE</h2>
+            <p>Descripción del destino turístico 1.</p>
+            <a href="/infTuristica/destino1-slug">Ver más</a>
+          </div>
+        </div>
       </div>
-    </div>    
-    </main>
-	<PiePagina />  
+      
+
+      <div class="bottom-filters">
+        <div class="filter-options">
+          <select class="filter-select">
+            <option value="todos">Todos</option>
+            <option value="rural">Rural</option>
+            <option value="urbano">Urbano</option>
+          </select>
+        </div>
+
+        <div class="ad-space">
+          <p>¡No te pierdas nuestras promociones!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <PiePagina />
 </Layout>
 
 <style>
+  :root {
+        --cafe: #8B4512;
+        --beige: #F5ECDD;
+        --verde-musgo: #566B30;
+        --rojo-vivo: #A52B2A;
+        --azul: #335669;
+      }
 
-/* Estilos base */
-:root {
-  --color-marron-tierra: #8B4513;
-  --color-crema: #F6ECDE;
-  --color-verde-musgo: #556B2F;
-  --color-rojo-arcilla: #A52A2A;
-  --color-azul-profundo: #335669;
-}
+      main, body {
+        background-color: var(--beige);
+      }
 
-body {
-  background-color: var(--color-crema);
-  font-family: 'Akshar Light', sans-serif;
-  margin: 0;
-  padding: 0;
-}
+      main {
+        padding: 20px;
+      }
 
-main {
-  background-color: var(--color-crema);
-}
-html, body {
-    background-color: var(--color-crema);
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+      .header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 10px;
+      }
 
-  }
+      .filters {
+        display: flex;
+        gap: 10px;
+      }
 
-/* Contenedor del título y barra de búsqueda */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  gap: 20px;
-}
+      .search-input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid var(--cafe);
+        border-radius: 5px;
+      }
 
-h1 {
-  color: var(--color-marron-tierra);
-  font-family: 'Poppins', sans-serif;
-  font-size: 40px;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
-}
+      .search-button {
+        padding: 10px;
+        background-color: var(--azul);
+        color: var(--beige);
+        cursor: pointer;
+        border: 1px solid #213742;
+        border-radius: 5px;
+      }
 
-.busqueda {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
-  max-width: 430px;
-}
+      .cards-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
 
-.busqueda input[type="text"] {
-  padding: 10px;
-  font-size: 18px;
-  border: 1px solid var(--color-marron-tierra);
-  border-radius: 4px;
-  width: 100%;
-  box-sizing: border-box;
-}
+      .card-wrapper {
+        width: 25%;
+      }
 
-.busqueda button {
-  background-color: var(--color-verde-musgo);
-  color: var(--color-crema);
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+      .card-title {
+        font-size: 1.5em;
+        color: var(--cafe);
+        margin-bottom: 10px;
+      }
 
-/* Contenedor principal del carrusel */
-.carrusel {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 20px; /* Espacio entre el carrusel y la barra de menú */
-  padding: 20px 0;
-  overflow: hidden;
-}
+      .card {
+        background-color: #eedbbb;
+        border: 1px solid #805e47;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+        width: 100%;
+      }
 
-/* Contenedor de las imágenes dentro del carrusel */
-.carrusel-contenedor {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  max-width: 1200px; /* Ajuste para un ancho máximo */
-  gap: 20px;
-  overflow: hidden;
-}
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
 
-/* Cada imagen en el carrusel */
-.carrusel-imagen {
-  flex: 0 0 auto;
-  width: 550px; /* Tamaño de la imagen */
-  overflow: hidden;
-}
+      .card h2 {
+        margin: 15px;
+        font-size: 1.5em;
+      }
 
-.carrusel-imagen img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-}
+      .card p {
+        margin: 15px;
+        font-size: 1em;
+        color: var(--azul);
+      }
 
-/* Botones de navegación */
-.prev, .next {
-  font-size: 30px;
-  color: var(--color-verde-musgo);
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 10px;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .card a {
+        display: block;
+        margin: 15px;
+        padding: 10px;
+        background-color: var(--cafe);
+        color: var(--beige);
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+      }
 
-.prev {
-  left: 20px;
-}
+      .card:hover {
+        transform: scale(1.05);
+      }
 
-.next {
-  right: 20px;
-}
+      .bottom-filters {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
 
-/* Evita que los botones se muevan */
-.prev:focus, .next:focus {
-  outline: none;
-}
+      .filter-options {
+        flex: 1;
+        text-align: center;
+      }
 
-@media (max-width: 768px) {
-  .carousel-container {
-    flex-direction: column; /* Cambia la dirección si es necesario */
-  }
+      .ad-space {
+        width: 200px;
+        text-align: center;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+      }
 
-  .search-bar, .filter-options {
-    width: 90%; /* Asegúrate de que ocupen menos espacio */
-    margin: 0 auto;
-  }
-}
+      .filter-select {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5PX;
+      }
 
-@media (max-width: 480px) {
-  .carousel-images img {
-    height: 200px; /* Ajusta la altura para pantallas pequeñas */
-  }
-}
-
-/* Ajustes responsive para tablets */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .carrusel-imagen {
-    width: 350px; /* Ajusta el tamaño para tablets */
-    height: 300px; /* Proporción más adecuada */
-  }
-
-  .prev, .next {
-    font-size: 28px;         /* Tamaño medio para los botones */
-    width: 45px;             /* Ancho mayor para visibilidad */
-    height: 45px;            /* Altura proporcional */
-    top: 50%;                /* Centra los botones en tablets */
-    transform: translateY(-50%);
-  }
-
-  .carrusel-contenedor {
-    width: 100%;             /* Asegura que ocupe el ancho disponible */
-    gap: 15px;               /* Espaciado mayor entre elementos */
-  }
-}
-
-
-  .info {
-    text-align: center;
-  }
-  
-  .info p {
-    color: var(--color-azul-profundo);
-    font-size: 18px;
-  }
-
-.info {
-  text-align: center;
-}
-
-.info p {
-  color: var(--color-azul-profundo);
-  font-size: 16px;
-}
-
-/* Filtros y anuncios */
-.filtros-anuncio {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 20px auto;
-}
-
-.filtros {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.filtros label,
-.filtros select {
-  font-size: 16px;
-  color: var(--color-marron-tierra);
-}
-
-.anuncio {
-  flex: 2;
-  display: flex;
-  justify-content: center;
-}
-
-.anuncio img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Estilos responsivos */
-/* Celulares */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 30px;
-  }
-
-  .busqueda {
-    width: 100%;
-  }
-
-  .carrusel {
-    flex-direction: column;
-  }
-
-  .filtros-anuncio {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .anuncio img {
-    max-width: 100%;
-  }
-}
-
-/* Tablets */
 @media (max-width: 1024px) {
-  .header {
-    flex-wrap: wrap;
-    text-align: center;
-  }
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .card-wrapper {
+        width: 50%;
+    }
+    .cards-container {
+        flex-direction: column;
+        align-items: baseline;
+    }
+    .card {
+        width: 80%; 
+    }
+    .search-button{
+        width: 10%; 
+    }
+    .search-input{
+      width: 30%;
+    }
+    .filters {
+        width: 100%;
+        flex-direction:unset;
+        justify-content: flex-end;
+    }
+    
+    .bottom-filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  .busqueda {
-    max-width: 80%;
-  }
-
-  .carrusel {
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .filtros-anuncio {
-    flex-direction: column;
-  }
-
-  .filtros {
-    width: 100%;
-    align-items: center;
-    text-align: center;
-  }
-
-  .anuncio img {
-    max-width: 80%;
-  }
+    .ad-space {
+        margin-top: 10px;
+    }
 }
 
-	</style>
+/* Media Queries para Móviles */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; 
+    }
+    .card-wrapper {
+        width: 60%;
+    }
+    .search-button{
+        width: 30%; 
+    }
+    .search-input{
+      width: 60%;
+    }
+    .filters {
+        width: 100%;
+        flex-direction:unset;
+        align-items:normal;
+    }
+    
+    .bottom-filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ad-space {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+</style>
