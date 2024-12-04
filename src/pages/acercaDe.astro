@@ -5,31 +5,10 @@ import PiePagina from '../components/piePagina.astro';
 import Encabezado from '../components/encabezado.astro';
 ---
 <Layout title="Acerca de..">
-	<main> 
-		<h1>ACERCA DE</h1>
-		<section class="quienes-somos">
-			<div class="titulo-principal">
-			  <img src="logoAro.png" alt="Logo Quirqui-Tour">
-			  <h1>QUIRQUI - TOUR</h1>
-			</div>
-			<div class="contenido">
-			  <h2>QUIENES SOMOS</h2>
-			  <p>
-				Somos un equipo de estudiantes apasionados por explorar y compartir las maravillas de nuestro país. Hemos creado esta página para brindarte una guía completa sobre los viajes departamentales e interdepartamentales en Bolivia, con un enfoque especial en la riqueza cultural y turística de Oruro. Aquí encontrarás información sobre destinos turísticos, transporte, festividades como el Carnaval de Oruro, y los fascinantes museos de la región.
-			  </p>
-			  <h2>OBJETIVO</h2>
-			  <p>
-				La página web está desarrollada para poder orientar y ofrecer información a los turistas y también a personas de nuestro departamento, ofrece una amplia información para que pueda visitar y conocer la historia y costumbres de nuestro departamento, también cuenta con información del transporte interdepartamental y departamental de Oruro y explica las tarifas de cada transporte.
-			  </p>
-			  <h2>CARACTERÍSTICAS</h2>
-			  <p>
-				El sitio web “QUIRQUI - TUR” tiene como objeto demostrar a la población en general y poder llegar a los turistas para mostrar los lugares turísticos más importantes como el Carnaval de Oruro, los museos, las rutas interdepartamentales y departamentales, además de tarifas, ofreciendo una información más detallada y óptima sobre los lugares turísticos de Oruro.
-			  </p>
-			</div>
-		</section>
-		  
+	<Encabezado />
+	<main>   
 		<section class="equipo-trabajo">
-			<h2>EQUIPO DE TRABAJO</h2>
+			<h1>¡CONOCENOS!</h1>
 			<div class="miembros">
 			  <div class="miembro">
 				<img src="logoAro.png" alt="Miembro del equipo">
@@ -201,6 +180,7 @@ import Encabezado from '../components/encabezado.astro';
 			  </div>
 		</section>
 	</main>
+	<PiePagina/>
 </Layout>
 
 
@@ -219,69 +199,21 @@ import Encabezado from '../components/encabezado.astro';
 	}
 	
 	body {
-		background-color: #F5ECDD;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		color: #333;
-		font-family: 'Akshar Light', sans-serif;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		min-height: 100vh;
+		margin: 0;
+      	padding: 0;
+        height: 100vh; /* Asegura que ocupa el 100% del alto de la ventana */
 	}
 
 	main {
-		padding: 20px;
+		padding: 5px;
 	}
 
-	.titulo-principal {
-		background-image: url('fondoTituloAcercaDe.jpg'); 
-		background-size: cover; 
-		background-position: center;
-		padding: 30px 20px;
-		display: flex; 
-		align-items: center; 
-		justify-content: center; 
-		gap: 20px; 
-		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
-		border-radius: 10px; 
-		text-align: center;
-	}
-
-	.titulo-principal img {
-		width: 150px; 
-		height: auto;
-	}
-
-	.titulo-principal h1 {
-		font-size: 2.5em;
-		margin: 0;
-		font-weight: bold;
-		text-transform: uppercase;
-		letter-spacing: 2px; 
-		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
-		color: #FFFFFF; 
-	}
-
-
-	.quienes-somos {
-		background-color: rgba(249, 221, 221, 0.7);
-		border-radius: 10px;
-		padding: 20px;
-		margin-bottom: 40px;
-	}
-	
-	.quienes-somos h1 {
-		text-align: center;
-		font-size: 3em;
-		color: #F5ECDD;
-	}
-	
-	.quienes-somos h2 {
-		color: #5A3E1A;
-		margin-top: 20px;
+	h1 {
+    	margin-top: 0; /* Elimina cualquier margen superior */
+    	padding-top: -100px; /* Ajusta la separación con el encabezado */
+    	font-size: 3rem; /* Mantén el tamaño del texto */
+    	color: #A52B2A; /* Color del texto */
+    	text-align: center; /* Centra el título */
 	}
 
 	.equipo-trabajo {
@@ -290,6 +222,13 @@ import Encabezado from '../components/encabezado.astro';
 		margin-bottom: 40px;
 		width: 100%;
 		border-radius: 10px;
+		margin-top: -50px;
+		background: linear-gradient(to top, rgba(65, 84, 107, 0.1), rgba(30,35,38,1)), 
+		url('/public/Inicio.jpg');
+		align-items: center;
+		display: grid;background-size: cover; /* Cubre toda el área */
+      	background-position: center; /* Centra la imagen */
+      	background-repeat: repeat; /* No repite la imagen */
 	}
 	
 	.equipo-trabajo h2 {
@@ -353,11 +292,11 @@ import Encabezado from '../components/encabezado.astro';
 		text-align: center; 
 	}
 	.miembro:hover {
- 		box-shadow: 0px 6px 12px rgba(0, 0, 0, 5);
+ 		box-shadow: 0px 6px 12px rgba(5, 0, 0, 5);
 	}
 
 	.miembro a:hover {
 		color: #6d1515;
 	}
-	</style>
+</style>
 	

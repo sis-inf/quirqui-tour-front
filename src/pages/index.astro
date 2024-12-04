@@ -9,49 +9,58 @@ import AcercaDe from './acercaDe.astro';
 <Layout title="Inicio">
     <Encabezado />
     <main class="main-content">
-		<h1>INICIO</h1> <!-- Titulo Grande en Rojo -->
-        <div class="content-wrapper">
-            <div class="carousel-container">
-                <div class="carrusel">
-                    <!-- Primer Slide -->
-                    <div class="carrusel-imagen">
-                        <a href="/destinos"> 
-                            <img src="/oruroFoto.jpg" alt="Destino turistico" class="carousel-img" />
-                            <div class="info">
-                                <p class="info-text">Casco del minero</p> <!-- Texto con borde azul -->
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Segundo Slide -->
-                    <div class="carrusel-imagen">
-                        <a href="/destinos">
-                            <img src="/oruroFoto.jpg" alt="Destino turistico" class="carousel-img" />
-                            <div class="info">
-                                <p class="info-text">Oruro</p> <!-- Texto con borde azul -->
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Tercer Slide -->
-                    <div class="carrusel-imagen">
-                        <a href="/destinos">
-                            <img src="/oruroFoto.jpg" alt="Destino turistico" class="carousel-img" />
-                            <div class="info">
-                                <p class="info-text">Casco</p> <!-- Texto con borde azul -->
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Botones de navegación -->
-                    <button class="prev" onclick="cambiarSlide(-1)">&#10094;</button>
-                    <button class="next" onclick="cambiarSlide(1)">&#10095;</button>
-                </div>
+        <div class="container">
+			<h2>-</h2>
+			<div class="sitios-recomendados">
+				<h2>INICIO</h2>
+				<div class="slider">
+					<ul>
+						<li>
+							<img src="src/pages/oruro/oruroVirgen.jpg" alt="" />
+							<p>Monumento a la Virgen del Socavón</p>
+						</li>
+						<li>
+							<img src="/morenada.jpeg" alt="" />
+							<p>Carnaval de Oruro</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/oruroCasco.jpg" alt="" />
+							<p>Oruro Casco</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/oruroPlaza.jpg" alt="" />
+							<p>Oruro Plaza</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/oruroVirgen.jpg" alt="" />
+							<p>Monumento a la Virgen del Socavón</p>
+						</li>
+					</ul>
+				</div>
             </div>
-
-            <img src="quirquiInicio.png" alt="Quirqui Inicio" class="quirquincho-image">
         </div>
-        <AcercaDe />
+
+		<section class="quienes-somos">
+			<div class="titulo-principal">
+			  <img src="logoAro.png" alt="Logo Quirqui-Tour">
+			  <h1>QUIRQUI - TOUR</h1>
+			</div>
+			<div class="contenido">
+			  <h2>QUIENES SOMOS</h2>
+			  <p>
+				Somos un equipo de estudiantes apasionados por explorar y compartir las maravillas de nuestro país. Hemos creado esta página para brindarte una guía completa sobre los viajes departamentales e interdepartamentales en Bolivia, con un enfoque especial en la riqueza cultural y turística de Oruro. Aquí encontrarás información sobre destinos turísticos, transporte, festividades como el Carnaval de Oruro, y los fascinantes museos de la región.
+			  </p>
+			  <h2>OBJETIVO</h2>
+			  <p>
+				La página web está desarrollada para poder orientar y ofrecer información a los turistas y también a personas de nuestro departamento, ofrece una amplia información para que pueda visitar y conocer la historia y costumbres de nuestro departamento, también cuenta con información del transporte interdepartamental y departamental de Oruro y explica las tarifas de cada transporte.
+			  </p>
+			  <h2>CARACTERÍSTICAS</h2>
+			  <p>
+				El sitio web “QUIRQUI - TUR” tiene como objeto demostrar a la población en general y poder llegar a los turistas para mostrar los lugares turísticos más importantes como el Carnaval de Oruro, los museos, las rutas interdepartamentales y departamentales, además de tarifas, ofreciendo una información más detallada y óptima sobre los lugares turísticos de Oruro.
+			  </p>
+			</div>
+		</section>
+		  
     </main>
     <PiePagina />
 </Layout>
@@ -61,7 +70,161 @@ import AcercaDe from './acercaDe.astro';
 		font-size: 3rem; /* Aumenta aún más el tamaño del título */
 		color: #A52B2A; /* Color rojo para el texto */
 		text-align: center; /* Centra el título */
-		margin-top: 10px; /* Ajusta el espacio encima del título */
+		margin-top: 20px; /* Ajusta el espacio encima del título */
+    }
+
+	h2 {
+		margin-top: 20px;
+		font-size: 3rem; /* Aumenta aún más el tamaño del título */
+		color: #F5ECDD; /* Color rojo para el texto */
+		text-align: center; /* Centra el título */
+		margin-top: 20px; /* Ajusta el espacio encima del título */
+    }
+	body, html {
+		margin-top: 0px;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.container {
+		margin: 0;
+		padding: 0;
+		margin-top: -150px;
+		background: linear-gradient(to top, rgba(65, 84, 107, 0.1), rgba(30,35,38,1)), 
+		url('/public/Inicio.jpg');
+		background-size: cover;
+		background-position: top;
+		height: 100vh;
+		color: antiquewhite;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		box-sizing: border-box;
+		align-items: center;
+	}
+
+    .slider {
+		width: 100%;
+		margin: 0zzz0px auto 0;
+		position: relative;
+		overflow: hidden;
+	}
+	.slider ul {
+		display: flex;
+		padding: 0;
+		margin: 0;
+		width: calc(100% * 5);
+		animation: slide 20s infinite alternate ease-in-out;
+	}
+
+	.slider li {
+		list-style: none;
+		width: 100%;
+	}
+
+	.slider img {
+		width: 100%;
+		border-radius: 20px;
+		margin-top: 10px;
+	}
+
+    
+	@keyframes slide {
+		0% {
+			margin-left: 0%;
+		}
+		15% {
+			margin-left: 0%;
+		}
+		20% {
+			margin-left: -100%;
+		}
+		35% {
+			margin-left: -100%;
+		}
+		40% {
+			margin-left: -200%;
+		}
+		55% {
+			margin-left: -200%;
+		}
+		60% {
+			margin-left: -300%;
+		}
+		75% {
+			margin-left: -300%;
+		}
+		80% {
+			margin-left: -400%;
+		}
+		100% {
+			margin-left: -400%;
+		}
+	}
+    
+    @media (max-width: 992px) {
+		.container {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.container {
+			grid-template-columns: 1fr;
+			padding: 10px;
+		}
+
+		.sitios-recomendados {
+			margin: 0 auto;
+		}
+	}
+
+	.quienes-somos {
+		background-color: rgba(249, 221, 221, 0.7);
+		border-radius: 10px;
+		padding: 20px;
+		margin-bottom: 40px;
+	}
+	
+	.quienes-somos h1 {
+		text-align: center;
+		font-size: 3em;
+		color: #F5ECDD;
+	}
+	
+	.quienes-somos h2 {
+		color: #5A3E1A;
+		margin-top: 20px;
+	}
+
+    
+	.titulo-principal img {
+		width: 150px; 
+		height: auto;
+	}
+
+	.titulo-principal h1 {
+		font-size: 2.5em;
+		margin: 0;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 2px; 
+		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+		color: #FFFFFF; 
+	}
+
+    .titulo-principal {
+		background-size: cover; 
+		background-position: center;
+		padding: 30px 20px;
+		display: flex; 
+		align-items: center; 
+		justify-content: center; 
+		gap: 20px; 
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+		border-radius: 10px; 
+        background-color: #872222;
+		text-align: center;
 	}
 
     .content-wrapper {
@@ -101,7 +264,7 @@ import AcercaDe from './acercaDe.astro';
 
     .info {
         text-align: center;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
 	.info-text {
@@ -127,34 +290,6 @@ import AcercaDe from './acercaDe.astro';
         border-radius: 50%;
         z-index: 10;
     }
-
-    .prev, .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-130%);
-        background-color: rgb(158, 35, 35);
-        padding: 10px;
-        cursor: pointer;
-        font-size: 25px;
-        color: #F5ECDD;
-        border-radius: 50%;
-        z-index: 10;
-    }
-
-    .prev {
-        left: 10px;
-    }
-
-    .next {
-        right: 10px;
-    }
-
-    .quirquincho-image {
-        width: 35%;
-        height: auto;
-        margin-top: 20px;
-    }
-
    /* Responsivo */
 @media (max-width: 768px) {
 	h1 {
@@ -190,28 +325,3 @@ import AcercaDe from './acercaDe.astro';
     }
 }
 </style>
-
-<script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carrusel-imagen');
-
-    function showSlide(index) {
-        if (index >= slides.length) currentSlide = 0;
-        if (index < 0) currentSlide = slides.length - 1;
-        
-        slides.forEach((slide, i) => {
-            slide.style.display = (i === currentSlide) ? 'block' : 'none';
-        });
-    }
-
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
-
-    // Inicializar el carrusel mostrando el primer slide
-    showSlide(currentSlide);
-</script>
