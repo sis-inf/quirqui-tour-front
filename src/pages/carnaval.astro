@@ -7,50 +7,66 @@ import Encabezado from '../components/encabezado.astro';
 <Layout title="Carnaval">
     <Encabezado />
 	<main>
-		
-		<h1>CARNAVAL</h1>
-		<div class="botonesP">
+        <header id="carnaval" class="cont">
+            <h1 class="titulo">CARNAVAL</h1>
+        <div class="botonesP">
 		<div class="botones1">
-			
 			<div class="fila">
 					<div class="icono">
 						<i class="fa fa-info-circle"></i>
 					</div>
-				<button class="btn">
+				<a href="#infor">
+                <button class="btn">
 				Informacion general
 				</button>
-				<div class="guion">></div>
+                </a>
+                <div class="guion">></div>
 			</div>
 			
 			<div class="fila">
 				<div class="icono">
 					<i class="fa fa-calendar"></i>
 				</div>
+                <a href="/carnaval/Cronograma">
 				<button class="btn">
 					Ver cronograma
 				</button>
+                </a>
 				<div class="guion">></div>
-				
-			</div>
-			
-			
-		</div>
-		<img src="/public/logoTOUR.png" alt="quirqui" class="imagen-botones">
-	</div>
-		
-	<!--	<div class="carrusel-conteiner">
-		<div class="carousel">
-			<div class="carousel-images">
-			<img src="/public/diablada.jpg" alt="Image 1">
-			<img src="/public/morenada.jpg" alt="image2 ">
-			<img src="/public/caporales.jpg" alt="Image 3">
-			<img src="/public/tobas.jpg" alt="Image 4">
-			<img src="/public/llamerada.jpg" alt="Image 5">
-			<img src="/public/salay.jpg" alt="Image 6">
-			<img src="/public/kallawaya.jpg" alt="Image 7">
 			</div>
 		</div>
-	</div>
+		<img src="/public/logoTOUR1.png" alt="quirqui" class="imagen-botones">
+    </div>
+        </header>
+
+        
+    
+    <header id="infor" class="carus1">
+    <div class="carus">
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="/public/diablada1.jpg" alt="Diablada">
+                <img src="/public/morenada1.jpg" alt="Morenada">
+                <img src="/public/caporales1.jpg" alt="Caporales">
+                <img src="/public/tobas.jpg" alt="Tobas">
+            </div>
+        </div>
+        <div class="inf">
+            <h1  class="info">   INFORMACION GENERAL </h1>
+            <p>
+                El Carnaval de Oruro es una de las festividades más importantes de Bolivia, celebrada anualmente en la ciudad de
+                Oruro en honor a la Virgen del Socavón. Reconocido como Patrimonio de la Humanidad por la UNESCO, este carnaval
+                ombina religiosidad, folklore y tradiciones ancestrales. Durante varios días, se lleva a cabo un desfile de comparsas
+                con danzas típicas como la Diablada, la Moreniada y la Saya, acompañadas de impresionantes trajes y música. La Diablada,
+                en particular, destaca por sus disfraces de diablos que simbolizan la lucha entre el bien y el mal. Además, incluye la entrada de
+                la Virgen del Socavón, una procesión religiosa que refleja la devoción de los mineros y la comunidad. Este evento es una manifestación
+                de identidad cultural y un importante atractivo turístico.
+            </p>
+        </div>
+    </div>
+    </header>
+
+	<!--	
  -->
  		<header id="ahuatiris" class="cont">
 		<h1 class="title">AHUATIRIS</h1>
@@ -399,38 +415,51 @@ import Encabezado from '../components/encabezado.astro';
             </div>
         </div>
 	</header>
-			
 	</main>
 	<PiePagina />
 </Layout>
+
 <style>
 	html {
   scroll-behavior: smooth;
 }
+a {
+    text-decoration: none;
+}
+.botonesP {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten */
+  justify-content: center; /* Centra los elementos */
+  gap: 20px;
+  padding: 20px;
+}
+.titulo {
+  color: #a52b2a;
+  font-size: 500%;
+  font-weight: bold;
+  margin: 20px 0 20px;
+  text-align: center;
+  font-family: "Castellar", sans-serif;
+  padding-bottom: 0%;
+}
+.botones1 {
+  margin-left: 20px; /* Ajuste para dispositivos pequeños */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* Centra los botones */
+  margin-top: 100px;
+}
 
-	.botonesP{
-		display: flex; /* Cambiar a un diseño horizontal */
-	}
-	.botones1
-	{
-		margin-left: 250px;
-		display: flex;
-  		flex-direction: column;
-  		gap: 10px;
-  		align-items: flex-start;
-		margin-top: 100px;
-		
-	}
-	.imagen-botones {
-    width: 500px; /* Ajusta el tamaño de la imagen */
-    height: 500px; /* Mantén la proporción */
-    border-radius: 10px; /* Opcional: bordes redondeados */
-	padding-left: 500px;
+.imagen-botones {
+  width: 100%; /* Hace que la imagen se ajuste al tamaño de su contenedor */
+  max-width: 500px; /* Establece un límite máximo */
+  height: auto; /* Mantiene la proporción de la imagen */
 }
 	.fila
 	{
 		display: flex;
-		align-items: ;
+		align-items: center;
 		gap: 10px; /* Espaciado entre icono, botón y flecha */
 		
 	}
@@ -469,10 +498,66 @@ h1{
 	font-weight: 500;
 }
 
+.carousel-container {
+    
+    position: relative;
+    width: 800%;
+    max-width: 800px; /* Tamaño máximo del carrusel */
+    overflow: hidden;
+    margin: 10px 10px; /* Centrar el carrusel */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    justify-content: space-between;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    
+}
+.carus{
+    display: flex;
+}
+.carus1{
+    background:radial-gradient( #ffff 10%, #ba9364);
+    padding-top: 200px;
+}
+
+.inf{
+    
+    color:#ffff;
+    font-family: 'Arial';
+    flex-direction: column;
+    gap: 20px;
+    text-align:start;
+    padding-inline-start: 10px;
+    margin: 10px ;
+    padding-top: 5px;
+    background:radial-gradient(#ffff 2%,#335669); 
+    border-radius: 20px;
+    
+}
+.info{
+    text-align: start;
+    font-family: "Castellar", sans-serif;
+    font-weight: bold;
+    font-size: 16;
+    color: #a52b2a;
+}
+.carus p{
+    color:black;
+    font-size: 30px;
+    font-family: 'Times New Roman';
+}
+
 /* */
 .seccion {
 		flex-direction: column;
-		background-color: #f5ecdd;
+		background:radial-gradient(#ba9364 10%,#ffff);
 		padding-top: 10px;
 		text-align: center;
 		display: flex;
@@ -483,7 +568,7 @@ h1{
     }
 	.cont{
 		flex-direction: column;
-		background-color: #ffff;
+		background:radial-gradient( #ffff 10%, #ba9364);
 		padding-top: 10px;
 		text-align: center;
 		display: flex;
@@ -531,45 +616,73 @@ h1{
         object-fit: cover;
         margin-right: 20px;
 	}
-    .carousel {
-      width: 500px;
-      height: 300px;
-      margin-left: 300px;
-      overflow: hidden;
-      border-radius: 10px;
-		
-	  margin-top: 50px;
-	  
-    }
-	.carrusel-conteiner {
-  position: relative; /* Fija el contenedor en el flujo del diseño */
-  margin-top: 50px; /* Separación del encabezado */
+  /** RESPONSIVE */
+  @media screen and (max-width: 480px) {
+  .titulo {
+    font-size: 200%; /* Reduce aún más el tamaño de la fuente */
+  }
+
+  .botonesP {
+    flex-direction: column; /* Los botones se apilan verticalmente */
+    gap: 15px;
+  }
+
+  .botones1 {
+    align-items: center; /* Centra los botones en pantallas pequeñas */
+  }
+
+  .imagen-botones {
+    width: 90%; /* Ajusta la imagen para pantallas muy pequeñas */
+    max-width: 350px;
+  }
+
+  .card-info {
+    padding: 10px; /* Ajusta el padding de las tarjetas para pantallas pequeñas */
+  }
 }
-    .carousel-images {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: 100%;
-	  
-    }
-    .carousel-images img {
-      width: 100%;
-      flex-shrink: 0;
-	  
-	  
-    }
+@media screen and (max-width: 768px) {
+  .titulo {
+    font-size: 300%; /* Ajusta el tamaño de la fuente en pantallas pequeñas */
+  }
+
+  .botones1 {
+    margin-left: 0; /* Elimina el margen para pantallas más pequeñas */
+    align-items: center; /* Centra los botones */
+    margin-top: 30px;
+  }
+
+  .botonesP {
+    flex-direction: column; /* Los botones se apilan en pantallas pequeñas */
+    align-items: center; /* Centra los botones */
+  }
+  
+  .imagen-botones {
+    width: 80%; /* Ajusta la imagen para pantallas pequeñas */
+    max-width: 400px;
+  }
+
+  /* Estilo para las secciones de las danzas */
+  .seccion .container {
+    flex-direction: column; /* Las imágenes y las tarjetas se apilan en pantallas pequeñas */
+    align-items: center;
+  }
+
+  .imagen {
+    width: 100%; /* Hace que la imagen se ajuste al tamaño de su contenedor */
+    max-width: 100%; /* Evita que la imagen sea más grande que su contenedor */
+  }
+}
 </style>
 <script>
-    // Selecciona el contenedor de las imágenes
-    const imagesContainer = document.querySelector('.carousel-images');
-    const images = document.querySelectorAll('.carousel-images img');
-    let currentIndex = 0;
+    const carousel = document.querySelector('.carousel');
+    let index = 0;
 
-    // Función para cambiar la imagen
-    function changeImage() {
-      currentIndex = (currentIndex + 1) % images.length; // Cambia al siguiente índice, regresa al inicio si se pasa
-      imagesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    function moveCarousel() {
+        const totalImages = carousel.children.length;
+        index = (index + 1) % totalImages; // Cambia al siguiente índice cíclicamente
+        carousel.style.transform = `translateX(${-index * 100}%)`;
     }
 
-    // Cambiar de imagen cada 3 segundos
-    setInterval(changeImage, 3000);
-  </script>
+    // Desplazamiento automático cada 3 segundos
+    setInterval(moveCarousel, 3000);
+</script>
