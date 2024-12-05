@@ -25,7 +25,9 @@ import Encabezado from '../components/encabezado.astro';
             <img src="/Museo.jpg" alt="Imagen Turística 1">
             <h2>NOMBRE</h2>
             <p>Descripción del destino turístico 1.</p>
-            <a href="/infTuristica/destino1-slug">Ver más</a>
+            <form action="/destinos" method="GET">
+              <button>Ver más</button>
+            </form>
           </div>
         </div>
 
@@ -36,7 +38,9 @@ import Encabezado from '../components/encabezado.astro';
             <img src="/caporales.jpg" alt="Imagen Turística 2">
             <h2>NOMBRE</h2>
             <p>Descripción del destino turístico 2.</p>
-            <a href="/infTuristica/destino2-slug">Ver más</a>
+            <form action="/destinos" method="GET">
+              <button>Ver más</button>
+            </form>
           </div>
         </div>
         <!-- Monumentos -->
@@ -46,7 +50,9 @@ import Encabezado from '../components/encabezado.astro';
           <img src="/Museo.jpg" alt="Imagen Turística 1">
           <h2>NOMBRE</h2>
           <p>Descripción del destino turístico 1.</p>
-          <a href="/infTuristica/destino1-slug">Ver más</a>
+          <form action="/destinos" method="GET">
+            <button>Ver más</button>
+          </form>
         </div>
       </div>
       <!-- Atractivos turisticos -->
@@ -56,7 +62,9 @@ import Encabezado from '../components/encabezado.astro';
             <img src="/Museo.jpg" alt="Imagen Turística 1">
             <h2>NOMBRE</h2>
             <p>Descripción del destino turístico 1.</p>
-            <a href="/infTuristica/destino1-slug">Ver más</a>
+            <form action="/destinos" method="GET">
+              <button>Ver más</button>
+            </form>
           </div>
         </div>
       </div>
@@ -107,9 +115,11 @@ import Encabezado from '../components/encabezado.astro';
       .filters {
         display: flex;
         gap: 10px;
+        width: 40%;
       }
 
       .search-input {
+        width: 70%;
         padding: 10px;
         font-size: 16px;
         border: 1px solid var(--cafe);
@@ -117,6 +127,7 @@ import Encabezado from '../components/encabezado.astro';
       }
 
       .search-button {
+        width: 25%;
         padding: 10px;
         background-color: var(--azul);
         color: var(--beige);
@@ -169,15 +180,15 @@ import Encabezado from '../components/encabezado.astro';
         color: var(--azul);
       }
 
-      .card a {
-        display: block;
-        margin: 15px;
-        padding: 10px;
-        background-color: var(--cafe);
-        color: var(--beige);
-        text-align: center;
-        text-decoration: none;
+      .card button {
+        padding: 10px 130px;
+        background-color: var(--cafe)	;
+        color: #f6ecde;
+        border: none;
         border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-bottom: 10px;
       }
 
       .card:hover {
@@ -225,6 +236,9 @@ import Encabezado from '../components/encabezado.astro';
     .card {
         width: 80%; 
     }
+    .card.buttom{
+      width: 10%;
+    }
     .search-button{
         width: 10%; 
     }
@@ -244,6 +258,7 @@ import Encabezado from '../components/encabezado.astro';
 
     .ad-space {
         margin-top: 10px;
+        margin-left: auto;
     }
 }
 
@@ -253,7 +268,18 @@ import Encabezado from '../components/encabezado.astro';
         width: 100%; 
     }
     .card-wrapper {
-        width: 60%;
+        width: 75%;
+    }
+    .card button {
+        padding: 10px 100px;
+        text-align: center;
+        background-color: var(--cafe)	;
+        color: #f6ecde;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-bottom: 10px;
     }
     .search-button{
         width: 30%; 
