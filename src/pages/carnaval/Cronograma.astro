@@ -1,16 +1,77 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PiePagina from '../../components/piePagina.astro';
 import Encabezado from '../../components/encabezado.astro';
 ---
 
 <Layout title="Cronograma">
     <Encabezado />
     <main>
-        <h1 class="title">CRONOGRAMA</h1>
-
+        
+        <div class="cronograma">
+            <h1 class="title">CRONOGRAMA</h1>
+        <div class="entrada">
+            <div class="slider">
+                <img src="/RolCarnaval2025.png" alt="Cronograma" >
+            </div>
+            
+            <p>
+                Cronograma de entrada
+            </p>
+        </div>
+        <div class="quirqui">
+            <img src="/public/logoTOUR1.png" alt="quirqui saludando">
+        </div>
+        
+    </div>
     </main>
+    <PiePagina />
 </Layout>
 <style>
+.cronograma{
+		flex-direction: column;
+		background:radial-gradient( #ffff 10%, #ba9364);
+		padding-top: 10px;
+		text-align: center;
+		justify-content: center;
+		height: 120vh; /* Ocupa toda la altura de la ventana */
+		
+	}
+.title {
+  color: #a52b2a;
+  font-size: 500%;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Castellar", sans-serif;
+  
+}
+.entrada{
+    align-items: flex-start;
+    height: 200px;
+    width: 200px;
+    margin-left: 20%;
+}
+entrada img{
+    width: 100px;
+    height: 200px;
+}
+.entrada p
+{       
+		text-align: center; 
+		background: #a52b2a;
+		display: flex;
+		padding: 10px 130px 10px 170px;
+		color: white;
+		border-radius: 20px;
+		font-size: 14px;
+		font-weight: bold;
+        width: 220px;
+        
+}
+.quirqui
+{
+    margin-left: 50%;
+}
 
 
 </style>
