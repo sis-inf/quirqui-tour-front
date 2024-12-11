@@ -18,25 +18,25 @@ import Encabezado from "../components/encabezado.astro";
 							<p>Monumento a la Virgen del Socavón</p>
 						</li>
 						<li>
-							<img src="src/pages/oruro/oruroNoche.jpeg" alt="" />
-							<p>Oruro Noche</p>
+							<img src="src/pages/oruro/santuario.jpg" alt="" />
+							<p>Santuario del Socavón</p>
 						</li>
 						<li>
 							<img src="src/pages/oruro/oruroCasco.jpg" alt="" />
-							<p>Oruro Casco</p>
+							<p>Casco del Minero</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/faro.jpg" alt="" />
+							<p>Faro de Conchupata</p>
 						</li>
 						<li>
 							<img src="src/pages/oruro/oruroPlaza.jpg" alt="" />
-							<p>Oruro Plaza</p>
-						</li>
-						<li>
-							<img src="src/pages/oruro/oruroVirgen.jpg" alt="" />
-							<p>Monumento a la Virgen del Socavón</p>
+							<p>Plaza 10 de Febrero</p>
 						</li>
 					</ul>
 				</div>
 				<img
-					src="src/pages/oruro/oruroQuirqui.png"
+					src="src/pages/oruro/quirquiCarnaval.png"
 					alt="quirqui"
 					class="quirqui"
 				/>
@@ -89,29 +89,29 @@ import Encabezado from "../components/encabezado.astro";
 				<div class="slider">
 					<ul>
 						<li>
-							<img src="src/pages/oruro/comida1.jpg" alt="" />
+							<img src="src/pages/oruro/charque.jpg" alt="" />
 							<p>Charquekan</p>
 						</li>
 						<li>
-							<img src="src/pages/oruro/comida1.jpg" alt="" />
-							<p>Comida2</p>
+							<img src="src/pages/oruro/chorizo.jpg" alt="" />
+							<p>Chorizo</p>
 						</li>
 						<li>
-							<img src="src/pages/oruro/comida1.jpg" alt="" />
-							<p>Comida3</p>
+							<img src="src/pages/oruro/intendente.jpg" alt="" />
+							<p>Intendente</p>
 						</li>
 						<li>
-							<img src="src/pages/oruro/comida1.jpg" alt="" />
-							<p>Comida4</p>
+							<img src="src/pages/oruro/tostada.jpg" alt="" />
+							<p>Tostada</p>
 						</li>
 						<li>
-							<img src="src/pages/oruro/comida1.jpg" alt="" />
-							<p>Comida5</p>
+							<img src="src/pages/oruro/rostro.jpg" alt="" />
+							<p>Rostro Asado</p>
 						</li>
 					</ul>
 				</div>
 				<img
-					src="src/pages/oruro/oruroQuirqui.png"
+					src="src/pages/oruro/quirquiComida.png"
 					alt="quirqui"
 					class="quirqui"
 				/>
@@ -122,20 +122,29 @@ import Encabezado from "../components/encabezado.astro";
 </Layout>
 
 <style>
+	main{
+		display: grid;
+		gap: 20px;
+		padding: 15px;
+		text-align: center;
+	}
+	h1 {
+		font-size: 5rem;
+		font-weight: bold;
+		color: #a52b2a;
+		letter-spacing: 3px;
+		margin: 0 auto;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
 	body {
 		background-color: #f6ecde;
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
-	}
-	h1 {
-		font-size: 5rem;
-		font-weight: bold;
 		text-align: center;
-		color: #a52b2a;
-		letter-spacing: 3px;
-		margin: 20px auto;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 	}
 
 	.container {
@@ -144,6 +153,7 @@ import Encabezado from "../components/encabezado.astro";
 		gap: 20px;
 		padding: 15px;
 		box-sizing: border-box;
+		text-align: center;
 	}
 
 	.historia,
@@ -162,6 +172,7 @@ import Encabezado from "../components/encabezado.astro";
 		position: relative;
 		overflow: hidden;
 	}
+
 	.slider ul {
 		display: flex;
 		padding: 0;
@@ -252,21 +263,32 @@ import Encabezado from "../components/encabezado.astro";
 		line-height: 1.6;
 		text-align: justify;
 	}
+
 	.quirqui {
-		width: 100%;
-		margin-top: 10px;
+		width: 104%;
+		margin-top: 100px;
 		border-radius: 10px;
 	}
 
-	@media (max-width: 992px) {
+	@media (max-width: 1024px) {
 		.container {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(1, 1fr);
+			padding: 10px;
+		}
+
+		main {
+			margin-top: 160px;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 3.5rem;
 		}
 	}
 
 	@media (max-width: 768px) {
 		.container {
-			grid-template-columns: 1fr;
+			grid-template-columns: repeat(1, 1fr);
 			padding: 10px;
 		}
 
@@ -274,6 +296,16 @@ import Encabezado from "../components/encabezado.astro";
 		.comida,
 		.sitios-recomendados {
 			margin: 0 auto;
+		}
+
+		main {
+			margin-top: 65px;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 2.5rem;
+			margin-top: 10px;
 		}
 	}
 </style>
