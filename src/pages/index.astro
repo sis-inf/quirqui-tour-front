@@ -45,19 +45,25 @@ import AcercaDe from './acercaDe.astro';
 			  <img src="logoAro.png" alt="Logo Quirqui-Tour">
 			  <h1>QUIRQUI - TOUR</h1>
 			</div>
-			<div class="contenido">
-			  <h2>QUIENES SOMOS</h2>
-			  <p>
-				Somos un equipo de estudiantes apasionados por explorar y compartir las maravillas de nuestro país. Hemos creado esta página para brindarte una guía completa sobre los viajes departamentales e interdepartamentales en Bolivia, con un enfoque especial en la riqueza cultural y turística de Oruro. Aquí encontrarás información sobre destinos turísticos, transporte, festividades como el Carnaval de Oruro, y los fascinantes museos de la región.
-			  </p>
-			  <h2>OBJETIVO</h2>
-			  <p>
-				La página web está desarrollada para poder orientar y ofrecer información a los turistas y también a personas de nuestro departamento, ofrece una amplia información para que pueda visitar y conocer la historia y costumbres de nuestro departamento, también cuenta con información del transporte interdepartamental y departamental de Oruro y explica las tarifas de cada transporte.
-			  </p>
-			  <h2>CARACTERÍSTICAS</h2>
-			  <p>
-				El sitio web “QUIRQUI - TUR” tiene como objeto demostrar a la población en general y poder llegar a los turistas para mostrar los lugares turísticos más importantes como el Carnaval de Oruro, los museos, las rutas interdepartamentales y departamentales, además de tarifas, ofreciendo una información más detallada y óptima sobre los lugares turísticos de Oruro.
-			  </p>
+			<div class="h2-columns">
+				<div class = "column">
+					<h2>QUIENES SOMOS</h2>
+					<p>
+						Somos un equipo de estudiantes apasionados por explorar y compartir las maravillas de nuestro país. Hemos creado esta página para brindarte una guía completa sobre los viajes departamentales e interdepartamentales en Bolivia, con un enfoque especial en la riqueza cultural y turística de Oruro. Aquí encontrarás información sobre destinos turísticos, transporte, festividades como el Carnaval de Oruro, y los fascinantes museos de la región.
+					</p>
+				</div>
+				<div class = "column">
+					<h2>OBJETIVO</h2>
+					<p>
+						La página web está desarrollada para poder orientar y ofrecer información a los turistas y también a personas de nuestro departamento, ofrece una amplia información para que pueda visitar y conocer la historia y costumbres de nuestro departamento, también cuenta con información del transporte interdepartamental y departamental de Oruro y explica las tarifas de cada transporte.
+					</p>
+				</div>
+				<div class = "column">
+					<h2>CARACTERÍSTICAS</h2>
+					<p>
+						El sitio web “QUIRQUI - TUR” tiene como objeto demostrar a la población en general y poder llegar a los turistas para mostrar los lugares turísticos más importantes como el Carnaval de Oruro, los museos, las rutas interdepartamentales y departamentales, además de tarifas, ofreciendo una información más detallada y óptima sobre los lugares turísticos de Oruro.
+					</p>
+				</div>
 			</div>
 		</section>
 		  
@@ -163,10 +169,33 @@ import AcercaDe from './acercaDe.astro';
 	}
     
     @media (max-width: 992px) {
-		.container {
-			grid-template-columns: repeat(2, 1fr);
-		}
+	.container {
+		grid-template-columns: repeat(2, 1fr);
+		padding: 20px;
+		background-size: contain;
+		
 	}
+
+	.h2-columns {
+		flex-direction: column;
+		gap: 30px; /* Espaciado mayor para mejor legibilidad */
+	}
+
+	.column {
+		margin: 0 auto; /* Centra las columnas */
+	}
+
+	.titulo-principal {
+		flex-direction: column;
+		padding: 20px;
+		text-align: center;
+	}
+
+	.titulo-principal h1 {
+		font-size: 2rem;
+	}
+}
+
 
 	@media (max-width: 768px) {
 		.container {
@@ -177,6 +206,50 @@ import AcercaDe from './acercaDe.astro';
 		.sitios-recomendados {
 			margin: 0 auto;
 		}
+		.quienes-somos {
+			padding: 10px;
+			gap: 15px;
+		}
+
+		.h2-columns {
+			display: block; /* Hace que las columnas se apilen */
+		}
+
+		.column {
+			margin-bottom: 20px;
+		}
+
+		.titulo-principal {
+			gap: 10px;
+		}
+
+		.titulo-principal img {
+			width: 120px;
+		}
+
+		.titulo-principal h1 {
+			font-size: 1.8rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.container {
+			background-position: center;
+			height: auto;
+			padding: 10px;
+		}
+
+		.h2-columns {
+			gap: 10px;
+		}
+
+		.titulo-principal img {
+			width: 100px;
+		}
+
+		.titulo-principal h1 {
+			font-size: 1.5rem;
+		}
 	}
 
 	.quienes-somos {
@@ -184,6 +257,8 @@ import AcercaDe from './acercaDe.astro';
 		border-radius: 10px;
 		padding: 20px;
 		margin-bottom: 40px;
+		display: grid;
+		gap: 20px;
 	}
 	
 	.quienes-somos h1 {
@@ -195,9 +270,30 @@ import AcercaDe from './acercaDe.astro';
 	.quienes-somos h2 {
 		color: #5A3E1A;
 		margin-top: 20px;
+		text-align: center;
+		grid-column: span 3;
 	}
 
-    
+    .h2-columns {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px; /* Espaciado entre columnas */
+	}
+
+	.column {
+	flex: 1; /* Asegura que las columnas tengan el mismo tamaño */
+	margin: 0 10px; /* Opcional: añade margen entre las columnas */
+	}
+
+	.column h2 {
+		font-size: 1.7em; /* Tamaño del texto del encabezado */
+		margin-bottom: 10px; /* Espacio debajo del encabezado */
+	}
+
+	.column p {
+	font-size: 1em; /* Ajusta el tamaño del texto dentro de los párrafos */
+	}
+
 	.titulo-principal img {
 		width: 150px; 
 		height: auto;
