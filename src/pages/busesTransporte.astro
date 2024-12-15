@@ -72,23 +72,23 @@ import Encabezado from "../components/encabezado.astro";
         <h1>LISTADO DE EMPRESAS</h1>
       </div>
       <section class="Listar" id="Listar">
-        <div class="card"> 
-          <div class="fotobus">
-            <img src="public/buss.png" alt="Imagen del bus"/>  
-          </div> 
-          <div class="info"> 
-            <div class="nombre_emp">NOMBRE</div> 
-            <br>
-            <br>
-            <div class="cel_emp">Info: +591 999999</div> 
-        </div> 
         <form action="/buscar" method="GET">
-          <button class="boton_inf"> + INFORMACIÓN</button> 
+          <div class="card"> 
+              <div class="fotobus">
+                <img src="public/buss.png" alt="Imagen del bus"/>  
+              </div> 
+              <div class="info"> 
+                <div class="nombre_emp">NOMBRE</div> 
+                <br>
+                <br>
+                <div class="cel_emp">Info: +591 999999</div> 
+              </div> 
+            <button class="boton_inf"> + INFORMACIÓN</button> 
+          </div>
         </form>
-        </div>
-          <figure class="infbuslogo">
+        <figure class="infbuslogo">
             <img src="QUIRQUI_info_bus.png" alt="Descripción de la imagen" />
-          </figure>
+        </figure>
         </div>
       </section>
     </div>
