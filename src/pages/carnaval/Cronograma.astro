@@ -14,7 +14,6 @@ import Encabezado from '../../components/encabezado.astro';
             <div class="slider">
                 <img src="/RolCarnaval2025.png" alt="Cronograma" >
             </div>
-            
             <p>
                 Cronograma de entrada
             </p>
@@ -51,6 +50,7 @@ import Encabezado from '../../components/encabezado.astro';
     width: 200px;
     justify-content: center;
     align-items: center;
+    text-align: center; 
     padding-left: 10%;
 
 }
@@ -76,25 +76,38 @@ entrada img{
 {
     margin-left: 50%;
 }
+.quirqui img{
+    height: 400px;
+    width: 400px;
+}
 
 
 /* Media Queries for Responsive Design */
-@media (max-width: 1394px) {
+@media (max-width: 1800px)
+{
+    .cronograma
+    {
+        height: auto;
+    }
+}
+@media (max-width: 1130px) {
     .title {
         font-size: 300%;
     }
     .cronograma
     {
-        flex-direction: column;
         height: auto;
+        flex-direction: column;
+        width: auto;
     }
-    .entrada {
-        
-    margin-left: 0;
-    align-items: flex-start;
-    height: 200px;
-    width: 200px;
-    padding-left: 20%;    
+    .entrada{
+        margin-left: 50px;
+        text-align: center;
+        flex-direction: column;
+    }
+    .entrada img {
+        width: 300%;
+        height: 170%;
     }
     .entrada p {
         text-align: center; 
@@ -105,13 +118,13 @@ entrada img{
 		border-radius: 20px;
 		font-size: 14px;
 		font-weight: bold;
-        width: 220px;
+        width: 300px;
     }
     .quirqui {
         margin-left: 0;
         text-align: center;
         flex-direction: column;
-        margin-top: 600px;
+        margin-top: 750px;
     }
     
     .quirqui img{
@@ -121,7 +134,94 @@ entrada img{
 }
 
 
-@media (max-width: 522px) {
+@media (max-width: 820px) {
+    .title {
+        font-size: 200%;
+    }
+    .cronograma
+    {
+        height: auto;
+    }
+    .entrada{
+        margin-left: 10%;
+        text-align: center;
+        flex-direction: column;
+    }
+    .entrada img {
+        
+        width: 250%;
+        height: 200%;
+    }
+    .entrada p {
+        font-size: 12px;
+        text-align: center; 
+		background: #a52b2a;
+		display: flex;
+		padding: 10px 10px 10px 10px;
+		color: white;
+		border-radius: 20px;
+		font-size: 14px;
+		font-weight: bold;
+        width: 485px;
+        
+    }
+    .quirqui {
+        margin-left: 0;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 600px;
+    }
+  
+    .quirqui img{
+        width: 200px;
+        height: 200px;
+    }
+}
+@media (max-width: 670px) {
+    .title {
+        font-size: 200%;
+    }
+    .cronograma
+    {
+        height: auto;
+    }
+    .entrada{
+        margin-left: 10px;
+        text-align: center;
+        flex-direction: column;
+    }
+    .entrada img {
+        
+        width: 250%;
+        height: 200%;
+    }
+    .entrada p {
+        font-size: 12px;
+        text-align: center; 
+		background: #a52b2a;
+		display: flex;
+		padding: 10px 10px 10px 10px;
+		color: white;
+		border-radius: 20px;
+		font-size: 14px;
+		font-weight: bold;
+        width: 485px;
+        
+    }
+    .quirqui {
+        margin-left: 0;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 600px;
+    }
+  
+    .quirqui img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 570px) {
     .title {
         font-size: 200%;
     }
@@ -129,6 +229,54 @@ entrada img{
         height: auto;
         flex-direction: column;
         width: auto;
+    }
+    .entrada{
+        margin-left: 30px;
+        text-align: center;
+        flex-direction: column;
+    }
+    .entrada img {
+        width: 170%;
+        height: 150%;
+    }
+    .entrada p {
+        font-size: 12px;
+        text-align: center; 
+		background: #a52b2a;
+		display: flex;
+		padding: 10px 10px 10px 10px;
+		color: white;
+		border-radius: 20px;
+		font-size: 14px;
+		font-weight: bold;
+        width: 325px;
+        
+    }
+    .quirqui {
+        margin-left: 0;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 400px;
+    }
+  
+    .quirqui img{
+        width: 200px;
+        height: 200px;
+    }
+}
+@media (max-width: 440px) {
+    .title {
+        font-size: 200%;
+    }
+    .cronograma {
+        height: auto;
+        flex-direction: column;
+        width: auto;
+    }
+    .entrada{
+        margin-left: 30px;
+        text-align: center;
+        flex-direction: column;
     }
     .entrada img {
         width: 150%;
@@ -144,7 +292,7 @@ entrada img{
 		border-radius: 20px;
 		font-size: 14px;
 		font-weight: bold;
-        width: 200px;
+        width: 285px;
         
     }
     .quirqui {
@@ -152,44 +300,6 @@ entrada img{
         text-align: center;
         flex-direction: column;
         margin-top: 300px;
-    }
-  
-    .quirqui img{
-        width: 200px;
-        height: 200px;
-    }
-}
-@media (max-width: 400px) {
-    .title {
-        font-size: 200%;
-    }
-    .cronograma {
-        height: auto;
-        flex-direction: column;
-        width: auto;
-    }
-    .entrada img {
-        width: 100%;
-        height: 100%;
-    }
-    .entrada p {
-        font-size: 12px;
-        text-align: center; 
-		background: #a52b2a;
-		display: flex;
-		padding: 10px 10px 10px 10px;
-		color: white;
-		border-radius: 20px;
-		font-size: 14px;
-		font-weight: bold;
-        width: 200px;
-        
-    }
-    .quirqui {
-        margin-left: 0;
-        text-align: center;
-        flex-direction: column;
-        margin-top: 200px;
     }
   
     .quirqui img{
