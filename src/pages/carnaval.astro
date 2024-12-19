@@ -7,13 +7,883 @@ import Encabezado from '../components/encabezado.astro';
 <Layout title="Carnaval">
     <Encabezado />
 	<main>
-		<h1>CARNAVAL</h1>
-		<img src="/dist/img1.1.jpeg" alt="">
+        <header id="carnaval" class="cont">
+            <h1 class="titulo">CARNAVAL</h1>
+        <div class="botonesP">
+		<div class="botones1">
+			<div class="fila">
+					<div class="icono">
+						<i class="fa fa-info-circle"></i>
+					</div>
+				<a href="#infor">
+                <button class="btn">
+				Informacion general
+				</button>
+                </a>
+                <div class="guion"></div>
+			</div>
+			
+			<div class="fila">
+				<div class="icono">
+					<i class="fa fa-calendar"></i>
+				</div>
+                <a href="/carnaval/Cronograma">
+				<button class="btn">
+					Ver cronograma
+				</button>
+                </a>
+				<div class="guion"></div>
+			</div>
+		</div>
+		<img src="/public/logoTOUR1.png" alt="quirqui" class="imagen-botones">
+    </div>
+        </header>
+
+        
+    
+    <header id="infor" class="carus1">
+    <div class="carus">
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="/public/diablada1.jpg" alt="Diablada">
+                <img src="/public/morenada1.jpg" alt="Morenada">
+                <img src="/public/caporales1.jpg" alt="Caporales">
+                <img src="/public/tobas.jpg" alt="Tobas">
+            </div>
+        </div>
+        <div class="inf">
+            <h1  class="info">   INFORMACION GENERAL </h1>
+            <p>
+                El Carnaval de Oruro es una de las festividades más importantes de Bolivia, celebrada anualmente en la ciudad de
+                Oruro en honor a la Virgen del Socavón. Reconocido como Patrimonio de la Humanidad por la UNESCO, este carnaval
+                ombina religiosidad, folklore y tradiciones ancestrales. Durante varios días, se lleva a cabo un desfile de comparsas
+                con danzas típicas como la Diablada, la Moreniada y la Saya, acompañadas de impresionantes trajes y música. La Diablada,
+                en particular, destaca por sus disfraces de diablos que simbolizan la lucha entre el bien y el mal. Además, incluye la entrada de
+                la Virgen del Socavón, una procesión religiosa que refleja la devoción de los mineros y la comunidad. Este evento es una manifestación
+                de identidad cultural y un importante atractivo turístico.
+            </p>
+        </div>
+    </div>
+    <div id="ahuatiris"></div>
+    </header>
+    
+
+	<!--	
+ -->
+ 		<header  class="cont">
+		<h1 class="title">AHUATIRIS</h1>
+        <div class="container">
+            <div>
+                <img src="/ahuatiris.jpg" class="imagen" />
+            </div>
+            <div class="card">
+                <div id="caporales" class="card-info">
+                    <p>
+                        La danza de los Ahuatiris es una expresión 
+                        cultural que simula la caza de aves en los 
+                        Andes. Los bailarines, con vestimentas 
+                        ornamentadas y movimientos rápidos, 
+                        representan la destreza de los cazadores y 
+                        la conexión profunda con la fauna local, 
+                        destacando el equilibrio natural en el 
+                        entorno andino. 
+                    </p>
+                </div>
+            </div>
+        </d iv>
+        </header>
+		<header  class="seccion">
+			<h1 class="title">CAPORALES</h1>
+			<div  class="container">
+			
+            <img src="/caporales.jpg" class="imagen" />
+            <div class="card">
+                <div id="cullaguada" class="card-info">
+                    <p>
+                        Los Caporales es una danza energética 
+                        y apasionada que representa la mezcla 
+                        de tradiciones indígenas y africanas 
+                        en Bolivia. Los bailarines llevan trajes 
+                        brillantes y pesadas botas, realizando 
+                        saltos y zapateos vigorosos que simbolizan 
+                        la fuerza y autoridad del caporal.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="cont">
+	<h1  class="title">CULLAGUADA</h1>
+        <div class="container">
+            <img src="/cullaguada.jpg" class="imagen" />
+            <div class="card">
+                <div id="diablada" class="card-info">
+                    <p>
+                        La Cullaguada es una danza de gratitud 
+                        hacia la Pachamama, donde los danzantes, 
+                        con trajes coloridos y gorros tradicionales, 
+                        representan a los campesinos de la región 
+                        andina. A través de sus movimientos y 
+                        cánticos, celebran la riqueza de la tierra 
+                        y su labor en la agricultura.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="seccion">
+		<h1 class="title">DIABLADA</h1>
+        <div class="container">
+            <img src="/diablada.jpg" class="imagen" />
+            <div class="card">
+                <div id="incas" class="card-info">
+                    <p>
+                        La Diablada de Oruro es una danza tradicional
+                        boliviana, conocida por sus trajes coloridos y
+                        máscaras imponentes que representan la lucha
+                        entre el bien y el mal. Es el acto central del
+                        Carnaval de Oruro, Patrimonio Cultural de la
+                        Humanidad, en honor a la Virgen del Socavón,
+                        fusionando simbolismo indígena y cristiano.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="cont">
+	<h1  class="title">INCAS</h1>
+        <div class="container">
+            <img src="/incas.jpg" class="imagen" />
+            <div class="card">
+                <div id="kallawaya" class="card-info">
+                    <p>
+                        La danza de los Incas rinde tributo 
+                        a la cultura incaica, representando 
+                        su grandeza y legado. Con trajes 
+                        elegantes y movimientos ceremoniales, 
+                        muestra la armonía y sabiduría de 
+                        esta civilización ancestral, combinando 
+                        espiritualidad y conexión con la naturaleza.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="seccion">
+		<h1 class="title">KALLAWAYA</h1>
+        <div class="container">
+            <img src="/kallawaya.jpg" class="imagen" />
+            <div class="card">
+                <div id="llamerada" class="card-info">
+                    <p>
+                        La danza Kullawaya representa a los médicos 
+                        tradicionales de Bolivia, famosos por su 
+                        conocimiento en medicina natural y su conexión 
+                        espiritual con la naturaleza. Los bailarines 
+                        llevan paraguas y bolsas con hierbas, simbolizando 
+                        su rol de protectores y sanadores en la comunidad 
+                        andina.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="cont">
+	<h1 class="title">LLAMERADA</h1>
+        <div class="container">
+            <img src="/llamerada.jpg" class="imagen" />
+            <div class="card">
+                <div id="morenada" class="card-info">
+                    <p>
+                        La Llamerada es una danza tradicional
+                        boliviana que representa la vida de los
+                        pastores de llamas en los Andes. Sus
+                        bailarines, vestidos con trajes coloridos y
+                        cargando pequeñas llamas de peluche,
+                        ejecutan pasos que simbolizan el arreo y el
+                        respeto a estos animales.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="seccion">
+		<h1 class="title">MORENADA</h1>
+        <div class="container">
+            <img src="/morenada.jpg" class="imagen" />
+            <div class="card">
+                <div id="negritos" class="card-info">
+                    <p>
+                        La Morenada es una danza tradicional
+                        boliviana de ritmo lento, con trajes vistosos y
+                        máscaras de mejillas hinchadas, que representa a 
+                        los esclavos africanos en la época colonial; es 
+                        emblemática del folclore boliviano y se presenta 
+                        en festivales como el Carnaval de Oruro.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="cont">
+	<h1  class="title">NEGRITOS</h1>
+	<div class="container">
+		<img src="/negritos.jpg" class="imagen" />
+		<div class="card">
+			<div id="potolos" class="card-info">
+				<p>
+					La danza de los Negritos es una 
+					representación alegre de las raíces 
+					africanas en Bolivia, especialmente 
+					en los Yungas. Sus trajes llamativos 
+					y movimientos rítmicos expresan la 
+					vitalidad de la cultura afroboliviana. 
+					Rinde homenaje a los antepasados 
+					africanos y su legado de perseverancia.
+				</p>
+			</div>
+		</div>
+	</div>
+	</header>
+	<header  class="seccion">
+		<h1 class="title">POTOLOS</h1>
+        <div class="container">
+            <img src="/potolos.jpg" class="imagen" />
+            <div class="card">
+                <div id="pujllay" class="card-info">
+                    <p>
+                        La danza de los Potolos es típica de 
+                        la región andina, destacada por sus 
+                        sombreros y trajes coloridos. Representa 
+                        la vida agrícola y cultural de la 
+                        comunidad, los pasos suaves y sincronizados 
+                        celebran la unidad y fortaleza de sus 
+                        tradiciones y costumbres.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="cont">
+	<h1 class="title">PUJLLAY</h1>
+	<div class="container">
+		<img src="/pujllay.jpg" class="imagen" />
+		<div class="card">
+			<div id="salay" class="card-info">
+				<p>
+					El Pujllay es una danza ceremonial que 
+					celebra la abundancia de la tierra y la 
+					fiesta de las cosechas. Los danzantes 
+					visten trajes llenos de colores y 
+					ornamentos, acompañados de una música 
+					alegre que simboliza la gratitud a la 
+					Pachamama y la alegría del trabajo 
+					comunal.
+				</p>
+			</div>
+		</div>
+	</div>
+</header>
+	<header  class="seccion">
+		<h1 class="title">SALAY</h1>
+        <div class="container">
+            <img src="/salay.jpg" class="imagen" />
+            <div class="card">
+                <div id="suri" class="card-info">
+                    <p>
+                        El Salay es una danza alegre y coqueta que 
+                        representa el cortejo y la celebración de 
+                        la juventud en el campo boliviano. Los 
+                        bailarines, con trajes coloridos y sombreros, 
+                        realizan giros y zapateos que reflejan la 
+                        picardía y el dinamismo de la vida campesina, 
+                        celebrando el amor y la vitalidad.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="cont">
+	<h1  class="title">SURI</h1>
+        <div class="container">
+            <img  src="/suri.jpg" class="imagen" />
+            <div class="card">
+                <div id="tarqueada" class="card-info">
+                    <p>
+                        La danza del Suri es una danza de equilibrio 
+                        que representa la elegancia y majestuosidad 
+                        del ñandú andino, o suri. Los bailarines, 
+                        vestidos con plumas y trajes que evocan la 
+                        figura de esta ave, imitan su porte y 
+                        movimientos, simbolizando el respeto y 
+                        conexión con la fauna autóctona.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+	</header>
+	<header class="seccion">
+		<h1 class="title">TARQUEADA</h1>
+        <div class="container">
+            <img src="/tarqueada.jpg" class="imagen" />
+            <div class="card">
+                <div id="tinkus" class="card-info">
+                    <p>
+                        La Tarqueada es una danza de los Andes 
+                        bolivianos que evoca el inicio de la 
+                        siembra y la temporada de lluvias. Los 
+                        bailarines tocan la tarqa, un instrumento 
+                        de viento rústico que produce un sonido 
+                        profundo y envolvente. Los pasos lentos y 
+                        sincronizados reflejan la conexión sagrada 
+                        entre el hombre y la naturaleza.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="cont">
+	<h1  class="title">TINKUS</h1>
+	<div class="container">
+		<img src="/tinkus.jpg" class="imagen" />
+		<div class="card">
+			<div id="tobas" class="card-info">
+				<p>
+					La danza de los Tinkus es una danza ritual 
+					boliviana que simboliza los enfrentamientos 
+					ceremoniales entre comunidades andinas. 
+					Destaca por sus trajes coloridos y dinámicos 
+					movimientos de combate, en honor a la Pachamama, 
+					como agradecimiento y pedido de buenas cosechas.
+				</p>
+			</div>
+		</div>
+	</div>
+</header>
+	<header  class="seccion">
+		<h1 class="title">TOBAS</h1>
+        <div class="container">
+            <img src="/tobas.jpg" class="imagen" />
+            <div class="card">
+                <div id="tundiqui" class="card-info">
+                    <p>
+                        La danza de los Tobas es una expresión
+                        cultural boliviana que recrea la vida de
+                        los pueblos amazónicos guerreros. Con
+                        movimientos ágiles y saltos acrobáticos,
+                        los bailarines usan trajes coloridos con
+                        plumas y adornos que evocan la conexión
+                        con la naturaleza, destacando la fuerza 
+                        y valentía.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="cont">
+	<h1  class="title">TUNDIQUI</h1>
+        <div class="container">
+            <img src="/tundiqui.jpg" class="imagen" />
+            <div class="card">
+                <div id="waka-waka" class="card-info">
+                    <p>
+                        El Tundiqui es una danza afroboliviana 
+                        que celebra la identidad cultural y la 
+                        memoria histórica de la comunidad 
+                        afrodescendiente en Bolivia. Con 
+                        movimientos rítmicos y trajes vibrantes, 
+                        los bailarines recuerdan las tradiciones 
+                        y las luchas de sus ancestros.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
+	<header  class="seccion">
+		<h1 class="title">WAKA WAKA</h1>
+        <div class="container">
+            <img src="/waka waka.jpg" class="imagen" />
+            <div class="card">
+                <div class="card-info">
+                    <p>
+                        El Waka Waka es una danza tradicional que 
+                        parodia las corridas de toros de la época 
+                        colonial. Los bailarines, con trajes que 
+                        imitan al toro y al torero, recrean la 
+                        figura de este espectáculo con humor y 
+                        crítica. La danza representa la resistencia 
+                        indígena y es una fusión de alegría y 
+                        protesta cultural.
+                    </p>
+                </div>
+            </div>
+        </div>
+	</header>
 	</main>
-	<PiePagina />  
+	<PiePagina />
 </Layout>
+
 <style>
-	img{
-		width: 100%;
+	
+a {
+    text-decoration: none;
+}
+
+.botonesP {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten */
+  justify-content: center; /* Centra los elementos */
+  gap: 20px;
+  
+}
+.titulo {
+  color: #a52b2a;
+  font-size: 500%;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Castellar", sans-serif;
+}
+.botones1 {
+  margin-left: 20px; /* Ajuste para dispositivos pequeños */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* Centra los botones */
+  margin-top: 100px;
+}
+
+.imagen-botones {
+  width: 100%; /* Hace que la imagen se ajuste al tamaño de su contenedor */
+  max-width: 500px; /* Establece un límite máximo */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin-left: 20vh;
+}
+	.fila
+	{
+		display: flex;
+		align-items: center;
+		gap: 10px; /* Espaciado entre icono, botón y flecha */
+		
 	}
+	.btn{
+		width: 190px;
+		text-align: center;
+		background: #a52b2a;
+		display: flex;
+		padding: 10px 20px;
+		color: white;
+		border-radius: 20px;
+		font-size: 14px;
+		font-weight: bold;
+		align-items: center;
+	}
+	.guion {
+  margin-left: auto;
+  font-size: 20px;
+  color:#a52b2a;
+}
+.icono
+{
+	width: 24px;
+	height: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #497e6c; /* Verde del ícono */
+	border-radius: 50%;
+	margin-right: 5px;
+	font-size: 16px;
+	color:white;
+}
+h1{
+	color: #a52b2a;
+	font-weight: 500;
+}
+
+.carousel-container {
+    
+    position: relative;
+    width: 800%;
+    max-width: 800px; /* Tamaño máximo del carrusel */
+    overflow: hidden;
+    margin: 10px 10px; /* Centrar el carrusel */
+	border-radius: 20px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    justify-content: space-between;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    
+}
+.carus{
+    display: flex;
+}
+.carus1{
+    background:radial-gradient( #ffff 10%, #ba9364);
+    padding-top: 200px;
+    width: auto;
+    padding-bottom: 200px;
+}
+
+.inf{
+    
+    color:#ffff;
+    font-family: 'Arial';
+    flex-direction: column;
+    gap: 20px;
+    text-align:start;
+    padding-inline-start: 10px;
+    margin: 10px ;
+    padding-top: 5px;
+    background:radial-gradient(#ffff 2%,#335669); 
+    border-radius: 20px;
+    
+}
+.info{
+    text-align: start;
+    font-family: "Castellar", sans-serif;
+    font-weight: bold;
+    font-size: 16;
+    color: #a52b2a;
+}
+.carus p{
+    color:black;
+    font-size: 30px;
+    font-family: 'Times New Roman';
+}
+
+/* */
+.seccion {
+		flex-direction: column;
+		background:radial-gradient(#ba9364 10%,#ffff);
+		padding-top: 10px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 600px; /* Ocupa toda la altura de la ventana */
+		scroll-snap-align: start; /* Asegura que las secciones se alineen al hacer scroll */
+        width: auto;
+    }
+    main {
+		margin-top: 10vh;
+		box-sizing: border-box;
+	}
+.cont{
+		flex-direction: column;
+		background:radial-gradient( #ffff 10%, #ba9364);
+		text-align: center;
+		display: flex;
+		align-items: center;
+		height: auto; /* Ocupa toda la altura de la ventana */
+		scroll-snap-align: start; /* Asegura que las secciones se alineen al hacer scroll */
+        width: auto;
+        padding-top: 10vh;        
+	}
+.title {
+        color: #a52b2a;
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin: 20px 0 20px;
+        text-align: center;
+        font-family: "Arial", sans-serif;
+		padding-top:50px;
+		padding-bottom: 0%;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center; 	
+        padding: 20px 120px;
+        gap: 40px;
+		
+    } 
+    .card {         
+        background-color: #ba9374;			
+        border-radius: 38px;					
+        padding: 25px;
+        text-align: justify;
+        max-width: 650px; 
+        width: auto;           
+    }
+    .card-info {	
+        font-size: 1.15rem;	
+        color: #55341e;
+        line-height: 1.6;
+        font-family: "Arial", sans-serif;
+        font-weight: 600;
+        width:auto ;
+	}
+    .imagen {
+        border-radius: 38px;
+		width: 600px;/*aumentar el ancho de la imagen*/
+		height: 350px; /* Altura fija reducida */
+        object-fit: cover;
+        margin-right: 20px;
+	}
+  /** RESPONSIVE */
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+    }
+    main {
+		margin-top: 10vh;
+		box-sizing: border-box;
+	}
+    
+    .carus
+    {
+        width: auto;
+    }
+    .seccion
+    {
+        
+        width: auto;
+        height: auto;
+    }
+    .cont
+    {
+        width: auto;
+        height: auto;
+    }
+    .title {
+        font-size: 2rem;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+}
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+    }
+    .container image-rendering: {
+        
+        width: auto;
+    };
+    main {
+		margin-top: 5vh;
+		box-sizing: border-box;
+	}
+    .imagen-botones{
+        width: auto;
+        height: 200px;
+        padding-right: 200px;
+        margin-top: 50px;
+    }
+    .cont{
+        flex-direction: column;
+        width: auto;
+        align-items: center;
+       
+    }
+    .carus
+    {
+        flex-direction: column;
+        width: auto;
+        align-items: center;
+    }
+    .carousel-container
+    {
+        width: auto;
+    }
+    .seccion
+    {
+        width: auto;
+        height: auto;
+    }
+    .title {
+        font-size: 300%;
+    }
+}
+@media (max-width: 770px)
+{
+    main {
+		margin-top: 5vh;
+		box-sizing: border-box;
+	} 
+}
+@media (max-width: 680px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 40vh;
+    }
+    .container img{
+        height: 300px;
+        width: 500px;
+
+    }
+    main {
+		margin-top: 5vh;
+		box-sizing: border-box;
+	}
+    .imagen-botones{
+        width: 200px;
+        height: 200px;
+        padding-right: 200px;
+        margin-top: 50px;
+    }
+    .carus
+    {
+        flex-direction: column;
+        width: auto;
+        align-items: center;
+    }
+    .carousel-container
+    {
+        width: auto;
+    }
+    .seccion
+    {
+        width: auto;
+        height: auto;
+    }
+    .titulo
+    {
+     width: auto;
+     text-align: center;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 550px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        width: 30vh;
+    }
+    .container img{
+        height: 300px;
+        width: 400px;
+        margin-left: 30px;
+    }
+    main {
+		margin-top: 5vh;
+		box-sizing: border-box;
+	}
+    .imagen-botones{
+        width: 200px;
+        height: 200px;
+        padding-right: 200px;
+        margin-top: 50px;
+    }
+    .carus
+    {
+        flex-direction: column;
+        width: auto;
+        align-items: center;
+    }
+    .carousel-container
+    {
+        width: auto;
+    }
+    .seccion
+    {
+        width: auto;
+        height: auto;
+    }
+    .titulo
+    {
+     font-size: 60px;
+     text-align: center;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .card-info p {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+}
+@media (max-width: 400px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        width: 25vh;
+    }
+    .container img{
+        height: 300px;
+        width: 300px;
+        margin-left: 30px;
+    }
+    main {
+		margin-top: 5vh;
+		box-sizing: border-box;
+	}
+    .imagen-botones{
+        width: 200px;
+        height: 200px;
+        padding-right: 200px;
+        margin-top: 50px;
+    }
+    
+    .cont{
+        width: auto;
+    }
+    .carus
+    {
+        flex-direction: column;
+        width: auto;
+        align-items: center;
+    }
+    .carousel-container
+    {
+        width: auto;
+    }
+    .seccion
+    {
+        width: auto;
+        height: auto;
+    }
+    .titulo
+    {
+     font-size: 40px;
+     text-align: center;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+}
+
 </style>
+<script>
+    const carousel = document.querySelector('.carousel');
+    let index = 0;
+
+    function moveCarousel() {
+        const totalImages = carousel.children.length;
+        index = (index + 1) % totalImages; // Cambia al siguiente índice cíclicamente
+        //carousel.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    // Desplazamiento automático cada 3 segundos
+    setInterval(moveCarousel, 3000);
+</script>
