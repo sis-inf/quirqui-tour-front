@@ -425,6 +425,9 @@ import Encabezado from '../components/encabezado.astro';
 </Layout>
 
 <style>
+    body{
+        background:radial-gradient( #ffff 10%, #ba9364);
+    }
 a {
     text-decoration: none;
 }
@@ -570,10 +573,12 @@ h1{
     }
     main {
 		margin-top: 10vh;
-		box-sizing: border-box;
+        background:radial-gradient( #ffff 10%, #ba9364);
+        
 	}
 .cont{
 		flex-direction: column;
+		
 		text-align: center;
 		display: flex;
 		align-items: center;
@@ -629,7 +634,7 @@ h1{
         flex-direction: column;
         align-items: center;
         width: 100%;
-        padding: 10px;
+        padding: 0px;
     }
     main {
         margin-top: 5vh;
@@ -747,11 +752,7 @@ h1{
         width: 100%;
         margin-left: 0;
     }
-    main {
-        margin-top: 5vh;
-        margin-right: 5vh;
-        box-sizing: border-box;
-    }
+
     .imagen-botones {
         display: none;
     }
