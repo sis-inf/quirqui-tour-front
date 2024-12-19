@@ -7,7 +7,159 @@ import Encabezado from '../components/encabezado.astro';
 <Layout title="BUSCAR">
     <Encabezado />
 	<main>
-		<h1>BUSCAR</h1>
+		<h1>ENCUENTRA EL MEJOR VIAJE PARA TI</h1>
+		<div class="divisas">Divisa: Bolivianos</div>
+		<div class="contenedor">
+			<div class="bus-info">
+				<div class="fotobus">
+					<img src="public/buss.png" alt="Imagen del bus"/>  
+				  </div>
+				<div class="bus_detalles">
+					<div class="datos"><strong class="sub_titulos">Nombre</strong></div>
+					<div class="cel_emp">Info: +591 00000000</div>
+					<div class="datos"><strong class="sub_titulos">ORIGEN:</strong> Oruro</div>
+					<div class="datos"><strong class="sub_titulos">DESTINO:</strong>"Conectar Con Destino de la BD"</div>
+					<div class="datos"> <strong class="sub_titulos">HORA DE SALIDA:</strong>"Conectar Con Destino de la BD"</div>
+				</div>
+				<div class="precio">Bs. 00</div>
+			</div>
+		</div>
 	</main>
 	<PiePagina />
 </Layout>
+
+<style>
+	main{
+		background-color: #F5ECDD;
+	}
+	body {
+		font-family: Arial, sans-serif;
+		background-color: #F5ECDD;
+		margin: 0;
+		padding: 0;
+	}
+	h1{
+    	color: #A52A2A;
+	}
+	h2{
+		color: #634822;
+	}
+	.contenedor {
+		width: 50%;
+		margin: 20px auto;
+		background-color: #f7e5c8;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		margin-bottom: 40px;
+	}
+	.header {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.header h1 {
+		margin: 0;
+		color: #A52A2A;
+	}
+	.divisas{
+		display: inline-block;
+		background-color: #335669;
+		color: #fff;
+		padding: 5px 10px;
+		border-radius: 4px;
+		margin:0;
+		margin-bottom: 20px;
+		
+	}
+	.bus-info {
+		display: flex;
+		align-items: center;
+		border-top: 2px solid #A52A2A;
+		padding-top: 10px;
+		margin-top: 10px;
+	}
+	.sub_titulos{
+		color: #335669;
+	}
+	.datos{
+		color: #A52A2A;
+	}
+	.cel_emp{
+		color: #566B30;
+	}
+
+	.fotobus{ 
+		width: 135px; 
+		height: 135px; 
+		background-color: #ebbc6b; 
+		border-radius: 5px; 
+		display: flex; 
+		align-items: center; 
+		justify-content: center; 
+		font-size: 12px; 
+		font-weight: bold; 
+  	}
+	.fotobus img{
+		width: 100%; 
+		height: 100%; 
+		object-fit: cover;	
+	}
+	.bus_detalles {
+		flex-grow: 1;
+	}
+	.bus_detalles div {
+		margin-bottom: 10px;
+	}
+	.precio {
+		background-color: #A52A2A;
+		color: #fff;
+		padding: 10px;
+		border-radius: 4px;
+		text-align: center;
+		font-size: 1.5em;
+	}
+	/* celulares */
+  	@media (max-width: 768px) {
+		.contenedor{
+			max-width:  80%;
+		}
+		.bus-info {
+			flex-direction: column; 
+			align-items: center;
+			margin-bottom: 20px;
+			width: 100%;
+		}
+		.fotobus{
+			width: 135px; 
+			height: 135px; 
+			margin-bottom: 10px;
+		}
+		.bus_detalles {
+			margin-right: 0;
+			margin-bottom: 10px; 
+		}
+	}
+  /* tablets */
+    @media (max-width: 1024px) {
+		.contenedor{
+			width: 50%;
+		}
+		.bus-info {
+			flex-direction: column; 
+			align-items: center;
+			margin-bottom: 20px;
+		}
+		.fotobus{
+			width: 135px; 
+			height: 135px; 
+			margin-bottom: 10px;
+		}
+		.bus_detalles {
+			margin-right: 0;
+			margin-bottom: 10px; 
+		}
+		.precio {
+			text-align: center; 
+		}
+    }
+</style>

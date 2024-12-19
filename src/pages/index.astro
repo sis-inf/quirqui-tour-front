@@ -1,20 +1,423 @@
 ---
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import PiePagina from '../components/piePagina.astro';
 import Encabezado from '../components/encabezado.astro';
+import AcercaDe from './acercaDe.astro';
 ---
+
 <Layout title="Inicio">
     <Encabezado />
-	<main>
-		<h1>INICIO</h1>
-		<img src="oruroFoto.jpg" alt="">
-	</main>
-	<PiePagina />
+    <main class="main-content">
+        <div class="container">
+			<h2>-</h2>
+			<div class="sitios-recomendados">
+				<h2>INICIO</h2>
+				<div class="slider">
+					<ul>
+						<li>
+							<img src="src/pages/oruro/oruroVirgen.jpg" alt="" />
+							<p>Monumento a la Virgen del Socavón</p>
+						</li>
+						<li>
+							<img src="/morenada.jpeg" alt="" />
+							<p>Carnaval de Oruro</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/oruroCasco.jpg" alt="" />
+							<p>Oruro Casco</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/oruroPlaza.jpg" alt="" />
+							<p>Oruro Plaza</p>
+						</li>
+						<li>
+							<img src="src/pages/oruro/oruroVirgen.jpg" alt="" />
+							<p>Monumento a la Virgen del Socavón</p>
+						</li>
+					</ul>
+				</div>
+            </div>
+        </div>
+
+		<section class="quienes-somos">
+			<div class="titulo-principal">
+			  <img src="logoAro.png" alt="Logo Quirqui-Tour">
+			  <h1>QUIRQUI - TOUR</h1>
+			</div>
+			<div class="h2-columns">
+				<div class = "column">
+					<h2>QUIENES SOMOS</h2>
+					<p>
+						Somos un equipo de estudiantes apasionados por explorar y compartir las maravillas de nuestro país. Hemos creado esta página para brindarte una guía completa sobre los viajes departamentales e interdepartamentales en Bolivia, con un enfoque especial en la riqueza cultural y turística de Oruro. Aquí encontrarás información sobre destinos turísticos, transporte, festividades como el Carnaval de Oruro, y los fascinantes museos de la región.
+					</p>
+				</div>
+				<div class = "column">
+					<h2>OBJETIVO</h2>
+					<p>
+						La página web está desarrollada para poder orientar y ofrecer información a los turistas y también a personas de nuestro departamento, ofrece una amplia información para que pueda visitar y conocer la historia y costumbres de nuestro departamento, también cuenta con información del transporte interdepartamental y departamental de Oruro y explica las tarifas de cada transporte.
+					</p>
+				</div>
+				<div class = "column">
+					<h2>CARACTERÍSTICAS</h2>
+					<p>
+						El sitio web “QUIRQUI - TUR” tiene como objeto demostrar a la población en general y poder llegar a los turistas para mostrar los lugares turísticos más importantes como el Carnaval de Oruro, los museos, las rutas interdepartamentales y departamentales, además de tarifas, ofreciendo una información más detallada y óptima sobre los lugares turísticos de Oruro.
+					</p>
+				</div>
+			</div>
+		</section>
+		  
+    </main>
+    <PiePagina />
 </Layout>
+
 <style>
-	img{
+	h1 {
+		font-size: 3rem; /* Aumenta aún más el tamaño del título */
+		color: #A52B2A; /* Color rojo para el texto */
+		text-align: center; /* Centra el título */
+		margin-top: 20px; /* Ajusta el espacio encima del título */
+    }
+
+	h2 {
+		margin-top: 20px;
+		font-size: 3rem; /* Aumenta aún más el tamaño del título */
+		color: #F5ECDD; /* Color rojo para el texto */
+		text-align: center; /* Centra el título */
+		margin-top: 20px; /* Ajusta el espacio encima del título */
+    }
+	body, html {
+		margin-top: 0px;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.container {
+		margin: 0;
+		padding: 0;
+		margin-top: -150px;
+		background: linear-gradient(to top, rgba(65, 84, 107, 0.1), rgba(30,35,38,1)), 
+		url('/public/Inicio.jpg');
+		background-size: cover;
+		background-position: top;
+		height: 100vh;
+		color: antiquewhite;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		box-sizing: border-box;
+		align-items: center;
+	}
+
+    .slider {
+		width: 100%;
+		margin: 0zzz0px auto 0;
+		position: relative;
+		overflow: hidden;
+	}
+	.slider ul {
+		display: flex;
+		padding: 0;
+		margin: 0;
+		width: calc(100% * 5);
+		animation: slide 20s infinite alternate ease-in-out;
+	}
+
+	.slider li {
+		list-style: none;
 		width: 100%;
 	}
+
+	.slider img {
+		width: 100%;
+		border-radius: 20px;
+		margin-top: 10px;
+	}
+
+    
+	@keyframes slide {
+		0% {
+			margin-left: 0%;
+		}
+		15% {
+			margin-left: 0%;
+		}
+		20% {
+			margin-left: -100%;
+		}
+		35% {
+			margin-left: -100%;
+		}
+		40% {
+			margin-left: -200%;
+		}
+		55% {
+			margin-left: -200%;
+		}
+		60% {
+			margin-left: -300%;
+		}
+		75% {
+			margin-left: -300%;
+		}
+		80% {
+			margin-left: -400%;
+		}
+		100% {
+			margin-left: -400%;
+		}
+	}
+    
+    @media (max-width: 992px) {
+	.container {
+		grid-template-columns: repeat(2, 1fr);
+		padding: 20px;
+		background-size: contain;
+		
+	}
+
+	.h2-columns {
+		flex-direction: column;
+		gap: 30px; /* Espaciado mayor para mejor legibilidad */
+	}
+
+	.column {
+		margin: 0 auto; /* Centra las columnas */
+	}
+
+	.titulo-principal {
+		flex-direction: column;
+		padding: 20px;
+		text-align: center;
+	}
+
+	.titulo-principal h1 {
+		font-size: 2rem;
+	}
+}
+
+
+	@media (max-width: 768px) {
+		.container {
+			grid-template-columns: 1fr;
+			padding: 10px;
+		}
+
+		.sitios-recomendados {
+			margin: 0 auto;
+		}
+		.quienes-somos {
+			padding: 10px;
+			gap: 15px;
+		}
+
+		.h2-columns {
+			display: block; /* Hace que las columnas se apilen */
+		}
+
+		.column {
+			margin-bottom: 20px;
+		}
+
+		.titulo-principal {
+			gap: 10px;
+		}
+
+		.titulo-principal img {
+			width: 120px;
+		}
+
+		.titulo-principal h1 {
+			font-size: 1.8rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.container {
+			background-position: center;
+			height: auto;
+			padding: 10px;
+		}
+
+		.h2-columns {
+			gap: 10px;
+		}
+
+		.titulo-principal img {
+			width: 100px;
+		}
+
+		.titulo-principal h1 {
+			font-size: 1.5rem;
+		}
+	}
+
+	.quienes-somos {
+		background-color: rgba(249, 221, 221, 0.7);
+		border-radius: 10px;
+		padding: 20px;
+		margin-bottom: 40px;
+		display: grid;
+		gap: 20px;
+	}
+	
+	.quienes-somos h1 {
+		text-align: center;
+		font-size: 3em;
+		color: #F5ECDD;
+	}
+	
+	.quienes-somos h2 {
+		color: #5A3E1A;
+		margin-top: 20px;
+		text-align: center;
+		grid-column: span 3;
+	}
+
+    .h2-columns {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px; /* Espaciado entre columnas */
+	}
+
+	.column {
+	flex: 1; /* Asegura que las columnas tengan el mismo tamaño */
+	margin: 0 10px; /* Opcional: añade margen entre las columnas */
+	}
+
+	.column h2 {
+		font-size: 1.7em; /* Tamaño del texto del encabezado */
+		margin-bottom: 10px; /* Espacio debajo del encabezado */
+	}
+
+	.column p {
+	font-size: 1em; /* Ajusta el tamaño del texto dentro de los párrafos */
+	}
+
+	.titulo-principal img {
+		width: 150px; 
+		height: auto;
+	}
+
+	.titulo-principal h1 {
+		font-size: 2.5em;
+		margin: 0;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 2px; 
+		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+		color: #FFFFFF; 
+	}
+
+    .titulo-principal {
+		background-size: cover; 
+		background-position: center;
+		padding: 30px 20px;
+		display: flex; 
+		align-items: center; 
+		justify-content: center; 
+		gap: 20px; 
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+		border-radius: 10px; 
+        background-color: #872222;
+		text-align: center;
+	}
+
+    .content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .carousel-container {
+        position: relative;
+        width: 80%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .carrusel {
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px 0;
+    }
+
+    .carrusel-imagen {
+        flex: 0 0 100%;
+        display: none;
+    }
+
+    .carousel-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .info {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+	.info-text {
+		color: #F5ECDD; /* Cambié el color del texto a blanco para mejorar la legibilidad */
+		font-size: 20px; /* Aumenté el tamaño de la fuente */
+		border: 0px solid;
+		display: inline-block;
+		padding: 12px; /* Más espacio en el contenedor */
+		border-radius: 5px;
+		background-color: #335669; /* Fondo con el color #335669 */
+	}
+
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgb(157, 43, 43);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 25px;
+        color: #872222;
+        border-radius: 50%;
+        z-index: 10;
+    }
+   /* Responsivo */
+@media (max-width: 768px) {
+	h1 {
+		font-size: 3rem; /* Aumenta aún más el tamaño del título */
+		color: #A52B2A; /* Color rojo para el texto */
+		text-align: center; /* Centra el título */
+		margin-top: -50px; /* Ajusta el espacio encima del título */
+	}
+	.content-wrapper {
+        flex-direction: row; /* Cambiar a fila en lugar de columna */
+        align-items: center; /* Alinea los elementos verticalmente al centro */
+        justify-content: space-between; /* Centra los elementos */
+    }
+
+    .carousel-container {
+        width: 50%;
+    }
+
+    .quirquincho-image {
+        width: 20%; /* Reduce el tamaño de la imagen */
+        height: auto;
+        margin-top: 0px;
+        margin-left: 20px; /* Espacio debajo de la imagen */
+    }
+
+    .info-text {
+        font-size: 18px; /* Ajusta el tamaño del texto para que se vea bien en pantallas pequeñas */
+        padding: 10px; /* Ajusta el padding para que el texto sea más compacto */
+    }
+
+    .carousel-button {
+        font-size: 20px;
+    }
+}
 </style>

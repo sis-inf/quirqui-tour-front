@@ -3,6 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import PiePagina from "../components/piePagina.astro";
 import Encabezado from "../components/encabezado.astro";
+import fetchApi from '../lib/strapi';
+import type Empresas from '../interfaces/empresas';
+
+const empresas = await fetchApi<Empresas[]>({
+  endpoint: 'empresas', // the content type to fetch
+  wrappedByKey: 'data', // the key to unwrap the response
+});
 ---
 
 <Layout title="Buses_y_Transporte">
@@ -68,30 +75,50 @@ import Encabezado from "../components/encabezado.astro";
       <section class="contenedor-boton">
         <a href="#Listar" class="boton-listar">Listar Empresas</a>
       </section>
-
-      <section class="Listar">
+      <div class="lista">
         <h1>LISTADO DE EMPRESAS</h1>
-        <div class="card"> 
-          <img src="ruta/a/la/imagen.jpg" alt="Imagen del autobús">
-           <h2>Nombre</h2> 
-           <p>info: +591 00000000</p> 
-        </div>
-
-
-
-
-      </section>
+      </div>
+      {empresas.map((empresa) => (
+        <section class="Listar" id="Listar">
+          <div class="card"> 
+            <div class="fotobus">
+              <img src="public/buss.png" alt="Imagen del bus"/>  
+            </div> 
+            <div class="info"> 
+              <div class="nombre_emp">
+                <span>Empresa: </span>{empresa.nombre}</div> 
+              <br />
+              <br />
+              <div class="cel_emp">
+                <span>Telefono: </span>{empresa.contacto ? empresa.contacto : 'NULL'}</div> 
+            </div> 
+            <a class="boton_inf" href={`/buscar/${empresa.id}/`}>INFORMACIÓN</a> 
+          </div>
+        </section>
+      ))}
     </div>
   </main>
   <PiePagina />
 </Layout>
 
 <style>
-  body {
+  main {
     background-color: #f6ecde; 
+  }
+  body{
+    background-color: #f6ecde; 
+  }
+  html { 
+    scroll-behavior: smooth;
   }
   h1{
     color: #A52A2A;
+  }
+  h2{
+    color: #634822;
+  }
+  label{
+    color: #FBF8F3;
   }
   .contenedor {
     display: flex;
@@ -185,7 +212,6 @@ import Encabezado from "../components/encabezado.astro";
     align-items: center;
     justify-content: center;
   }
-
   .buses-logo img {
     max-width: 350px;
     height: auto;
@@ -198,7 +224,6 @@ import Encabezado from "../components/encabezado.astro";
     text-align: left;
     width: 100%;
   }
-
   .boton-listar {
     padding: 10px 20px;
     background-color: #A52A2A	;
@@ -208,42 +233,92 @@ import Encabezado from "../components/encabezado.astro";
     cursor: pointer;
     text-decoration: none; 
   }
-
   .boton-listar:hover { 
     transform: translateY(-2px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
   /* Listado de Empresas */
+  .lista{
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .Listar { 
+    display: flex; 
+    align-items: flex-start; 
+   }
   .card { 
     display: flex; 
-    align-items: center;
-    border: 1px solid #ccc; 
-    border-radius: 8px; 
-    padding: 16px; 
-    max-width: 300px; 
+    align-items: center; 
+    background-color: #f7e5c8; 
+    border-bottom: 4px solid #A52A2A;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    border-radius: 10px; 
+    width: 550px; 
     font-family: Arial, sans-serif; 
-    background-color: #f9f9f9; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    flex-grow: 1;
   } 
-  .card img { 
-    width: 100%; 
-    border-radius: 8px; 
-    margin-right: 16px;
+  .card .fotobus{ 
+    width: 120px; 
+    height: 120px; 
+    background-color: #ebbc6b; 
+    border-radius: 5px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 12px; 
+    font-weight: bold; 
   } 
-  .card h2 { 
-    font-size: 1.5em; 
-    margin: 8px 0; 
-  }
-  .card p { 
-    color: #555; 
-    margin: 0; 
-  } 
+	.fotobus img{
+		width: 100%; 
+		height: 100%; 
+		object-fit: cover;	
+	}
   .card .info { 
-    margin-top: 12px; 
-    font-size: 0.9em; 
-    color: #777; 
+    flex-grow: 1; 
+    margin-left: 20px; 
+    align-items: center; 
+    justify-content: center;
+  } 
+  .card .info .nombre_emp { 
+    font-size: 18px; 
+    margin-top: 10px;
+    font-weight: bold; 
+    color: #335669;
+    
+  } 
+  .card .info .cel_emp { 
+    font-size: 16px; 
+    margin-bottom: 10px;
+    margin-top: 5px; 
+    color: #566B30;
   }
-
+  .boton_inf {
+    padding: 10px 20px;
+    background-color: #A52A2A	;
+    color: #f6ecde;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; 
+  }
+  .boton_inf:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  .infbuslogo{
+    background-color:#f6ecde;
+    padding: auto;
+    flex: 0.7;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+  .infbuslogo img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+  }
   /* celulares */
   @media (max-width: 768px) {
     .contenedor {
@@ -275,16 +350,28 @@ import Encabezado from "../components/encabezado.astro";
       max-width: 100%; 
       box-sizing: border-box; 
     }
-
+    .Listar{
+      flex-direction: column;
+      align-items: center;
+      width: 75%;
+    }
+    .card{
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      width: 100%;
+    }
     .buses-logo {
       display: none; /* oculta el logo en pantallas de celulares */
     }
+    .infbuslogo {
+      display: none; /* oculta el logo en pantallas de celulares */
+    }
   }
-
   .contenedor-boton {
     margin-bottom: 20px; 
   }
-
+ 
   /* tablets */
   @media (max-width: 1024px) {
     .contenedor {
@@ -306,6 +393,16 @@ import Encabezado from "../components/encabezado.astro";
     .formulario-transporte {
       margin-top: 10px; 
       max-width: 100%; 
+    }
+    .Listar{
+      flex-direction: column;
+      align-items: center;
+    }
+    .card{
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      width: 100%;
     }
   }
 </style>
