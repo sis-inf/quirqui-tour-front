@@ -20,7 +20,7 @@ import Encabezado from '../components/encabezado.astro';
 				Informacion general
 				</button>
                 </a>
-                <div class="guion"></div>
+                <div class="guion">></div>
 			</div>
 			
 			<div class="fila">
@@ -32,7 +32,7 @@ import Encabezado from '../components/encabezado.astro';
 					Ver cronograma
 				</button>
                 </a>
-				<div class="guion"></div>
+				<div class="guion">></div>
 			</div>
 		</div>
 		<img src="/public/logoTOUR1.png" alt="quirqui" class="imagen-botones">
@@ -629,244 +629,226 @@ h1{
         object-fit: cover;
         margin-right: 20px;
 	}
-  /** RESPONSIVE */
-/* Responsive Design */
-@media (max-width: 1400px) {
+/* Estilos para pantallas de hasta 1024px */
+@media (max-width: 1024px) {
     .container {
         flex-direction: column;
         align-items: center;
-        width: auto;
+        width: 100%;
+        padding: 10px;
     }
     main {
-		margin-top: 10vh;
-		box-sizing: border-box;
-	}
-    
-    .carus
-    {
-        width: auto;
+        margin-top: 5vh;
+        box-sizing: border-box;
     }
-    .seccion
-    {
-        
-        width: auto;
+    .carus {
+        width: 100%;
+    }
+    .seccion {
+        width: 100%;
         height: auto;
     }
-    .cont
-    {
-        width: auto;
+    .cont {
+        width: 100%;
         height: auto;
     }
     .title {
         font-size: 2rem;
     }
-
-    .container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
     .card {
         max-width: 90%;
     }
 }
-@media (max-width: 1200px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        width: auto;
-    }
-    .container image-rendering: {
-        
-        width: auto;
-    };
-    main {
-		margin-top: 5vh;
-		box-sizing: border-box;
-	}
-    .imagen-botones{
-        width: auto;
-        height: 200px;
-        padding-right: 200px;
-        margin-top: 50px;
-    }
-    .cont{
-        flex-direction: column;
-        width: auto;
-        align-items: center;
-       
-    }
-    .carus
-    {
-        flex-direction: column;
-        width: auto;
-        align-items: center;
-    }
-    .carousel-container
-    {
-        width: auto;
-    }
-    .seccion
-    {
-        width: auto;
-        height: auto;
-    }
-    .title {
-        font-size: 300%;
-    }
-}
-@media (max-width: 770px)
-{
-    main {
-		margin-top: 5vh;
-		box-sizing: border-box;
-	} 
-}
-@media (max-width: 680px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        width: 40vh;
-    }
-    .container img{
-        height: 300px;
-        width: 500px;
 
-    }
-    main {
-		margin-top: 5vh;
-		box-sizing: border-box;
-	}
-    .imagen-botones{
-        width: 200px;
-        height: 200px;
-        padding-right: 200px;
-        margin-top: 50px;
-    }
-    .carus
-    {
+/* Estilos para pantallas de hasta 768px */
+@media (max-width: 768px) {
+    .container {
         flex-direction: column;
-        width: auto;
         align-items: center;
+        width: 90%;
+        padding: 10px;
     }
-    .carousel-container
-    {
-        width: auto;
-    }
-    .seccion
-    {
-        width: auto;
+    .container img {
+        width: 90%;
         height: auto;
     }
-    .titulo
-    {
-     width: auto;
-     text-align: center;
+    main {
+
+        margin-top: 5vh;
+        box-sizing: border-box;
+    }
+    .imagen-botones {
+        width: 100%;
+        height: auto;
+        margin-top: 50px;
+    }
+    .carus {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .carousel-container {
+        width: 100%;
+    }
+    .seccion {
+        width: 100%;
+        height: auto;
+    }
+    .titulo {
+        width: 100%;
+        text-align: center;
     }
     .title {
         font-size: 1.5rem;
     }
-}
-@media (max-width: 550px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        width: 30vh;
-    }
-    .container img{
-        height: 300px;
-        width: 400px;
-        margin-left: 30px;
-    }
-    main {
-		margin-top: 5vh;
-		box-sizing: border-box;
-	}
-    .imagen-botones{
-        width: 200px;
-        height: 200px;
-        padding-right: 200px;
-        margin-top: 50px;
-    }
-    .carus
-    {
-        flex-direction: column;
-        width: auto;
-        align-items: center;
-    }
-    .carousel-container
-    {
-        width: auto;
-    }
-    .seccion
-    {
-        width: auto;
-        height: auto;
-    }
-    .titulo
-    {
-     font-size: 60px;
-     text-align: center;
-    }
-    .title {
-        font-size: 1.5rem;
-    }
-
     .card-info p {
         font-size: 0.9rem;
     }
-
     .container {
         padding: 10px;
     }
 }
+
+/* Estilos adicionales para pantallas de hasta 680px */
+@media (max-width: 680px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .container img {
+        width: 100%;
+        height: auto;
+    }
+    main {
+        margin-top: 5vh;
+        box-sizing: border-box;
+    }
+    .imagen-botones {
+        width: 100%;
+        height: auto;
+        margin-top: 50px;
+    }
+    .carus {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .carousel-container {
+        width: 100%;
+    }
+    .seccion {
+        width: 100%;
+        height: auto;
+    }
+    .titulo {
+        width: 100%;
+        text-align: center;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
 }
+
+/* Estilos para pantallas de hasta 425px */
+@media (max-width: 425px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        padding: 10px;
+    }
+    .container img {
+        height: auto;
+        width: 100%;
+        margin-left: 0;
+    }
+    main {
+        margin-top: 5vh;
+        box-sizing: border-box;
+    }
+    .imagen-botones {
+        width: 100%;
+        height: auto;
+        padding-right: 0;
+        margin-top: 50px;
+    }
+    .cont {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .carus {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .carousel-container {
+        width: 100%;
+    }
+    .seccion {
+        width: 100%;
+        height: auto;
+    }
+    .titulo {
+        width: 100%;
+        text-align: center;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .card-info p {
+        font-size: 0.8rem;
+    }
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Estilos para pantallas de hasta 400px */
 @media (max-width: 400px) {
     .container {
         flex-direction: column;
         align-items: center;
         align-content: center;
-        width: 25vh;
+        width: 90%;
+        padding: 10px;
     }
-    .container img{
-        height: 300px;
-        width: 300px;
-        margin-left: 30px;
+    .container img {
+        height: auto;
+        width: 97%;
+        margin-left: 0;
+        justify-items: center;
     }
     main {
-		margin-top: 5vh;
-		box-sizing: border-box;
-	}
-    .imagen-botones{
-        width: 200px;
-        height: 200px;
-        padding-right: 200px;
+        margin-top: 5vh;
+        box-sizing: border-box;
+    }
+    .imagen-botones {
+        width: 100%;
+        height: auto;
+        padding-right: 0;
         margin-top: 50px;
     }
-    
-    .cont{
-        width: auto;
+    .cont {
+        width: 100%;
     }
-    .carus
-    {
+    .carus {
         flex-direction: column;
-        width: auto;
+        width: 100%;
         align-items: center;
     }
-    .carousel-container
-    {
-        width: auto;
+    .carousel-container {
+        width: 100%;
     }
-    .seccion
-    {
-        width: auto;
+    .seccion {
+        width: 100%;
         height: auto;
     }
-    .titulo
-    {
-     font-size: 40px;
-     text-align: center;
+    .titulo {
+        font-size: 40px;
+        text-align: center;
     }
     .title {
         font-size: 1.5rem;
@@ -881,7 +863,7 @@ h1{
     function moveCarousel() {
         const totalImages = carousel.children.length;
         index = (index + 1) % totalImages; // Cambia al siguiente índice cíclicamente
-        //carousel.style.transform = `translateX(${-index * 100}%)`;
+        carousel.style.transform = `translateX(${-index * 100}%)`;
     }
 
     // Desplazamiento automático cada 3 segundos
