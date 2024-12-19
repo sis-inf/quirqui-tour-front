@@ -3,6 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import PiePagina from "../components/piePagina.astro";
 import Encabezado from "../components/encabezado.astro";
+import fetchApi from '../lib/strapi';
+import type Empresas from '../interfaces/empresas';
+
+const empresas = await fetchApi<Empresas[]>({
+  endpoint: 'empresas', // the content type to fetch
+  wrappedByKey: 'data', // the key to unwrap the response
+});
 ---
 
 <Layout title="Buses_y_Transporte">
@@ -71,26 +78,24 @@ import Encabezado from "../components/encabezado.astro";
       <div class="lista">
         <h1>LISTADO DE EMPRESAS</h1>
       </div>
-      <section class="Listar" id="Listar">
-        <form action="/buscar" method="GET">
+      {empresas.map((empresa) => (
+        <section class="Listar" id="Listar">
           <div class="card"> 
-              <div class="fotobus">
-                <img src="public/buss.png" alt="Imagen del bus"/>  
-              </div> 
-              <div class="info"> 
-                <div class="nombre_emp">NOMBRE</div> 
-                <br>
-                <br>
-                <div class="cel_emp">Info: +591 999999</div> 
-              </div> 
-            <button class="boton_inf"> + INFORMACIÓN</button> 
+            <div class="fotobus">
+              <img src="public/buss.png" alt="Imagen del bus"/>  
+            </div> 
+            <div class="info"> 
+              <div class="nombre_emp">
+                <span>Empresa: </span>{empresa.nombre}</div> 
+              <br />
+              <br />
+              <div class="cel_emp">
+                <span>Telefono: </span>{empresa.contacto ? empresa.contacto : 'NULL'}</div> 
+            </div> 
+            <a class="boton_inf" href={`/buscar/${empresa.id}/`}>INFORMACIÓN</a> 
           </div>
-        </form>
-        <figure class="infbuslogo">
-            <img src="QUIRQUI_info_bus.png" alt="Descripción de la imagen" />
-        </figure>
-        </div>
-      </section>
+        </section>
+      ))}
     </div>
   </main>
   <PiePagina />
