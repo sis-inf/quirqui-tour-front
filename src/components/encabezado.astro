@@ -17,397 +17,461 @@ import Card from "../components/Card.astro";
 						<a href="/"><img src="/logo.png" alt="" /></a>
 					</figure>
 				</div>
+				<section class="navegacion-contenedor seccion">
+					<nav class="navbar" id="navbar">
+						<input type="checkbox" id="checkbox" />
+			
+						<!-- Enlaces de navegación -->
+						<ul class="nav-links" id="nav-links">
+							<li><a href="/">INICIO</a></li>
+							<li><a href="/oruro">ORURO</a></li>
+							<li class="dropdown">
+								<a href="/carnaval" class="carnaval"id="carnaval-link">CARNAVAL</a>
+								<ul class="dropdown-menu" id="carnaval-submenu">
+									<li><a href="/carnaval/diablada">Diablada</a></li>
+									<li><a href="/carnaval/morenada">Morenada</a></li>
+									<li><a href="/carnaval/llamerada">Llamerada</a></li>
+									<li><a href="/carnaval/tobas">Tobas</a></li>
+									<li><a href="/carnaval/tinkus">Tinkus</a></li>
+									<li><a href="/carnaval/incas">Incas</a></li>
+									<li><a href="/carnaval/tarqueada">Tarqueada</a></li>
+											<li><a href="/carnaval/pujllay">Pujllay</a></li>
+											<li><a href="/carnaval/potolos">Potolos</a></li>
+									<li class="dropdown-submenu">
+										<a href="#" id="ver-mas">Ver más</a>
+										<ul class="dropdown-menu" id="mas-danzas" style="display: none;">
+											<li><a href="/carnaval/negritos">Negritos</a></li>
+											<li><a href="/carnaval/caporales">Caporales</a></li>
+											<li><a href="/carnaval/tundiqui">Tundiqui</a></li>
+											<li><a href="/carnaval/ahuatiris">Ahuatiris</a></li>
+											<li><a href="/carnaval/cullaguada">Cullaguada</a></li>
+											<li><a href="/carnaval/suri">Suri</a></li>
+											<li><a href="/carnaval/salay">Salay</a></li>
+											<li><a href="/carnaval/kallawaya">Kallawaya</a></li>
+											<li><a href="/carnaval/waka-waka">Waka Waka</a></li>
+											<!-- Agrega más danzas según sea necesario -->
+	
+											<!-- <li class="dropdown-submenu">
+												<a href="#" id="ver-mas-dos">Ver más</a>
+												<ul class="dropdown-menu" id="otras-danzas" style="display: none;">
+											<li><a href="/carnaval/tarqueada">Tarqueada</a></li>
+											<li><a href="/carnaval/Pujllay">Pujllay</a></li>
+											<li><a href="/carnaval/potolos">Potolos</a></li>
+											<li><a href="/carnaval/salay">Salay</a></li>
+											<li><a href="/carnaval/kallawaya">Kallawaya</a></li>
+											<li><a href="/carnaval/waka-waka">Waka Waka</a></li>
+												</ul>
+											</li> -->
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<!--<li><a href="/museos">MUSEOS</a></li>
+							<li><a href="/acercaDe">ACERCA DE</a></li>
+							<li><a href="/gesContenido">GES. DE CONTENIDO</a></li>-->
+							<li>
+								<a href="/busesTransporte">BUSES & TRANSPORTE</a>
+							</li>
+							<li><a href="/infTuristica">INF. TURISTICA</a></li>
+							<li><a href="/acercaDe">EQUIPO DE TRABAJO</a></li>
+						</ul>
+					</nav>
+					<script>
+						document.getElementById("ver-mas").addEventListener("click", function(event) {
+							event.preventDefault(); // Evita que el enlace se active
+							const masDanzas = document.getElementById("mas-danzas");
+							if (masDanzas.style.display === "none") {
+								masDanzas.style.display = "block";
+								this.textContent = "Ver menos";
+							} else {
+								masDanzas.style.display = "none";
+								this.textContent = "Ver más";
+							}
+						});
+	
+						document.addEventListener("DOMContentLoaded", function () {
+							const url = window.location.pathname;
+							const carnavalSubmenu = document.getElementById("carnaval-submenu");
+							const carnavalLink = document.getElementById("carnaval-link");
+	
+							// Verificar si estamos en la página /carnaval
+							if (url === "/carnaval") {
+								// Agregar evento de clic al enlace "Carnaval"
+								carnavalLink.addEventListener("click", function(event) {
+									event.preventDefault(); // Evita recargar la página
+									
+									// Alternar visibilidad del submenú
+									carnavalSubmenu.style.display = carnavalSubmenu.style.display === "block" ? "none" : "block";
+								});
+							} else {
+								// Asegurar que el submenú esté oculto en otras páginas
+								carnavalSubmenu.style.display = "none";
+							}
+						});
+						document.addEventListener("DOMContentLoaded", function () {
+						const url = window.location.pathname;
+						const carnavalLink = document.getElementById("carnaval-link");
+	
+						if (url === "/carnaval") {
+							carnavalLink.classList.add("active");
+						}
+					});
+					document.addEventListener("DOMContentLoaded", function () {
+						const url = window.location.pathname;
+						const navLinks = document.querySelectorAll(".nav-links a");
+	
+						navLinks.forEach(link => {
+							if (link.getAttribute("href") === url) {
+								link.classList.add("active");
+							}
+						});
+					});
+					</script>
+	
+				</section>
+				<div >
+					<figure class="quirqui1">
+						<img  src="/quirquiEncabezado.png" alt="" style="transform: scaleX(-1);"/>
+					</figure>
+				</div>
+				
 			</section>
-			<section class="navegacion-contenedor seccion">
-				<nav class="navbar" id="navbar">
-					<input type="checkbox" id="checkbox" />
-					<div class="menu">
-						<label for="checkbox"></label>
-						<img src="close.svg" class="x-icon" alt="" />
-						<img src="menu.svg" class="line-icon" alt="" />
-					</div>
-					<!-- Enlaces de navegación -->
-					<ul class="nav-links" id="nav-links">
-						<li><a href="/">INICIO</a></li>
-						<li><a href="/oruro">ORURO</a></li>
-						<li><a href="/infTuristica">INF. TURISTICA</a></li>
-						<li>
-							<a href="/busesTransporte">BUSES & TRANSPORTE</a>
-						</li>
-						<li class="dropdown">
-							<a href="/carnaval" class="carnaval"id="carnaval-link">CARNAVAL</a>
-							<ul class="dropdown-menu" id="carnaval-submenu">
-								<li><a href="/carnaval/diablada">Diablada</a></li>
-								<li><a href="/carnaval/morenada">Morenada</a></li>
-								<li><a href="/carnaval/llamerada">Llamerada</a></li>
-								<li><a href="/carnaval/tobas">Tobas</a></li>
-								<li><a href="/carnaval/tinkus">Tinkus</a></li>
-								<li><a href="/carnaval/incas">Incas</a></li>
-								<li><a href="/carnaval/tarqueada">Tarqueada</a></li>
-										<li><a href="/carnaval/pujllay">Pujllay</a></li>
-										<li><a href="/carnaval/potolos">Potolos</a></li>
-								<li class="dropdown-submenu">
-									<a href="#" id="ver-mas">Ver más</a>
-									<ul class="dropdown-menu" id="mas-danzas" style="display: none;">
-										<li><a href="/carnaval/negritos">Negritos</a></li>
-										<li><a href="/carnaval/caporales">Caporales</a></li>
-										<li><a href="/carnaval/tundiqui">Tundiqui</a></li>
-										<li><a href="/carnaval/ahuatiris">Ahuatiris</a></li>
-										<li><a href="/carnaval/cullaguada">Cullaguada</a></li>
-										<li><a href="/carnaval/suri">Suri</a></li>
-										<li><a href="/carnaval/salay">Salay</a></li>
-										<li><a href="/carnaval/kallawaya">Kallawaya</a></li>
-										<li><a href="/carnaval/waka-waka">Waka Waka</a></li>
-										<!-- Agrega más danzas según sea necesario -->
-
-										<!-- <li class="dropdown-submenu">
-											<a href="#" id="ver-mas-dos">Ver más</a>
-											<ul class="dropdown-menu" id="otras-danzas" style="display: none;">
-										<li><a href="/carnaval/tarqueada">Tarqueada</a></li>
-										<li><a href="/carnaval/Pujllay">Pujllay</a></li>
-										<li><a href="/carnaval/potolos">Potolos</a></li>
-										<li><a href="/carnaval/salay">Salay</a></li>
-										<li><a href="/carnaval/kallawaya">Kallawaya</a></li>
-										<li><a href="/carnaval/waka-waka">Waka Waka</a></li>
-											</ul>
-										</li> -->
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="/museos">MUSEOS</a></li>
-						<li><a href="/acercaDe">ACERCA DE</a></li>
-						<li><a href="/gesContenido">GES. DE CONTENIDO</a></li>
-					</ul>
-				</nav>
-				<script>
-					document.getElementById("ver-mas").addEventListener("click", function(event) {
-        event.preventDefault(); // Evita que el enlace se active
-        const masDanzas = document.getElementById("mas-danzas");
-        if (masDanzas.style.display === "none") {
-            masDanzas.style.display = "block";
-            this.textContent = "Ver menos";
-        } else {
-            masDanzas.style.display = "none";
-            this.textContent = "Ver más";
-        }
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const url = window.location.pathname;
-        const carnavalSubmenu = document.getElementById("carnaval-submenu");
-        const carnavalLink = document.getElementById("carnaval-link");
-
-        // Verificar si estamos en la página /carnaval
-        if (url === "/carnaval") {
-            // Agregar evento de clic al enlace "Carnaval"
-            carnavalLink.addEventListener("click", function(event) {
-                event.preventDefault(); // Evita recargar la página
-                
-                // Alternar visibilidad del submenú
-                carnavalSubmenu.style.display = carnavalSubmenu.style.display === "block" ? "none" : "block";
-            });
-        } else {
-            // Asegurar que el submenú esté oculto en otras páginas
-            carnavalSubmenu.style.display = "none";
-        }
-    });
-	document.addEventListener("DOMContentLoaded", function () {
-    const url = window.location.pathname;
-    const carnavalLink = document.getElementById("carnaval-link");
-
-    if (url === "/carnaval") {
-        carnavalLink.classList.add("active");
-    }
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const url = window.location.pathname;
-    const navLinks = document.querySelectorAll(".nav-links a");
-
-    navLinks.forEach(link => {
-        if (link.getAttribute("href") === url) {
-            link.classList.add("active");
-        }
-    });
-});
-</script>
-
-			</section>
+			<div class="menu">
+				<label for="checkbox"></label>
+				<img src="close.svg" class="x-icon" alt="" />
+				<img src="menu.svg" class="line-icon" alt="" />
+			</div>
+			
+			
 		</div>
 	</header>
 </Layout>
 <style>
 
-#carnaval-submenu {
-    display: none; /* Oculto por defecto */
-}
-
-	/*variable globales*/
-	:root {
-		--color-primario: #8b4513;
-		--color-secundario: #f5ecdd;
-		--negro: #000000;
-		--blanco: #0c0c0c;
-		--letras: #556b2f;
-		--font-Akshar: "Akshar", serif;
-		--font-Roboto: "Roboto", serif;
+	#carnaval-submenu {
+		display: none; /* Oculto por defecto */
 	}
-	/*OJO*/
-	html,
-	body {
-		height: 100%;
-		margin: 0;
-	}
-
-	body {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	} /*SOLO DEMOSTRACIÓN*/
-
-	/*stylos de la navegacion principal*/
-
-	/*header*/
-	.navegacion {
-		width: 100%;
-		height: 180px;
-		position: fixed;
-	}
-	.contenedor-logo {
-		background-color: var(--color-primario);
-	}
-	.seccion {
-		width: 100%;
-		height: 100%;
-	}
-
-	.navbar {
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		position: fixed;
-		font-family: var(--font-Akshar);
-		text-align: center;
-		background-color: var(--color-secundario);
-		height: 55px;
-	}
-
-	.logo {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	.logo img {
-		width: 120px; /* Tamaño del logo */
-		height: auto;
-		margin-right: 0;
-	}
-
-	.nav-links {
-		list-style: none;
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		width: 100%;
-		height: 40px;
-		padding: 0;
-	}
-
-	.nav-links li {
-		display: inline-block;
-		padding: 0 20px;
-	}
-
-	.nav-links a {
-		text-decoration: none;
-		color: var(--letras);
-		font-size: 20px;
-		font-weight: 600;
-		text-transform: uppercase;
-	}
-
-	.nav-links a:hover {
-		text-decoration: underline;
-		color: var(--negro);
-	}
-	.menu,
-	input {
-		display: none;
-	}
-
-.nav-links a.active {
-    background-color: rgba(186, 147, 116, 0.7); /* Fondo claro */
-    color: var(--negro); /* Letra negra */
-    padding: 1px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-	display: inline-block; /* Asegura que solo ocupe el espacio necesario */
-}
-
-	/* Estilos para el menú desplegable de Carnaval */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none; /* Oculto por defecto */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: rgba(186, 147, 116, 0.7);
-    padding: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-	width: 160px;
-}
-
-.dropdown-menu li {
-    padding: 5px 20px;
-}
-
-.dropdown-menu li a {
-    color: #6f4428;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-	padding: 5px 20px;
-}
-
-.dropdown-menu li a:hover {
-    background-color: #b8a08e;
-    color: #fff;
-}
-
-/* Mostrar el menú desplegable al pasar el mouse */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-submenu .dropdown-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background-color: rgba(186, 147, 116, 0.7);
-    position: absolute;
-    left: 100%;
-    top: 0;
-	width: 160px;
-}
-
-.dropdown-submenu .dropdown-menu li a {
-    color: #6f4428;
-    text-decoration: none;
-    padding: 5px 15px;
-    display: block;
-}
-
-.dropdown-submenu .dropdown-menu li a:hover {
-    background-color: #b8a08e;
-    color: #fff;
-}
-
-	@media screen and (max-width: 768px) {
-		.nav-links {
-			position: absolute;
+	
+		/*variable globales*/
+		:root {
+			--color-primario: #8b4513;
+			--color-secundario: #f5ecdd;
+			--negro: #A52B2A;
+			--blanco: #0c0c0c;
+			--letras: #556b2f;
+			--font-Akshar: "Akshar", serif;
+			--font-Roboto: "Roboto", serif;
+		}
+		/*OJO*/
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+		}
+	
+		body {
+			display: flex;
 			flex-direction: column;
-			align-items: center;
-			gap: 10px;
-			top: 40px;
-			background: rgba(199, 177, 177, 0.65);
+			min-height: 100vh;
+		} /*SOLO DEMOSTRACIÓN*/
+	
+		/*stylos de la navegacion principal*/
+	
+		/*header*/
+		.navegacion {
 			width: 100%;
-			right: 0;
-			padding: 0px 0px;
-			overflow: hidden;
-			transition: 500ms;
-			height: 0;
+			height: 180px;
+			position: fixed;
+			z-index: 1000;
+			justify-content: center;
 		}
-		input:checked ~ .nav-links {
-			height: 600%;
+		.contenedor-logo {
+			background-color: var(--color-primario);
+			height: 130px;
 		}
-		.menu {
-			display: block;
-			width: 24px;
+		.seccion {
+			width: 100%;
+			height: 100%;
 		}
-		.menu label {
-			width: 24px;
-			height: 24px;
-			position: absolute;
-			cursor: pointer;
+	
+		.navbar {
+			
+			width: 80%;
+			max-width: 80%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			position: fixed;
+			font-family: var(--font-Akshar);
+			text-align: center;
+			background-color: var(--color-primario);
+			height: 130px;
 		}
-		.x-icon {
-			display: none;
+	
+		.logo {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 		}
-		input:checked ~ .menu .line-icon {
-			display: none;
+	
+		.logo img {
+			width: 120px; /* Tamaño del logo */
+			height: auto;
+			margin-right: 0;
 		}
-		input:checked ~ .menu .x-icon {
-			display: block;
+	
+		.nav-links {
+			list-style: none;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			width: 100%;
+			height: 40px;
+			padding: 0;
 		}
-	}
-	@media screen and (max-width: 920px) {
+	
 		.nav-links li {
 			display: inline-block;
-			padding: 0 10px;
+			padding: 0 20px;
+		}
+		
+
+		.nav-links a {
+			text-decoration: none;
+			color: var(--color-secundario);
+			font-size: 20px;
+			font-weight: 6000;
+			text-transform: uppercase;
+			padding: 1px 20px;
+			border-radius: 5px;
+			display:inline-block;
+		}
+	
+		.nav-links a:hover {
+			text-decoration: none;
+			color: var(--color-secundario);
+			background-color: #6a7c4a;
+			
+			
+		}
+		.menu,
+		input {
+			display: none;
+		}
+	
+	.nav-links a.active {
+		background-color: var(--letras); /* Fondo claro */
+		color: var(--color-secundario); 
+		padding: 1px 20px;
+		border-radius: 5px;
+		font-weight: bold;
+		text-decoration: none;
+		display: inline-block; /* Asegura que solo ocupe el espacio necesario */
+	}
+	
+		/* Estilos para el menú desplegable de Carnaval */
+	.dropdown {
+		position: relative;
+	}
+	
+	.dropdown-menu {
+		display: none; /* Oculto por defecto */
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: rgba(186, 147, 116, 0.7);
+		padding: 10px 0;
+		border-radius: 5px;
+		box-shadow: 0 4px 8px rgb(234, 209, 209);
+		z-index: 10;
+		width: 160px;
+	}
+	
+	.dropdown-menu li {
+		padding: 5px 20px;
+	}
+	
+	.dropdown-menu li a {
+		color: #6f4428;
+		text-decoration: none;
+		font-size: 18px;
+		display: block;
+		padding: 5px 20px;
+	}
+	
+	.dropdown-menu li a:hover {
+		background-color: #b8a08e;
+		color: #fff;
+	}
+	
+	/* Mostrar el menú desplegable al pasar el mouse */
+	.dropdown:hover .dropdown-menu {
+		display: block;
+	}
+	
+	.dropdown-submenu .dropdown-menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		background-color: rgba(186, 147, 116, 0.7);
+		position: absolute;
+		left: 100%;
+		top: 0;
+		width: 160px;
+	}
+	
+	.dropdown-submenu .dropdown-menu li a {
+		color: #6f4428;
+		text-decoration: none;
+		padding: 5px 15px;
+		display: block;
+	}
+	
+	.dropdown-submenu .dropdown-menu li a:hover {
+		background-color: #b8a08e;
+		color: #fff;
+	}
+	
+		@media screen and (max-width: 768px) {
+			.nav-links {
+				position: absolute;
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+				top: 40px;
+				background: rgba(116, 38, 38, 0.65);
+				width: 100%;
+				right: 0;
+				padding: 0px 0px;
+				overflow: hidden;
+				transition: 500ms;
+				height: 0;
+			}
+			.seccion {
+				width: 50%;
+				height: 20%;
+			}
+			input:checked ~ .nav-links {
+				height: 1200%;
+			}
+			.contenedor-logo{
+				height: 34%;
+			}
+			.navbar {
+				height: 34px; /* Reduce la altura */
+			}
+
+			.menu {
+				display: block;
+				width: 24px;
+			}
+			.menu label {
+				width: 24px;
+				height: 24px;
+				position: absolute;
+				cursor: pointer;
+			}
+			.x-icon {
+				display: none;
+			}
+			input:checked ~ .menu .line-icon {
+				display: none;
+			}
+			input:checked ~ .menu .x-icon {
+				display: block;
+			}
+			.quirqui {
+				position: absolute; 
+				top: 0px; 
+				left: 37%; 
+				transform: translateX(-50%); 
+				width: 100px; 
+				height: auto; 
+				z-index: 10; 
+			}
+
+			.quirqui1{
+				display: none;
+			}
+
+		}	
+		@media screen and (max-width: 920px) {
+			.nav-links li {
+				display: inline-block;
+				padding: 0 10px;
+			}
+		}
+	
+		/* Deslizamiento en responsive */
+		@media screen and (max-width: 768px) {
+		#carnaval-submenu {
+			max-height: 100px; /* Ajusta la altura máxima para que se deslice */
+			overflow-y: auto;  /* Activa el deslizamiento vertical */
+			overflow-x: hidden; /* para evitar desplazamiento horizontal */
 		}
 	}
-
-	/* Deslizamiento en responsive */
-    @media screen and (max-width: 768px) {
-    #carnaval-submenu {
-        max-height: 100px; /* Ajusta la altura máxima para que se deslice */
-        overflow-y: auto;  /* Activa el deslizamiento vertical */
-		overflow-x: hidden; /* para evitar desplazamiento horizontal */
-    }
-}
-@media screen and (max-width: 768px) {
-    /* Ajustar el segundo submenú para que se muestre debajo del primero en pantallas pequeñas */
-    .dropdown-submenu .dropdown-menu {
-        position: static; /* Cambia la posición para que se apile debajo */
-        margin-top: 10px; /* Agrega un pequeño margen superior si es necesario */
-        left: auto; /* Anula la posición izquierda */
-        top: auto; /* Anula la posición superior */
-    }
-}
-@media screen and (max-width: 768px) {
-    /* Alineación del segundo submenú */
-    .dropdown-submenu .dropdown-menu {
-        position: relative;
-        margin-top: 0;
-        left: -11px;
-        top: 0;
-        width: 100%;
-        padding: 0; /* Elimina cualquier espacio adicional */
-    }
-
-    /* Estilo para unir ambos submenús visualmente */
-    .dropdown-menu,
-    .dropdown-submenu .dropdown-menu {
-        border: none;
-        box-shadow: none;
-        background-color: rgba(186, 147, 116, 0.7);
-        text-align: left; /* Alinea el texto y botones a la izquierda */
-    }
-
-    /* Ajuste de los elementos del menú */
-    .dropdown-menu li,
-    .dropdown-submenu .dropdown-menu li {
-        padding: 0 15px; /* Ajusta el espaciado de los elementos */
-        margin: 0; /* Elimina cualquier margen adicional */
-    }
-
-    /* Ajuste del botón "Ver Más" */
-    .dropdown-menu .ver-mas,
-    .dropdown-submenu .ver-mas {
-        width: 100%; /* Asegura que ocupe todo el ancho disponible */
-        padding-left: 10px 15px; /* Ajusta la alineación hacia la izquierda */
-        text-align: left;
-    }
+	@media screen and (max-width: 768px) {
+		/* Ajustar el segundo submenú para que se muestre debajo del primero en pantallas pequeñas */
+		.dropdown-submenu .dropdown-menu {
+			position: static; /* Cambia la posición para que se apile debajo */
+			margin-top: 10px; /* Agrega un pequeño margen superior si es necesario */
+			left: auto; /* Anula la posición izquierda */
+			top: auto; /* Anula la posición superior */
+		}
+	}
+	@media screen and (max-width: 768px) {
+		/* Alineación del segundo submenú */
+		.dropdown-submenu .dropdown-menu {
+			position: relative;
+			margin-top: 0;
+			left: -11px;
+			top: 0;
+			width: 100%;
+			padding: 0; /* Elimina cualquier espacio adicional */
+		}
 	
-}
+		/* Estilo para unir ambos submenús visualmente */
+		.dropdown-menu,
+		.dropdown-submenu .dropdown-menu {
+			border: none;
+			box-shadow: none;
+			background-color: rgba(252, 176, 114, 0.7);
+			text-align: left; /* Alinea el texto y botones a la izquierda */
+		}
+	
+		/* Ajuste de los elementos del menú */
+		.dropdown-menu li,
+		.dropdown-submenu .dropdown-menu li {
+			padding: 0 15px; /* Ajusta el espaciado de los elementos */
+			margin: 0; /* Elimina cualquier margen adicional */
+		}
+	
+		/* Ajuste del botón "Ver Más" */
+		.dropdown-menu .ver-mas,
+		.dropdown-submenu .ver-mas {
+			width: 100%; /* Asegura que ocupe todo el ancho disponible */
+			padding-left: 10px 15px; /* Ajusta la alineación hacia la izquierda */
+			text-align: left;
+		}
+		
+	}
+	@media screen and (width: 1024px) {
+		.nav-links {
+			width: 190%; /* Asegura que ocupe todo el ancho disponible */
+			height: 50%;
+			justify-content: center; /* Distribuye uniformemente los elementos */
+			align-items: center; /* Centra las opciones verticalmente */
+			position: static;
+			font-family: var(--font-Akshar);
+			text-align: center;
+			background-color: var(--color-primario);
+			display:block;
+
+		}
+		.quirqui1{
+			display: none;
+		}
+	}
 
 
 		/*end header*/
