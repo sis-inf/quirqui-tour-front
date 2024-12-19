@@ -20,7 +20,7 @@ import Encabezado from '../components/encabezado.astro';
 				Informacion general
 				</button>
                 </a>
-                <div class="guion">></div>
+                <div class="guion"></div>
 			</div>
 			
 			<div class="fila">
@@ -32,7 +32,7 @@ import Encabezado from '../components/encabezado.astro';
 					Ver cronograma
 				</button>
                 </a>
-				<div class="guion">></div>
+				<div class="guion"></div>
 			</div>
 		</div>
 		<img src="/public/logoTOUR1.png" alt="quirqui" class="imagen-botones">
@@ -425,11 +425,9 @@ import Encabezado from '../components/encabezado.astro';
 </Layout>
 
 <style>
-	
 a {
     text-decoration: none;
 }
-
 .botonesP {
   display: flex;
   flex-wrap: wrap; /* Permite que los elementos se ajusten */
@@ -439,7 +437,7 @@ a {
 }
 .titulo {
   color: #a52b2a;
-  font-size: 500%;
+  font-size: 300%;
   font-weight: bold;
   text-align: center;
   font-family: "Castellar", sans-serif;
@@ -525,16 +523,15 @@ h1{
 }
 .carus{
     display: flex;
+    text-align: justify;
 }
 .carus1{
-    background:radial-gradient( #ffff 10%, #ba9364);
-    padding-top: 200px;
+    
+    padding-top: 100px;
     width: auto;
-    padding-bottom: 200px;
 }
 
 .inf{
-    
     color:#ffff;
     font-family: 'Arial';
     flex-direction: column;
@@ -555,15 +552,13 @@ h1{
     color: #a52b2a;
 }
 .carus p{
-    color:black;
+    color:#503507;
     font-size: 30px;
     font-family: 'Times New Roman';
 }
 
-/* */
 .seccion {
 		flex-direction: column;
-		background:radial-gradient(#ba9364 10%,#ffff);
 		padding-top: 10px;
 		text-align: center;
 		display: flex;
@@ -579,7 +574,6 @@ h1{
 	}
 .cont{
 		flex-direction: column;
-		background:radial-gradient( #ffff 10%, #ba9364);
 		text-align: center;
 		display: flex;
 		align-items: center;
@@ -607,7 +601,7 @@ h1{
 		
     } 
     .card {         
-        background-color: #ba9374;			
+        background-color: #335669;			
         border-radius: 38px;					
         padding: 25px;
         text-align: justify;
@@ -616,7 +610,7 @@ h1{
     }
     .card-info {	
         font-size: 1.15rem;	
-        color: #55341e;
+        color: #F5ECDD;
         line-height: 1.6;
         font-family: "Arial", sans-serif;
         font-weight: 600;
@@ -666,21 +660,14 @@ h1{
         flex-direction: column;
         align-items: center;
         width: 90%;
-        padding: 10px;
+        
     }
     .container img {
         width: 90%;
         height: auto;
     }
-    main {
-
-        margin-top: 5vh;
-        box-sizing: border-box;
-    }
     .imagen-botones {
-        width: 100%;
-        height: auto;
-        margin-top: 50px;
+        display:none;
     }
     .carus {
         flex-direction: column;
@@ -688,7 +675,7 @@ h1{
         align-items: center;
     }
     .carousel-container {
-        width: 100%;
+        width: 95%;
     }
     .seccion {
         width: 100%;
@@ -725,9 +712,7 @@ h1{
         box-sizing: border-box;
     }
     .imagen-botones {
-        width: 100%;
-        height: auto;
-        margin-top: 50px;
+        display: none;
     }
     .carus {
         flex-direction: column;
@@ -749,30 +734,26 @@ h1{
         font-size: 1.5rem;
     }
 }
-
-/* Estilos para pantallas de hasta 425px */
 @media (max-width: 425px) {
     .container {
         flex-direction: column;
         align-items: center;
-        align-content: center;
-        width: 100%;
+        width: 90%;
         padding: 10px;
     }
     .container img {
+        margin-right: 0vh;
         height: auto;
         width: 100%;
         margin-left: 0;
     }
     main {
         margin-top: 5vh;
+        margin-right: 5vh;
         box-sizing: border-box;
     }
     .imagen-botones {
-        width: 100%;
-        height: auto;
-        padding-right: 0;
-        margin-top: 50px;
+        display: none;
     }
     .cont {
         flex-direction: column;
@@ -785,16 +766,17 @@ h1{
         align-items: center;
     }
     .carousel-container {
-        width: 100%;
+        width: 95%;
     }
     .seccion {
         width: 100%;
         height: auto;
     }
     .titulo {
-        width: 100%;
-        text-align: center;
-    }
+  font-size: 300%;
+  text-align: center;
+  font-family: "Castellar", sans-serif;
+}
     .title {
         font-size: 1.5rem;
     }
@@ -803,55 +785,6 @@ h1{
     }
     .container {
         padding: 10px;
-    }
-}
-
-/* Estilos para pantallas de hasta 400px */
-@media (max-width: 400px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        width: 90%;
-        padding: 10px;
-    }
-    .container img {
-        height: auto;
-        width: 97%;
-        margin-left: 0;
-        justify-items: center;
-    }
-    main {
-        margin-top: 5vh;
-        box-sizing: border-box;
-    }
-    .imagen-botones {
-        width: 100%;
-        height: auto;
-        padding-right: 0;
-        margin-top: 50px;
-    }
-    .cont {
-        width: 100%;
-    }
-    .carus {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-    .carousel-container {
-        width: 100%;
-    }
-    .seccion {
-        width: 100%;
-        height: auto;
-    }
-    .titulo {
-        font-size: 40px;
-        text-align: center;
-    }
-    .title {
-        font-size: 1.5rem;
     }
 }
 
